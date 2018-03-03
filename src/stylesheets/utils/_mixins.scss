@@ -1,0 +1,147 @@
+// Mixins
+
+@mixin rhythm($sizeValue, $heightValue) {
+  font-size: $sizeValue + px;;
+  line-height: $heightValue / $sizeValue;
+}
+
+@mixin button-size($padding-y, $padding-x, $font-size, $line-height, $border-radius) {
+  padding: $padding-y $padding-x;
+  font-size: $font-size;
+  line-height: $line-height;
+  border-radius: $border-radius;
+}
+
+@mixin reset-button {
+  overflow : visible;
+  margin : 0;
+  padding : 0;
+  border : 0;
+  background : transparent;
+  font : inherit;
+  line-height : normal;
+  cursor : pointer;
+  -moz-user-select : text;
+
+  &::-moz-focus-inner {
+      padding : 0;
+      border : 0;
+  }
+}
+
+@mixin setTransitionFor($properties...) {
+  transition: 0.2s ease-in-out;
+  transition-property: $properties;
+}
+
+@mixin arrowSmall($side) {
+  position: relative;
+  display: inline-block;
+  @if $side == right {
+    &:after,
+    &:before {
+      vertical-align: text-bottom;
+    }
+    &:after {
+      content: '>';
+      margin-left: 10px;
+    }
+  } @else {
+    &:before {
+      content: '<';
+      margin-right: 10px;
+    }
+  }
+}
+
+@mixin goldOnHover($icon) {
+  @include setTransitionFor(color, fill);
+
+  &:hover {
+    @if $icon == icon {
+      fill: var(--gold);
+    } @else {
+      color: var(--gold);
+    }
+  }
+  &:active {
+    @if $icon == icon {
+      fill: var(--gold);
+    } @else {
+      color: var(--gold);
+    }
+  }
+}
+
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+
+@mixin placeholder {
+  @include optional-at-root('::-webkit-input-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root('::-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-ms-input-placeholder') {
+    @content;
+  }
+}
+
+@mixin setHeaderBackgrounds($mobilePath, $desktopPath) {
+  @custom-media --headerBreakpoint (width >= 400px);
+
+  background-image: url($mobilePath);
+  @media (--headerBreakpoint) {
+    background-image: url($desktopPath);
+  }
+}
+
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+  background-repeat: no-repeat;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(../images/#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

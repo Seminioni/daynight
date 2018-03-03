@@ -1,0 +1,25 @@
+{% from 'macros/helpers.html' import sprite %}
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{{ title }}{% endblock %}</title>
+    <link rel="stylesheet" href="../stylesheets/app.css">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'>
+
+    {% block head %}{% endblock %}
+  </head>
+  <body class="page">
+    {% block content %}
+
+      {% block footer %}
+      {% endblock %}
+
+    {% endblock %}
+
+    {% block javascript %}
+      <script async src="../javascripts/app.js"></script>
+    {% endblock %}
+  </body>
+</html>
