@@ -1,9 +1,9 @@
-# Coinsage.ru frontend repository
+# DayNight.ru frontend repository
 
-### Постоянная ссылка на рабочу версию
+### Постоянная ссылка на рабочую версию
 
 ```
-http://coinsage.surge.sh/
+http://daynight0288.surge.sh/
 ```
 
 ### Подготовка
@@ -21,21 +21,21 @@ nvm install --lts
 В корне папки
 
 ```
-npm install || yarn
+yarn
 ```
 ### Запуск дев-режима
 
 ```
-npm start || yarn start
+yarn start
 ```
 ### Сбилдить проект
 
 ```
-npm build || yarn build
+yarn build
 
 ```
 ## Бегает на
 
 * [Yarn](https://yarnpkg.com/en/) — Fast, reliable, and secure dependency management.
 * [Blendid](https://github.com/vigetlabs/blendid) — (formerly known as Gulp Starter) is a delicious stand-alone blend of tasks and build tools poured into Gulp to form a full-featured modern asset pipeline.
-* [PostCSS](https://rometools.github.io/rome/) — is a tool for transforming styles with JS plugins.
+* [PostCSS](http://postcss.org/) — is a tool for transforming styles with JS plugins.
