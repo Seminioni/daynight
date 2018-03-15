@@ -18,7 +18,6 @@ module.exports = {
   stylesheets: {
     sass: {
       includePaths: [
-        "./node_modules/choices.js/assets/styles/scss/",
       ]
     },
   },

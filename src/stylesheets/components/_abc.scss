@@ -1,0 +1,154 @@
+.abcMobile {
+  width: 100%;
+  position: relative;
+  padding-bottom: 100px;
+}
+
+.abcMobileGrid {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 250px;
+  margin: 0 auto;
+
+  &.active{
+    position: relative;
+    width: 100%;
+    padding: 0 25px;
+
+    .abcMobileLetter:not(.active){
+      display: none;
+    }
+
+    .abcMobileLetter{
+      .abcMobileLetterName {
+        display: none;
+      }
+
+      .abcMobileListWords{
+        display: block;
+      }
+      .abcMobileListWord {
+        line-height: 2;
+      }
+    }
+  }
+}
+
+.abcMobileLetter {
+  position: relative;
+  width: 50px;
+  height: 50px;
+
+  &.active{
+    width: 100%;
+    height: unset;
+  }
+}
+
+.abcMobileLetterName {
+  @include textNormalSize();
+  font-weight: 500;
+  line-height: 50px;
+  text-align: center;
+}
+
+.abcMobileListWords {
+  display: none;
+}
+
+.abcMobileListWord {
+  @include textNormalSize();
+}
+
+.abcMobileListLink {
+  color: var(--c-black);
+}
+
+.abcMobileCurrentChoice {
+  width: calc(100% - 50px);
+  margin: 0 auto 50px;
+
+  &.active {
+    .abcMobileCurrentChoiceValue {
+      color: var(--c-black);
+    }
+
+    .abcMobileCurrentChoiceReset {
+      display: block;
+    }
+  }
+}
+
+.abcMobileCurrentChoiceValue {
+  @include textNormalSize();
+  color: var(--c-light-grey);
+  padding: 5px 0;
+  border-bottom: 1px solid var(--c-black);
+}
+
+.abcMobileCurrentChoiceReset {
+  display: none;
+  @include textNormalSize();
+  position: absolute;
+  right: 25px;
+  background-color: var(--c-white);
+  padding: 16px;
+  z-index: 1;
+}
+
+.abc {
+  width: 100%;
+  display: none;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0 auto;
+}
+
+.abcRow {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.abcLetter {
+  width: 100%;
+  padding-right: 20px;
+  margin-bottom: 12px;
+}
+
+.abcLetterName {
+  @include textNormalSize();
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+
+.abcListWords {
+  width: 100%;
+}
+
+.abcListWord {
+  @include textSmallSize();
+  text-transform: uppercase;
+
+  &.active {
+    font-weight: 500;
+  }
+}
+
+.abcListLink {
+  color: var(--c-black);
+}
+
+@media screen and (min-width: $pre-mobile) {
+  .abc {
+    display: flex;
+  }
+  .abcMobile {
+    display: none;
+  }
+}

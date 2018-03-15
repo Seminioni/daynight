@@ -54,24 +54,7 @@
   }
 }
 
-@mixin goldOnHover($icon) {
-  @include setTransitionFor(color, fill);
 
-  &:hover {
-    @if $icon == icon {
-      fill: var(--gold);
-    } @else {
-      color: var(--gold);
-    }
-  }
-  &:active {
-    @if $icon == icon {
-      fill: var(--gold);
-    } @else {
-      color: var(--gold);
-    }
-  }
-}
 
 @mixin optional-at-root($sel) {
   @at-root #{if(not &, $sel, selector-append(&, $sel))} {
@@ -97,51 +80,86 @@
   }
 }
 
-@mixin setHeaderBackgrounds($mobilePath, $desktopPath) {
-  @custom-media --headerBreakpoint (width >= 400px);
 
-  background-image: url($mobilePath);
-  @media (--headerBreakpoint) {
-    background-image: url($desktopPath);
+// Legacy mixins
+
+@mixin font($fontSize, $fontName, $lineHeight) {
+  font-size: $fontSize;
+  font-family: $fontName;
+  line-height: $lineHeight / $fontSize;
+}
+
+@mixin textNormalSize() {
+  @include font(11px, var(--HelveticaNeue), 17px);
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+@mixin textNormalForMenu() {
+  @include textNormalSize();
+  line-height: 15px;
+}
+
+@mixin textSmallSize() {
+  @include font(9px, var(--HelveticaNeue), 17px);
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+@mixin arrow() {
+  width: 17px;
+  height: 7px;
+  position: relative;
+  overflow: hidden;
+
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+    width: 11px;
+    height: 7px;
+    border-top: 1px solid var(--c-black);
+    top: 0;
+  }
+
+  &:after {
+    left: 0;
+    transform-origin: left top;
+    transform: rotate(32deg);
+  }
+
+  &:before {
+    right: 0;
+    transform-origin: right top;
+    transform: rotate(-32deg);
   }
 }
 
-@mixin sprite-width($sprite) {
-  width: nth($sprite, 5);
-}
+@mixin arrowSmall() {
+  width: 11px;
+  height: 6px;
+  position: relative;
+  overflow: hidden;
 
-@mixin sprite-height($sprite) {
-  height: nth($sprite, 6);
-}
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 3px;
+    border-top: 1px solid var(--c-black);
+    top: 0;
+  }
 
-@mixin sprite-position($sprite) {
-  $sprite-offset-x: nth($sprite, 3);
-  $sprite-offset-y: nth($sprite, 4);
-  background-position: $sprite-offset-x  $sprite-offset-y;
-  background-repeat: no-repeat;
-}
+  &:after {
+    left: 0;
+    transform-origin: left top;
+    transform: rotate(32deg);
+  }
 
-@mixin sprite-image($sprite) {
-  $sprite-image: nth($sprite, 9);
-  background-image: url(../images/#{$sprite-image});
-}
-
-@mixin sprite($sprite) {
-  @include sprite-image($sprite);
-  @include sprite-position($sprite);
-  @include sprite-width($sprite);
-  @include sprite-height($sprite);
-}
-
-// The `sprites` mixin generates identical output to the CSS template
-//   but can be overridden inside of SCSS
-//
-// @include sprites($spritesheet-sprites);
-@mixin sprites($sprites) {
-  @each $sprite in $sprites {
-    $sprite-name: nth($sprite, 10);
-    .#{$sprite-name} {
-      @include sprite($sprite);
-    }
+  &:before {
+    right: 0;
+    transform-origin: right top;
+    transform: rotate(-32deg);
   }
 }

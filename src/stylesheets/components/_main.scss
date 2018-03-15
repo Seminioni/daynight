@@ -1,0 +1,27 @@
+.main {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  min-height: 500px;
+  height: 100%;
+  @extend .container;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.mainContainer {
+  width: 100%;
+  max-width: 710px;
+}
+
+@media screen and (min-width: $pre-mobile) {
+  .main {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  .mainContainer {
+    padding-top: 9px;
+  }
+}

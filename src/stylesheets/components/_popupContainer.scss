@@ -1,0 +1,42 @@
+.popupContainer{
+  display: none;
+  width: 100%;
+  position: fixed;
+  top: 65px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--c-white);
+  z-index: 1000000;
+  padding: 25px 36px 0;
+  overflow-y: scroll;
+
+  &.active{
+    display: block;
+  }
+
+  .btnCross{
+    top: 3px;
+    right: 15px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.popupInner{
+  padding-bottom: 60px;
+}
+
+.popupBottom{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+@media screen and (min-width: $pre-mobile){
+  .popupContainer{
+    display: none !important;
+  }
+}

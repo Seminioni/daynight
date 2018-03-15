@@ -1,0 +1,128 @@
+.address {
+  position: relative;
+  padding-top: 33px;
+  
+  &.active{
+    padding-bottom: 17px;
+    .addressImgWrapper,
+    .addressPhoneStreetWrapper{
+      display: block;
+    }
+    .addressBuild {
+      border-bottom-color: transparent;
+    }
+    .addressBuildNameArrow {
+      transform: translateY(6px) rotate(180deg);
+    }
+  }
+}
+
+.addressImgWrapper {
+  width: 100%;
+  display: none;
+}
+
+.addressImg {
+  width: 100%;
+}
+
+.addressBuild {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid var(--c-black);
+  padding: 13px 25px 4px;
+}
+
+.addressBuildName {
+  @include textNormalSize();
+}
+
+.addressBuildNameArrow {
+  display: inline-block;
+  float: right;
+  transform: translateY(8px);
+  @include arrowSmall();
+}
+
+.addressPhoneStreetWrapper {
+  display: none;
+  padding: 0 25px;
+}
+
+.addressStreets {
+  width: 100%;
+  white-space: nowrap;
+  margin: 25px 0 10px;
+}
+
+.addressStreet {
+  width: 50%;
+  display: inline-block;
+  white-space: normal;
+  @include textNormalSize();
+  
+  &:last-child{
+    padding-left: 5px;
+  }
+}
+
+.addressPhone {
+  @include textNormalSize();
+}
+
+@media screen and (min-width: $pre-mobile){
+  .address {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0 0 20px;
+    
+    &.active{
+      padding: 0 0 20px;
+    }
+  }
+  .addressBuild {
+    position: unset;
+    top: unset;
+    left: unset;
+    width: 100%;
+    border-bottom: 0;
+    padding: 0 0 0 20px;
+    margin-bottom: 10px;
+  }
+  .addressBuildName {
+    font-weight: 500;
+  }
+  .addressBuildNameArrow{
+    display: none;
+  }
+  .addressImgWrapper {
+    max-width: 520px;
+    display: block;
+  }
+  .addressPhoneStreetWrapper {
+    display: block;
+    padding: 0 0 0 20px;
+  }
+  .addressInfo{
+    position: relative;
+    max-width: 191px;
+    width: 100%;
+  }
+  .addressStreets{
+    white-space: normal;
+    margin: 0;
+  }
+  .addressStreet{
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    
+    &:last-child{
+      padding: 0;
+    }
+  }
+}

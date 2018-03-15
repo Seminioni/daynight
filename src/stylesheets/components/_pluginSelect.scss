@@ -1,0 +1,45 @@
+.yuroidStylizedSelectWrapper {
+  position: relative;
+  width: 100%;
+  border-bottom: 1px solid var(--c-black);
+}
+
+.yuroidStylizedSelectCurrent {
+  width: 100%;
+  padding: 10px;
+}
+
+.yuroidStylizedSelectCurrentValue {
+  @include textNormalSize();
+  color: var(--c-black);
+  width: calc(100% - 13px);
+}
+
+.yuroidStylizedSelectList {
+  display: none;
+  position: absolute;
+  width: 100%;
+  background-color: color(var(--c-white), l(80%));
+  background-color: var(--c-light-indigo);
+  z-index: 10;
+
+  &.active {
+    display: block;
+  }
+}
+
+.yuroidStylizedSelectListItem {
+  @include textNormalSize();
+  color: var(--c-black);
+  padding: 5px 8px;
+
+  &.active {
+    color: var(--c-red);
+  }
+}
+
+.yuroidStylizedSelectArrow {
+  display: block;
+  @include arrowSmall();
+  float: right;
+}

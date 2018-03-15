@@ -1,0 +1,71 @@
+{% extends 'layouts/application.njk' %}
+{% from 'macros/helpers.html' import spriteForLink,sprite %}
+
+{% block content %}
+
+<div class="latest">
+  <div class="latestTop">
+    <a class="link latestTopLink" href="#">
+            <img class="latestTopCover" src="https://daynight.ru/custom/bnrs/2400-flowers.gif">
+        </a>
+  </div>
+
+  <ul class="latestList">
+    <li class="latestListItem">
+      <div class="latestListItemLink">
+        <a href="https://daynight.ru/news/balenciaga-fall-2018/" class="latestListItemLinkImgWrapper">
+          <img src="https://daynight.ru//userfiles/news/large/2/12075_balenciaga-fall-2018.jpg" alt="Balenciaga Fall 2018" class="latestListItemLinkImg"></a>
+          <a href="https://daynight.ru/news/balenciaga-fall-2018/" class="latestListItemLinkText">Balenciaga Fall 2018</a>
+      </div>
+    </li>
+    <li class="latestListItem">
+      <div class="latestListItemLink">
+        <a href="https://daynight.ru/offline-gallery/"><img src="https://daynight.ru/custom/day/img/img-offline-gallery.jpg" alt="" class="latestListItemLinkImg"></a>
+      </div>
+    </li>
+    <li class="latestListItem">
+      <div class="latestListItemLink" id="instafeed1">
+        <a class="latestListItemLinkImgWrapper" href="https://www.instagram.com/p/BgVhx-MlTs0/"><img src="//scontent.cdninstagram.com/vp/4b37385360dcc0f2f4998f3d3f0e3dd6/5AACDAD2/t51.2885-15/s640x640/sh0.08/e35/28765165_564576670572369_6267111146113728512_n.jpg" alt="" class="latestListItemLinkImg"></a>
+        <a
+          class="latestListItemLinkText" href="https://www.instagram.com/p/BgVhx-MlTs0/">@daynightstores</a>
+      </div>
+    </li>
+    <li class="latestListItem">
+      <div class="latestListItemLink">
+        <a href="https://daynight.ru/news/altuzarra-fall-2018/" class="latestListItemLinkImgWrapper"><img src="https://daynight.ru/userfiles/news/large/2/12067_altuzarra-fall-2018.jpg" alt="Altuzarra Fall 2018" class="latestListItemLinkImg"></a>
+        <a href="https://daynight.ru/news/altuzarra-fall-2018/" class="latestListItemLinkText">Altuzarra Fall 2018</a>
+      </div>
+    </li>
+  </ul>
+  <ul class="latestList">
+    <li class="latestListItem">
+      <div class="latestListItemLink">
+        <a href="https://daynight.ru/news/new-items-daynightru273/" class="latestListItemLinkImgWrapper"><img src="https://daynight.ru/userfiles/news/large/2/12043_novinki-daynightru.jpg" alt="Новинки daynight.ru" class="latestListItemLinkImg"></a> <a href="https://daynight.ru/news/new-items-daynightru273/" class="latestListItemLinkText">Новинки daynight.ru</a>
+      </div>
+    </li>
+    <li class="latestListItem">
+      <div class="latestListItemLink">
+        <a href="https://daynight.ru/news/nina-ricci-fall-2018/" class="latestListItemLinkImgWrapper"><img src="https://daynight.ru/userfiles/news/large/2/12003_nina-ricci-fall-2018.jpg" alt="Nina Ricci Fall 2018" class="latestListItemLinkImg"></a> <a href="https://daynight.ru/news/nina-ricci-fall-2018/" class="latestListItemLinkText">Nina Ricci Fall 2018</a>
+      </div>
+    </li>
+    <li class="latestListItem">
+      <div class="latestListItemLink" id="instafeed2">
+      <a class="latestListItemLinkImgWrapper" href="https://www.instagram.com/p/BgV6vSDlc9J/"><img src="//scontent.cdninstagram.com/vp/129a878f21ca40ce1abadb31d526fc98/5B2DBE8C/t51.2885-15/s640x640/sh0.08/e35/28766356_326549951200751_6098878273561821184_n.jpg" alt="" class="latestListItemLinkImg"></a><a class="latestListItemLinkText" href="https://www.instagram.com/p/BgV6vSDlc9J/">@daynight.ru</a></div>
+    </li>
+    <li class="latestListItem">
+      <div class="latestListItemLink">
+        <a href="https://daynight.ru/news/ann-demeulemeester-fall-2018/" class="latestListItemLinkImgWrapper"><img src="https://daynight.ru/userfiles/news/large/2/11995_ann-demeulemeester-fall-2018.jpg" alt="Ann Demeulemeester Fall 2018" class="latestListItemLinkImg"></a> <a href="https://daynight.ru/news/ann-demeulemeester-fall-2018/" class="latestListItemLinkText">Ann Demeulemeester Fall 2018</a>
+      </div>
+    </li>
+  </ul>
+
+  <a href="news.html" class="link formButton">читать другие новости</a>
+  <div class="linkToCatalog" href="catalog.html">
+    <a class="link linkToCatalogText" href="catalog.html">Женское</a>
+    <a class="link linkToCatalogText" href="catalog.html">Мужское</a>
+    <a class="link linkToCatalogText" href="#">Outlet</a>
+    <span class="linkToCatalogArrow"></span>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,263 @@
+.uniList {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-left: 19px;
+  padding-right: 19px;
+}
+
+.uniItem {
+  display: block;
+  width: 50%;
+  margin-bottom: 18px;
+  padding-left: 4px;
+  padding-right: 4px;
+  color: var(--c-black);
+}
+
+.uniItemCover {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 270px;
+  margin-bottom: 9px;
+}
+
+.uniItemCoverImg {
+  height: 100px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.uniItemDate {
+  display: block;
+  @include textSmallSize();
+  line-height: 1;
+  margin-bottom: 1px;
+}
+
+.uniItemTitle {
+  display: block;
+  @include textNormalSize();
+  font-weight: 500;
+}
+
+.uniItemPrice {
+  display: block;
+  @include textNormalSize();
+}
+
+// Mods
+.uniItemPrice--old {
+  margin-right: 12px;
+  text-decoration: line-through;
+}
+
+.uniList--long {
+  .uniItem {
+    margin-bottom: 20px;
+  }
+  .uniItemCover,
+  .uniItemCoverImg {
+    height: 228px;
+  }
+  .uniItemCover {
+    margin-bottom: 6px;
+  }
+  .uniItemTitle {
+    margin-bottom: 1px;
+  }
+
+  .uniItemShoes {
+    .uniItemCoverImg {
+      height: 117px;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+    }
+  }
+}
+
+.uniItem--sale,
+.uniItem--new {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  @include textSmallSize();
+  color: var(--c-white);
+  text-transform: uppercase;
+  padding: 2px 7px 3px;
+}
+
+.uniItem--sale {
+  background-color: var(--c-red);
+}
+
+.uniItem--new {
+  background-color: var(--c-black);
+}
+
+.uniItem--zero {
+  margin: 0 !important;
+  height: 0;
+}
+
+.uniList--withAsymmetry {
+  display: block;
+
+  .uniItem {
+    margin: 0 auto 42px;
+    padding: 0;
+  }
+
+  .uniListRow {
+    &:nth-child(odd) {
+      .uniItem {
+        &:nth-child(1) {
+          width: 100%;
+          max-width: 330px;
+
+          .uniItemCover {
+            height: 450px;
+          }
+
+          .uniItemCoverImg {
+            height: 100%;
+          }
+        }
+
+        &:nth-child(2) {
+          width: 100%;
+          max-width: 297px;
+
+          .uniItemCover {
+            height: 350px;
+          }
+
+          .uniItemCoverImg {
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    &:nth-child(even) {
+      .uniItem {
+        &:nth-child(1) {
+          width: 100%;
+          max-width: 279px;
+
+          .uniItemCover {
+            height: 350px;
+          }
+
+          .uniItemCoverImg {
+            height: 100%;
+          }
+        }
+
+        &:nth-child(2) {
+          width: 100%;
+          max-width: 303px;
+
+          .uniItemCover {
+            height: 400px;
+          }
+
+          .uniItemCoverImg {
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $pre-mobile) {
+  .uniList--withOnlyImgs {
+    flex-direction: column;
+    padding: 0;
+    margin-bottom: 20px;
+
+    .uniItem {
+      width: 100%;
+    }
+    .uniItem,
+    .uniItemDate,
+    .uniItemTitle,
+    .uniItemCover {
+      margin: 0;
+      padding: 0;
+    }
+
+    .uniItemDate,
+    .uniItemTitle {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 540px) {
+  .uniList--withAsymmetry {
+    .uniItem {
+      padding: 0 16px;
+      margin: 0;
+    }
+
+    .uniListRow {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 42px;
+    }
+  }
+}
+
+@media screen and (min-width: $pre-mobile) {
+  .uniList {
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 730px) {
+  .uniItem {
+    width: 180px;
+    margin-bottom: 42px;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .uniList:not(.uniList--long) {
+    .uniItem {
+      padding: 0;
+    }
+  }
+}
+
+@media screen and (min-width: 828px) {
+  .uniList--long {
+    .uniItem {
+      width: 163px;
+    }
+  }
+}
+
+@media screen and (min-width: 838px) {
+  .uniList--long {
+    .uniItem {
+      padding: 0;
+    }
+  }
+  .uniList--withAsymmetry {
+    .uniItem {
+      padding: 0;
+      margin: 0;
+    }
+  }
+}

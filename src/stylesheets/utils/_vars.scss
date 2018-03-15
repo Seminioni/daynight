@@ -1,22 +1,21 @@
 // Variables
 
 :root {
-  --black: #000000;
-  --gold: #B49740;
-  --yellow: #a48632;
-  --gray1: #F7F7F7;
-  --gray2: #87970E;
-  --gray3: #070101;
-  --gray4: #655f5f;
-  --gray5: #8d8d8d;
-  --gray6: #dadada;
-  --red: #E7576B;
-  --green: #6AD67F;
-  --Lato: 'Lato';
-  --white: #fff;
+  --c-white: #fff;
+  --c-black: #000;
+  --c-grey: #9b9b9b;
+  --c-light-grey: #c8c8c8;
+  --c-red: #E33705;
+  --c-light-indigo: #9013FE;
+  --HelveticaNeue: 'HelveticaNeue';
 }
 
-@custom-media --s (width <= 768px);
-@custom-media --m (min-width: 769px);
-@custom-media --xl (min-width: 1025px);
-@custom-media --xl-sm (width <= 1025px);
+// @custom-media --s (width <= 768px);
+// @custom-media --m (min-width: 769px);
+// @custom-media --xl (min-width: 1025px);
+// @custom-media --xl-sm (width <= 1025px);
+
+// Viewposts
+$tablet: 768px;
+$pre-mobile: 640px;
+$mobile: 480px;

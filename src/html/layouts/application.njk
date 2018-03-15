@@ -1,25 +1,113 @@
 {% from 'macros/helpers.html' import sprite %}
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>{% block title %}{{ title }}{% endblock %}</title>
-    <link rel="stylesheet" href="../stylesheets/app.css">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'>
 
-    {% block head %}{% endblock %}
-  </head>
-  <body class="page">
-    {% block content %}
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}{{ title }}{% endblock %}</title>
+  <link rel="stylesheet" href="../stylesheets/app.css">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'> {% block head %}{% endblock %}
+</head>
 
-      {% block footer %}
-      {% endblock %}
+<body class="page">
+  <div class="wrapper">
 
-    {% endblock %}
+    {% include ('../components/_header.njk')%}
 
-    {% block javascript %}
-      <script async src="../javascripts/app.js"></script>
-    {% endblock %}
-  </body>
+    <div class="main">
+      <aside class="sidebar">
+        <div class="sidebarContainer">
+          <div class="sidebarCell">
+            <h3 class="sidebarCellTitle sidebarCellTitle--noMargin">Online Shop</h3>
+          </div>
+          <div class="sidebarCell">
+            <h3 class="sidebarCellTitle"><a class="link sidebarCellTitleLink" href="catalog.html">Женское</a></h3>
+            <div class="menu menu--withCapitalize">
+              <ul class="menuList">
+                <li class="menuListItem">
+                  <a href="catalog.html" class="link menuLink">Новинки</a>
+                </li>
+                <li class="menuListItem">
+                  <a href="catalog.html" class="link menuLink">Одежда</a>
+                </li>
+                <li class="menuListItem">
+                  <a href="catalog.html" class="link menuLink">Обувь</a>
+                </li>
+                <li class="menuListItem">
+                  <a href="catalog.html" class="link menuLink">Аксессуары</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="sidebarCell">
+            <h3 class="sidebarCellTitle"><a class="link sidebarCellTitleLink" href="catalog.html">Мужское</a></h3>
+            <div class="menu menu--withCapitalize">
+              <ul class="menuList">
+                <li class="menuListItem">
+                  <a href="catalog.html" class="link menuLink">Новинки</a>
+                </li>
+                <li class="menuListItem">
+                  <a href="catalog.html" class="link menuLink">Одежда</a>
+                </li>
+                <li class="menuListItem">
+                  <a href="catalog.html" class="link menuLink">Обувь</a>
+                </li>
+                <li class="menuListItem">
+                  <a href="catalog.html" class="link menuLink">Аксессуары</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="sidebarCell">
+            <h3 class="sidebarCellTitle">
+              <a class="link sidebarCellTitleLink" href="#">OFFLINE GALLERY</a>
+            </h3>
+          </div>
+          <div class="sidebarCell">
+            <h3 class="sidebarCellTitle">
+              <a class="link sidebarCellTitleLink" href="#">Daynight.Outlet</a>
+            </h3>
+          </div>
+          <div class="sidebarCell">
+            <div class="form">
+              <form>
+                <input class="formField" type="text" placeholder="email" />
+                <input class="formButton" type="submit" value="Подписаться" />
+              </form>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <div class="mainContainer">
+        {% block content %}
+
+        {% endblock %}
+      </div>
+    </div>
+    {% include('../components/_footer.njk') %}
+    {% include('../components/_popupContainer.njk') %}
+    <div class="modal">
+      <div class="modalContainer">
+        <img src="img/logo.svg" alt="" class="logo">
+        <div class="form form--inModal">
+          <form>
+            <h4 class="formTitle">Хотите узнавать о новинках первыми?</h4>
+            <input class="formField" type="text" placeholder="email" />
+            <input class="formButton" type="submit" value="Подписаться" />
+          </form>
+          <p class="formLegend"><sup>*</sup>Подписавшись вы даете согласие на обработку данных согласно политики конфиденциальности.</p>
+        </div>
+        <div class="modalClose"></div>
+      </div>
+    </div>
+
+
+  </div>
+  {% block javascript %}
+  <script async src="../javascripts/app.js"></script>
+  {% endblock %}
+
+</body>
+
 </html>

@@ -1,0 +1,56 @@
+html,
+body{
+  background-color: var(--c-white);
+  min-width: 320px;
+
+  &.active{
+    overflow: hidden;
+  }
+}
+
+body{
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  max-width: 888px;
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.wrapper{
+  position: relative;
+  padding-top: 65px;
+  width: 100%;
+  min-height: 100%;
+}
+
+.btnCross{
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 0;
+  right: 0;
+  overflow: hidden;
+  background: url('../img/img-cross16x16.svg') center center no-repeat;
+  cursor: pointer;
+}
+
+.commonMsg{
+  @include textNormalSize();
+  margin: 0 0 15px;
+}
+
+@media screen and (min-width: $pre-mobile){
+  html,
+  body{
+    height: 100%;
+  }
+
+  .wrapper {
+    padding-top: 0;
+    min-height: calc(100% - 135px);
+  }
+}

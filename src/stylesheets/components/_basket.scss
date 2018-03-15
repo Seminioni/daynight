@@ -1,0 +1,554 @@
+.basket {
+  width: 100%;
+  padding: 0 25px 50px;
+}
+
+.basketStatusEmpty{
+  margin-bottom: 20px;
+
+  .basketUniStr{
+    text-align: center;
+  }
+}
+
+.basketOrderPayment{
+  margin-bottom: 20px;
+}
+
+// promo
+.basketPromo {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.basketPromoTitle {
+  @include textNormalSize();
+  text-align: center;
+}
+
+.basketUniTitle{
+  @include textNormalSize();
+  margin-bottom: 16px;
+}
+
+.basketUniStr{
+  @include textNormalSize();
+  margin-bottom: 12px;
+
+  &--grey{
+    color: var(--c-grey);
+  }
+
+  &--small{
+    @include textSmallSize();
+  }
+}
+
+.basketUniLink{
+  @include textNormalSize();
+  color: var(--c-black);
+  text-decoration: underline;
+
+  &:hover,
+  &:active{
+    color: var(--c-black);
+    text-decoration: none;
+  }
+
+  &:focus,
+  &:visited{
+    color: var(--c-black);
+    text-decoration: underline;
+  }
+}
+
+// basketProductCardUniBox
+.basketProductCardUniBoxName {
+  @include textNormalSize();
+}
+
+.basketProductCardUniBoxValue {
+  @include textNormalSize();
+  text-align: center;
+  padding-top: 13px;
+}
+
+// productCard
+.basketProductList {
+  width: 100%;
+}
+
+.basketProductListItem {
+  width: 100%;
+  border-top: 1px solid var(--c-black);
+  padding-top: 16px;
+}
+
+.basketProductCard {
+  position: relative;
+  width: 100%;
+}
+
+.basketProductCardCell {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-flow: row nowrap;
+  margin-bottom: 16px;
+}
+
+.basketProductCardImgWrapper {
+  width: calc((99 / 325) * 100%);
+  max-width: 100px;
+}
+
+.basketProductCardImg {
+  width: 100%;
+}
+
+.basketProductCardMainInfo {
+  width: calc((227 / 325) * 100%);
+  padding-left: 27px;
+}
+
+.basketProductCardMainInfoTitle {
+  @include textNormalSize();
+
+  span {
+    display: none;
+  }
+}
+
+.basketProductCardMainInfoList {
+  padding-top: 37px;
+  width: 100%;
+}
+
+.basketProductCardMainInfoListItem {
+  @include textNormalSize();
+}
+
+// counter
+.basketProductCardCounter {
+  width: 70px;
+  @include textNormalSize();
+}
+
+.basketProductCardCounterContainer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.basketProductCardCounterButton {
+  display: block;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  &--minus {
+    &:before {
+      content: '';
+      width: 10px;
+      border-top: 1px solid var(--c-black);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &--plus {
+    &:before {
+      content: '';
+      width: 10px;
+      border-top: 1px solid var(--c-black);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &:after {
+      content: '';
+      height: 10px;
+      border-left: 1px solid var(--c-black);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.basketProductCardCounterValue {
+  height: 40px;
+  width: 40px;
+  border: 0;
+  background-color: var(--c-white);
+  @include textNormalSize();
+  padding: 0 5px;
+  text-align: center;
+}
+
+.basketProductCardRemoveButton {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  right: 25px;
+  cursor: pointer;
+}
+
+.basketProductCardRemoveButtonText {
+  @include textNormalSize();
+  display: none;
+}
+
+.basketProductCardRemoveButtonCross {
+  position: absolute;
+  top: 11px;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  overflow: hidden;
+  transform: rotate(45deg) translate(-50%, -50%);
+
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &:after {
+    width: 10px;
+    border-top: 1px solid var(--c-black);
+  }
+
+  &:before {
+    height: 10px;
+    border-left: 1px solid var(--c-black);
+  }
+}
+
+.basketTotalCost {
+  width: 100%;
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    border-top: 1px solid var(--c-black);
+    transform: translateY(10px);
+  }
+  text-align: right;
+}
+
+.basketTotalCostValue {
+  position: relative;
+  @include textNormalSize();
+  font-weight: 500;
+  background-color: var(--c-white);
+  padding-left: 22px;
+}
+
+// BASKETDELIVERY
+.basketUniControl {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.basketUniControlTitle {
+  @include textNormalSize();
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.basketUniControlItem {
+  width: 100%;
+  position: relative;
+  margin-bottom: 15px;
+
+  &.active{
+    .basketUniControlItemLabelIcon {
+      transform: rotate(180deg) translateY(2px);
+    }
+    .basketUniControlItemDescription {
+      display: block;
+    }
+  }
+
+  &--withRightControl{
+    .basketUniControlItemControl {
+      left: 0;
+      right: unset;
+    }
+    .basketUniControlItemLabel {
+      padding-right: 10px;
+      padding-left: 40px;
+    }
+  }
+}
+
+.basketUniControlItemLabel {
+  @include textNormalSize();
+  padding-right: 80px;
+  margin-bottom: 8px;
+}
+
+.basketUniControlItemLabelIcon {
+  display: inline-block;
+  @include arrowSmall();
+}
+
+.basketUniControlItemDescription {
+  display: none;
+  @include textNormalSize();
+  color: var(--c-grey);
+}
+
+.basketUniControlPrice {
+  position: absolute;
+  top: 0;
+  right: 40px;
+  @include textNormalSize();
+  font-weight: 500;
+}
+
+.basketUniControlItemControl {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  top: -8px;
+  right: 0;
+}
+
+.basketUniControlItemControlSwitcher {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 32px;
+  height: 32px;
+  opacity: 0;
+}
+
+.basketUniControlItemControlPsuedoSwitcher {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  background-color: transparent;
+
+  &:after {
+    content: '';
+    display: none;
+    width: 8px;
+    height: 8px;
+    background-color: var(--c-black);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 14px;
+    height: 14px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid var(--c-black);
+  }
+}
+
+.basketUniControlItemControlSwitcher:checked + .basketUniControlItemControlPsuedoSwitcher {
+  &:after {
+    display: block;
+  }
+}
+
+// MEDIA
+@media screen and (min-width: 375px) {
+  .basketProductCardRemoveButton {
+    width: 64px;
+  }
+
+  .basketProductCardRemoveButtonText {
+    display: block;
+  }
+}
+
+@media screen and (min-width: $pre-mobile) {
+  .basket {
+    padding: 0;
+  }
+
+  .basketPromo {
+    margin-top: 20px;
+    margin-bottom: 25px;
+
+    .basketPromoTitle,
+    .formField,
+    .formButton {
+      display: inline-block;
+    }
+
+    .form {
+      width: auto;
+      margin: 0;
+    }
+
+    .formField {
+      width: 110px;
+      margin: 0 24px 0 12px;
+    }
+
+    .formButton {
+      width: 165px;
+    }
+  }
+
+  .basketUniControlItemLabelIcon {
+    display: none;
+  }
+
+  .basketUniControlItemDescription {
+    display: block;
+  }
+
+  .basketStatusEmpty{
+    .basketUniStr{
+      text-align: unset;
+    }
+  }
+
+  .basketOrderPayment{
+    .formButton{
+      max-width: 165px;
+      margin: 0;
+    }
+  }
+}
+
+@media screen and (min-width: 840px) {
+  .basketProductCard {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+
+  .basketProductCardCell {
+    width: 100%;
+
+    &:nth-child(1) {
+      width: calc(100% - 200px);
+    }
+  }
+
+  .basketProductCardImgWrapper {
+    padding-top: 22px;
+  }
+
+  .basketPromo {
+    .basketPromoTitle,
+    .formField,
+    .formButton {
+      display: inline-block;
+    }
+
+    .form {
+      width: auto;
+      margin: 0;
+    }
+
+    .formField {
+      width: 118px;
+      margin: 0 24px 0 12px;
+    }
+
+    .formButton {
+      width: 165px;
+    }
+  }
+
+  .basketProductCardRemoveButton {
+    width: auto;
+    height: unset;
+    position: relative;
+    top: unset;
+    right: unset;
+  }
+
+  .basketProductCardRemoveButtonCross {
+    top: calc(50% - 11px);
+    right: unset;
+    left: calc(50% - 5px);
+    width: 10px;
+    height: 10px;
+    overflow: hidden;
+    transform: rotate(45deg) translate(-50%, -50%);
+  }
+
+  .basketProductCardCounter {
+    width: auto;
+  }
+
+  .basketProductCardCounterContainer {
+    padding-top: 38px;
+  }
+
+  .basketProductCardUniBoxValue {
+    padding-top: 50px;
+  }
+
+  .basketProductCardCounterButton {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  .basketProductCardUniBox {
+    width: 100%;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .basketProductCardImgWrapper {
+    width: 100%;
+    flex-shrink: 0;
+  }
+
+  .basketProductCardMainInfoList {
+    padding-top: 50px;
+  }
+
+  .basketProductListItem:not(:first-child) {
+    .basketProductCardUniBoxName,
+    .basketProductCardRemoveButtonText,
+    .basketProductCardCountertitle,
+    .basketProductCardMainInfoTitle {
+      opacity: 0;
+    }
+  }
+
+  .basketProductListItem:not(:first-child) {
+    padding-top: 0;
+  }
+}

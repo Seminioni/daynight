@@ -1,0 +1,48 @@
+.uniAccordion {
+  margin: 24px 0 0;
+  &.active {
+    .uniAccordionName {
+      margin-bottom: 10px;
+    }
+    .uniAccordionContainer {
+      display: block;
+    }
+    .uniAccordionNameArrow{
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.uniAccordionName {
+  display: inline-block;
+  @include textNormalSize();
+  font-weight: 500;
+  user-select: none;
+  cursor: pointer;
+}
+
+.uniAccordionNameArrow{
+  display: inline-block;
+  @include arrowSmall();
+  margin-left: 18px;
+}
+
+.uniAccordionContainer {
+  display: none;
+
+  p {
+    @include textNormalSize();
+    margin-bottom: 10px;
+  }
+
+  a {
+    @include textNormalSize();
+    color: var(--c-black);
+    text-decoration: underline;
+
+    &:hover,
+    &:active {
+      text-decoration: none;
+    }
+  }
+}

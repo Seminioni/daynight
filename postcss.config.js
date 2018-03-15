@@ -5,60 +5,66 @@ let plugins = [
   }),
   require("postcss-cssnext")({}),
   require("postcss-clearfix")({}),
-  // require('postcss-font-magician')({
-  //   custom: {
-  //     'Lato': {
-  //        variants: {
-  //           normal: {
-  //              300: {
-  //                 url: {
-  //                    woff2: '../fonts/Lato/Lato-Light.woff2',
-  //                    woff: '../fonts/Lato/Lato-Light.woff',
-  //                    ttf: '../fonts/Lato/Lato-Light.ttf'
-  //                 }
-  //              },
-  //              400: {
-  //                 url: {
-  //                    woff2: '../fonts/Lato/Lato-Regular.woff2',
-  //                    woff: '../fonts/Lato/Lato-Regular.woff',
-  //                    ttf: '../fonts/Lato/Lato-Regular.ttf'
-  //                 }
-  //              },
-  //              500: {
-  //                url: {
-  //                   woff2: '../fonts/Lato/Lato-Medium.woff2',
-  //                   woff: '../fonts/Lato/Lato-Medium.woff',
-  //                   ttf: '../fonts/Lato/Lato-Medium.ttf'
-  //                }
-  //              }
-  //           },
-  //           italic: {
-  //              300: {
-  //                 url: {
-  //                   woff2: '../fonts/Lato/Lato-LightItalic.woff2',
-  //                   woff: '../fonts/Lato/Lato-LightItalic.woff',
-  //                   ttf: '../fonts/Lato/Lato-LightItalic.ttf'
-  //                 }
-  //              },
-  //              500: {
-  //                 url: {
-  //                   woff2: '../fonts/Lato/Lato-MediumItalic.woff2',
-  //                   woff: '../fonts/Lato/Lato-MediumItalic.woff',
-  //                   ttf: '../fonts/Lato/Lato-MediumItalic.ttf'
-  //                 }
-  //            }
-  //           }
-  //        }
-  //     }
-  //  },
-  //   formats: 'woff2 woff'
-  // })
+  require("postcss-font-magician")({
+    custom: {
+      HelveticaNeue: {
+        variants: {
+          normal: {
+            300: {
+              url: {
+                woff2: "../fonts/helveticaCyr/HelveticaNeue-Light.woff2",
+                woff: "../fonts/helveticaCyr/HelveticaNeue-Light.woff",
+                ttf: "../fonts/helveticaCyr/HelveticaNeue-Light.ttf"
+              }
+            },
+            400: {
+              url: {
+                woff2: "../fonts/helveticaCyr/HelveticaNeue-Regular.woff2",
+                woff: "../fonts/helveticaCyr/HelveticaNeue-Regular.woff",
+                ttf: "../fonts/helveticaCyr/HelveticaNeue-Regular.ttf"
+              }
+            },
+            700: {
+              url: {
+                woff2: "../fonts/helveticaCyr/HelveticaNeue-Bold.woff2",
+                woff: "../fonts/helveticaCyr/HelveticaNeue-Bold.woff",
+                ttf: "../fonts/helveticaCyr/HelveticaNeue-Bold.ttf"
+              }
+            }
+          },
+          italic: {
+            300: {
+              url: {
+                woff2: "../fonts/helveticaCyr/HelveticaNeue-Light-Italic.woff2",
+                woff: "../fonts/helveticaCyr/HelveticaNeue-Light-Italic.woff",
+                ttf: "../fonts/helveticaCyr/HelveticaNeue-Light-Italic.ttf"
+              }
+            },
+            500: {
+              url: {
+                woff2:
+                  "../fonts/helveticaCyr/HelveticaNeue-Regular-Italic.woff2",
+                woff: "../fonts/helveticaCyr/HelveticaNeue-Regular-Italic.woff",
+                ttf: "../fonts/helveticaCyr/HelveticaNeue-Regular-Italic.ttf"
+              }
+            },
+            700: {
+              url: {
+                woff2: "../fonts/helveticaCyr/HelveticaNeue-Bold-Italic.woff2",
+                woff: "../fonts/helveticaCyr/HelveticaNeue-Bold-Italic.woff",
+                ttf: "../fonts/helveticaCyr/HelveticaNeue-Bold-Italic.ttf"
+              }
+            }
+          }
+        }
+      }
+    },
+    formats: "woff2 woff ttf"
+  })
 ];
 
 if (global.production) {
-  plugins.push(
-    require("css-mqpacker")()
-  );
+  plugins.push(require("css-mqpacker")());
 }
 
 module.exports = {

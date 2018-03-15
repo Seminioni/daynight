@@ -1,0 +1,160 @@
+.post{
+  padding-bottom: 30px;
+}
+
+.postHeader{
+  position: relative;
+  padding-left: 26px;
+  padding-right: 26px;
+}
+
+.postBackLink{
+  position: absolute;
+  top: 0;
+  right: 26px;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: url('../img/img-cross16x16.svg') top right no-repeat;
+  cursor: pointer;
+
+  &:active{
+    .postBackLinkText{
+      color: var(--c-black);
+    }
+  }
+}
+.postBackLinkText{
+  display: none;
+  @include font(9px, var(--HelveticaNeue), 11px);
+  color: var(--c-grey);
+
+  &:before{
+    content: '< ';
+  }
+}
+
+.postTitle{
+  @include textNormalSize();
+  font-weight: 500;
+  text-transform: uppercase;
+  padding-right: 44px;
+  margin-bottom: 8px;
+}
+
+.postCreated{
+  @include textSmallSize();
+}
+
+.postContent{
+  padding: 15px 26px;
+  @include textNormalSize();
+
+  h2{
+    @include textNormalSize();
+    font-weight: 500;
+    margin: 25px 0 20px;
+  }
+
+  p{
+    @include textNormalSize();
+    margin-bottom: 15px;
+  }
+
+  a{
+    @include textNormalSize();
+    color: var(--c-black);
+    text-decoration: underline;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &:visited{
+      color: var(--c-black);
+    }
+
+    &:hover,
+    &:active{
+      text-decoration: none;
+    }
+
+    &:focus{
+      text-decoration: underline;
+    }
+  }
+
+  img{
+    margin-bottom: 15px;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+  }
+
+  ul{
+    list-style: none;
+    margin-bottom: 20px;
+
+    li{
+      &:before{
+        content: '- ';
+      }
+      margin-bottom: 5px;
+    }
+  }
+
+  strong, b{
+    font-weight: 500;
+  }
+}
+
+.postContent--onlyNews img{
+  max-width: 300px;
+  width: 100%;
+}
+
+.postContent--only20th{
+  display: none;
+}
+
+.postFooter{
+  .socials{
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: $pre-mobile) {
+  .postBackLink{
+    position: unset;
+    top: unset;
+    right: unset;
+    display: block;
+    width: 250px;
+    height: unset;
+    background: none;
+    margin-bottom: 15px;
+  }
+
+  .postContent--only20th{
+    display: block;
+  }
+
+  .postBackLinkText{
+    display: block;
+  }
+
+  .postHeader,
+  .postContent{
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .postTitle{
+    padding-right: 0;
+  }
+
+  .postFooter{
+    .socials{
+      display: none;
+    }
+  }
+}

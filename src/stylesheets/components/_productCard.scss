@@ -1,0 +1,278 @@
+.productCard {
+  width: 100%;
+  padding: 0 25px 25px;
+
+  .formButton--favorite {
+    display: none;
+    margin-top: 8px;
+  }
+
+  .breadcrumbs {
+    display: none;
+    margin-bottom: 20px;
+  }
+}
+
+.productCardInner {
+  width: 100%;
+}
+
+.productGallery {
+  position: relative;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.productGalleryContainer {
+  position: relative;
+  width: calc(100% - 40px);
+  max-width: 325px;
+  margin: 0 auto;
+}
+
+.productGalleryImg {
+  width: 100%;
+}
+
+.productMainContent {
+  position: relative;
+}
+
+.productName {
+  display: block;
+  @include textNormalSize();
+  color: var(--c-black);
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.productNameLink {
+  @include textNormalSize();
+  font-weight: inherit;
+  color: var(--c-black);
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &:visited {
+    color: var(--c-black);
+  }
+}
+
+.productString {
+  @include textNormalSize();
+  margin: 0;
+}
+
+.productType {
+  display: block;
+  @include textNormalSize();
+  color: var(--c-black);
+  font-weight: 500;
+}
+
+.productVendorCode {
+  @include textNormalSize();
+  color: var(--c-black);
+  font-weight: 300;
+}
+
+.productPrice {
+  @include textNormalSize();
+  color: var(--c-black);
+  font-weight: 500;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.productSizes {
+  position: relative;
+  margin: 5px 0 25px;
+}
+
+.productCurrentSize {
+  display: block;
+}
+
+.productCurrentSizeLabel {
+  display: inline-block;
+  @include textNormalSize();
+  color: var(--c-black);
+  font-weight: 500;
+  margin-right: 16px;
+}
+
+.productCurrentSizeValue {
+  @include font(11px, var(--HelveticaNeue), 13px);
+  color: var(--c-black);
+  font-weight: 500;
+}
+
+.productTableOfSizesAnchor {
+  position: absolute;
+  top: 4px;
+  right: 0;
+  @include textNormalSize();
+  color: var(--c-black);
+  cursor: pointer;
+}
+
+.productCardGrid {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.productCardGridCell {
+  &:first-child {
+    padding-bottom: 30px;
+  }
+
+  &:last-child {
+    padding-bottom: 20px;
+  }
+}
+
+.productCardFooter {
+  padding-top: 25px;
+  .socials {
+    margin: 0 auto;
+  }
+}
+
+.productDescription {
+  margin-bottom: 15px;
+
+  &.active {
+    margin-bottom: 5px;
+
+    .productDescriptionInner {
+      height: unset;
+    }
+    .productDescriptionBtn {
+      display: none;
+    }
+  }
+}
+
+.productDescriptionLabel{
+  @include textNormalSize();
+  margin-top: 15px;
+  margin-bottom: 6px;
+}
+
+.productDescriptionInner {
+  overflow: hidden;
+  height: 32px;
+  @include textNormalSize();
+
+  p {
+    @include textNormalSize();
+    color: var(--c-black);
+    margin: 0 0 15px;
+  }
+}
+
+.productDescriptionBtn {
+  @include textNormalSize();
+  color: var(--c-black);
+  cursor: pointer;
+
+  &:after {
+    content: '...';
+  }
+}
+
+// Mods
+.productString--grey{
+  color: var(--c-grey);
+}
+
+@media screen and (min-width: $pre-mobile){
+  .productCardFooter {
+    padding-top: 43px;
+
+    .socials {
+      display: none;
+      margin: 0;
+    }
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .productCard {
+    padding: 0;
+
+    .breadcrumbs {
+      display: block;
+    }
+
+    .formButton{
+      max-width: 165px;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .formButton--favorite {
+      display: block;
+    }
+  }
+
+  .productCardInner {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .productGallery,
+  .productMainContent {
+    width: calc(50% - 16px);
+  }
+
+  .productName {
+    margin-bottom: 13px;
+  }
+
+  .productType {
+    margin-bottom: 3px;
+  }
+
+  .productVendorCode {
+    margin-bottom: 16px;
+  }
+
+  .productString {
+    position: relative;
+  }
+
+  .productTableOfSizesAnchor {
+    position: relative;
+
+    &:after {
+      content: '';
+      display: inline-block;
+      border-top: 1px solid var(--c-black);
+      position: relative;
+      transform: translateX(0);
+    }
+  }
+
+  .productCardGridCell {
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  .productSizes {
+    margin-top: 15px;
+    margin-bottom: 70px;
+  }
+
+  .productCardFooter {
+    .socials {
+      display: block;
+    }
+  }
+}

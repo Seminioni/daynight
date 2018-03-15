@@ -1,0 +1,35 @@
+.header {
+  position: fixed;
+  width: 100%;
+  height: 65px;
+  background-color: var(--c-white);
+  padding-top: 25px;
+  top: 0;
+  min-width: 320px;
+  z-index: 10000;
+}
+
+.logo {
+  display: block;
+  width: 102px;
+  margin: 0 auto;
+
+  img{
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: $pre-mobile){
+  .header {
+    position: relative;
+    z-index: unset;
+    top: unset;
+    height: unset;
+    padding-top: 42px;
+    padding-bottom: 10px;
+  }
+  .logo {
+    width: 229px;
+    margin-bottom: 40px;
+  }
+}

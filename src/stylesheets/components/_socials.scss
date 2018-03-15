@@ -1,0 +1,32 @@
+//Core styles
+.socials{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 120px;
+}
+
+.socialsLink{
+  display: inline-block;
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+//End core styles
+
+//Mods
+
+//End mods
+
+//Media queries
+  //Core styles
+
+  //End core styles
+
+  //Mods
+
+  //End mods
+//End media queries

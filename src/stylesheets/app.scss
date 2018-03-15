@@ -4,6 +4,7 @@
 @import "utils/sprite/_sprite";
 @import "utils/_resets";
 @import "utils/_vars";
+@import "utils/_links";
 @import "utils/_mixins";
 @import "utils/_radiobuttons";
 @import "utils/_buttons";
@@ -11,7 +12,7 @@
 
 html,
 body {
-  font-family: var(--Lato), Arial, Helvetica, sans-serif;
+  font-family: var(--HelveticaNeue), Helvetica, Arial, sans-serif;
   font-weight: normal;
 }
 
@@ -59,4 +60,36 @@ body {
     }
   }
 }
+
+@import "utils/socialShareLinks";
+
+@import "components/abc";
+@import "components/address";
+@import "components/basket";
+@import "components/breadcrumbs";
+@import "components/common";
+@import "components/filter";
+@import "components/footer";
+@import "components/form";
+@import "components/header";
+@import "components/latest";
+@import "components/linkToCatalog";
+@import "components/main";
+@import "components/menu";
+@import "components/modal";
+@import "components/optionalContent";
+@import "components/others";
+@import "components/paginator";
+@import "components/popupContainer";
+@import "components/popupFilter";
+@import "components/pluginSelect";
+@import "components/productCard";
+@import "components/sidebar";
+@import "components/sliderHorizontal";
+@import "components/socials";
+@import "components/post";
+@import "components/uniAccordion";
+@import "components/uniList";
+@import "components/text";
+@import "components/tour";
 

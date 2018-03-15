@@ -1,0 +1,23 @@
+.popupFilter{
+  display: none;
+  width: 100%;
+  padding-bottom: 30px;
+  
+  &.active{
+    display: block;
+  }
+  
+  .btnCross{
+    top: 3px;
+    right: 15px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media screen and (min-width: $pre-mobile) {
+  .popupFilter{
+    padding-left: 4px;
+    padding-right: 30px;
+  }
+}

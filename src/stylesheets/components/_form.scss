@@ -1,0 +1,173 @@
+.form {
+  width: 100%;
+  margin: 0 auto;
+
+  .errors{
+    @include textSmallSize();
+    color: var(--c-black);
+  }
+}
+
+.formError{
+  @include textNormalSize();
+  color: var(--c-red);
+}
+
+.formField {
+  background-color: var(--c-white);
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid var(--c-black);
+  @include textNormalSize();
+  padding: 5px 0;
+  margin-bottom: 10px;
+
+  &::placeholder{
+    color: var(--c-light-grey);
+  }
+
+  &--withFullBorder{
+    border: 1px solid var(--c-black);
+  }
+}
+
+.formButton {
+  display: block;
+  width: 100%;
+  height: 32px;
+  border: 1px solid var(--c-black);
+  @include textNormalSize();
+  color: var(--c-black);
+  background-color: var(--c-white);
+  cursor: pointer;
+  margin: 0 auto;
+
+  &:hover {
+    color: var(--c-white);
+    background-color: var(--c-black);
+  }
+
+  &:focus {
+    color: var(--c-black);
+    background-color: var(--c-white);
+  }
+
+  &:active {
+    color: var(--c-black);
+    background-color: var(--c-white);
+  }
+}
+
+.formButton--width165{
+  max-width: 165px;
+}
+
+.formButton--resetMargin{
+  margin: 0;
+}
+
+.formTitle{
+  @include textNormalSize();
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.formLegend{
+  @include textSmallSize();
+
+  &--absolutePositionRight{
+    position: unset;
+    top: unset;
+    right: unset;
+    margin: 20px 0;
+    display: block;
+  }
+}
+
+.formLabel{
+  @include textNormalSize();
+
+  &:after{
+    content: ':';
+  }
+
+  &--reqiured{
+    display: block;
+    margin-bottom: 7px;
+
+    &:after{
+      content: '*:';
+    }
+  }
+}
+
+.formFieldSet{
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.formTextarea{
+  display: block;
+  width: 100%;
+  padding: 10px;
+  resize: none;
+  background-color: var(--c-white);
+  border: 1px solid var(--c-black);
+  @include textNormalSize();
+  margin-bottom: 10px;
+  border-radius: 0;
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  min-height: 150px;
+}
+
+// MODS
+.form--Mobile{
+  position: relative;
+  padding-bottom: 23px;
+
+  .formField{
+    @include font(14px, var(--HelveticaNeue), 17px);
+    padding-right: 110px;
+  }
+
+  .formButton{
+    border: 0;
+    padding: 0;
+    text-transform: lowercase;
+    display: inline-block;
+    width: unset;
+    height: 27px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: none;
+    @include font(14px, var(--HelveticaNeue), 17px);
+
+    &:hover{
+      background: none;
+      color: var(--c-black);
+    }
+  }
+}
+
+.form--inModal{
+  max-width: 273px;
+
+  .formField {
+    margin-bottom: 30px;
+  }
+  .formLegend{
+    margin-top: 36px;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: $pre-mobile){
+  .formLegend--absolutePositionRight{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    display: inline;
+  }
+}

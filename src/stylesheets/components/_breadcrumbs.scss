@@ -1,0 +1,15 @@
+.breadcrumbs{
+  width: 100%;
+}
+
+.breadcrumbsLink{
+  display: inline-block;
+  @include textNormalSize();
+  color: var(--c-grey);
+  padding-left: 4px;
+  
+  &:before{
+    content: '<';
+    padding-right: 8px;
+  }
+}

@@ -1,0 +1,21 @@
+.textContainer{
+  h1{
+    @include textNormalSize();
+    font-weight: 500;
+  }
+  
+  p{
+    @include textNormalSize();
+    padding: 0 25px;
+    margin-bottom: 16px;
+    
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  
+  img{
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
