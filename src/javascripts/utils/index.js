@@ -1,3 +1,7 @@
+/**
+ * @param  HTMLElement
+ * @param  className
+ */
 export function toggleClass(el, className) {
   if (el.classList) {
     el.classList.toggle(className);
