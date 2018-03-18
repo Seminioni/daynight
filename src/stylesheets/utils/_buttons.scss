@@ -2,8 +2,8 @@
 
 // // Basic button parameters
 // :root {
-//   --btn-border-color: var(--black);
-//   --btn-color: var(--black);
+//   --btn-border-color: var(--c-black);
+//   --btn-color: var(--c-black);
 //   --btn-background: transparent;
 //   --btn-padding-y: 13px;
 //   --btn-padding-x: 50px;
@@ -42,7 +42,7 @@
 // // Black button parameters
 // :root {
 //   --btn-black-color-hover: var(--gold);
-//   --btn-black-border-color: var(--black);
+//   --btn-black-border-color: var(--c-black);
 //   --btn-black-border-color-hover: var(--gold);
 // }
 
@@ -133,7 +133,7 @@
 //     left: 50%;
 //     height: 1px;
 //     width: 17px;
-//     background-color: var(--black);
+//     background-color: var(--c-black);
 //   }
 
 //   &:after {
@@ -167,7 +167,7 @@
 //       height: 1px;
 //       width: 17px;
 //       transform: translate(-50%, -50%);
-//       background-color: var(--black);
+//       background-color: var(--c-black);
 //       transform-origin: 0 50%;
 //     }
 

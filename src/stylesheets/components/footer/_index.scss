@@ -1,28 +1,50 @@
+//Core styles
 .footer {
   display: none;
   width: 100%;
   padding-top: 40px;
   padding-bottom: 40px;
+  @media (--m) {
+    display: block;
+  }
+
+  .nav--footer .nav__link {
+    @include rhythm(11,11);
+    text-transform: uppercase;
+  }
 }
 
-.footerInner {
+.footer__inner {
   display: flex;
   justify-content: space-between;
   align-items: stretch;
   flex-flow: row-reverse nowrap;
+  @media (--s) {
+    flex-direction: column;
+  }
 }
 
-.footerCell {
+.footer__cell {
   width: 100%;
 
-  &:first-child{
+  &:first-child {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
   }
+  @media (--s) {
+    text-align: center;
+    margin: 0 auto;
+
+    &:first-child {
+      align-items: center;
+      max-width: 500px;
+      margin-bottom: 40px;
+    }
+  }
 }
 
-.copyRight {
+.copyright {
   @include textSmallSize();
   color: var(--c-black);
   margin-bottom: 4px;
@@ -34,40 +56,20 @@
   color: var(--c-light-grey);
 }
 
-.paymentsStandarts {
+.payment-standarts {
   flex-shrink: 0;
   width: 87px;
 }
+//End core styles
 
-// Mods
-.footerCell--width440{
+//Mods
+.footerCell--width440 {
   max-width: 440px;
 }
+//End mods
 
-// media
 @media screen and (min-width: $pre-mobile) {
-  .footer {
-    display: block;
-  }
-  .paymentsStandartsFullSet{
+  .paymentsStandartsFullSet {
     margin: 25px 0 !important;
   }
 }
-
-@media screen and (max-width: $tablet) {
-  .footerInner {
-    flex-direction: column;
-  }
-
-  .footerCell {
-    text-align: center;
-    margin: 0 auto;
-
-    &:first-child{
-      align-items: center;
-      max-width: 500px;
-      margin-bottom: 40px;
-    }
-  }
-}
-

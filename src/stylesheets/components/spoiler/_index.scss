@@ -1,0 +1,16 @@
+//Core styles
+.spoiler__container {
+  overflow: hidden;
+  @include setTransitionFor(max-height, opacity);
+  max-height: 1800px;
+  &.is-collapsed {
+    max-height: 0;
+    opacity: 0;
+  }
+}
+
+//End core styles
+
+//Mods
+
+//End mods

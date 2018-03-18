@@ -9,10 +9,12 @@
   justify-content: center;
   transition: transform 0.2s ease;
   span {
-    @include burger(15px, 1px, 3px, #444);
+    @include burger(15px, 1px, 4px, #444);
   }
   &.is-pressed {
-    transform: rotate(90deg);
+    span {
+      transform: translate3d(0,0,0) rotate(90deg);
+    }
   }
   @media (--m) {
     display: none;

@@ -1,9 +1,6 @@
 //Core styles
-.nav__links {
-  display: none;
-  @media (--m) {
-    display: flex;
-  }
+.nav {
+  display: flex;
 }
 
 .nav__link {
@@ -14,9 +11,26 @@
 //End core styles
 
 //Mods
+.nav--vertical {
+  flex-direction: column;
+  .nav__link {
+    display: block;
+  }
+}
+
+.nav--header,
+.nav--aside {
+  display: none;
+  @media (--m) {
+    display: flex;
+  }
+}
+
 .nav--header {
   padding-left: 156px;
   .nav__links {
+    display: flex;
+    flex-grow: 1;
     justify-content: space-between;
   }
   .nav__link {
@@ -26,12 +40,8 @@
 
 .nav--aside {
   @media (--m) {
-    .nav__links {
-      flex-direction: column;
-    }
     .nav__link--heading {
       text-transform: uppercase;
-      display: inline-block;
       & + .nav__link--heading {
         margin-top: 20px;
       }

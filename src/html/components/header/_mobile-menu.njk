@@ -1,83 +1,52 @@
-{# <div  class="popupContainer">
-    <div id="btnPopupContainerClose" class="btnCross"></div>
-    <div class="popupInner">
-        <div class="menuMobile">
-            <ul class="menuMobileList">
-                <li class="menuMobileListItem">
-                    <a href="#" class="menuMobileLink menuMobileLinkJS">Женское</a>
-                    <ul class="menuMobileList menuMobileList--asSubMenu">
-                        <li class="menuMobileListItem">
-                            <a href="catalog.html" class="menuMobileLink">Новинки</a>
-                        </li>
-                        <li class="menuMobileListItem">
-                            <a href="catalog.html" class="menuMobileLink">Одежда</a>
-                        </li>
-                        <li class="menuMobileListItem">
-                            <a href="catalog.html" class="menuMobileLink">Обувь</a>
-                        </li>
-                        <li class="menuMobileListItem">
-                            <a href="catalog.html" class="menuMobileLink">Аксессуары</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="menuMobileListItem">
-                    <a href="#" class="menuMobileLink menuMobileLinkJS">Мужское</a>
-                    <ul class="menuMobileList menuMobileList--asSubMenu">
-                        <li class="menuMobileListItem active">
-                            <a href="catalog.html" class="menuMobileLink">Новинки</a>
-                        </li>
-                        <li class="menuMobileListItem">
-                            <a href="catalog.html" class="menuMobileLink">Одежда</a>
-                        </li>
-                        <li class="menuMobileListItem">
-                            <a href="catalog.html" class="menuMobileLink">Обувь</a>
-                        </li>
-                        <li class="menuMobileListItem">
-                            <a href="catalog.html" class="menuMobileLink">Аксессуары</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="menuMobileListItem">
-                    <a href="#" class="menuMobileLink menuMobileLinkJS">Outlet</a>
-                </li>
-            </ul>
-        </div>
-        <div class="menu menu--mobile">
-            <a class="menuLink" href="news.html">Новости</a>
-            <a class="menuLink" href="brands.html">Бренды</a>
-            <a class="menuLink" href="history.html">История</a>
-            <a class="menuLink" href="address.html">Адреса</a>
-        </div>
-    </div>
-
-
-</div> #}
-
 <div data-target="header.mobileMenu" class="mobile-menu">
   <button type="button" data-action="click->header#onMobileMenuExitCross" class="btn-cross icon-cross"></button>
   <div class="mobile-menu__inner">
-    <nav class="nav nav--mobile-menu">
-      <div class="nav__links">
-        <a class="nav__link link" href="news.html">Новости</a>
-        <a class="nav__link link" href="brands.html">Бренды</a>
-        <a class="nav__link link" href="history.html">История</a>
-        <a class="nav__link link" href="address.html">Адреса</a>
-        <a class="nav__link link" href="basket.html">Корзина</a>
+    <nav class="nav nav--vertical nav--mobile-menu">
+      <div class="nav__subset spoiler" data-controller="spoiler">
+        <a href="catalog.html" class="nav__link nav__link--heading link spoiler__trigger" data-target="spoiler.trigger" data-action="spoiler#onTriggerAction">Женское</a>
+        <div class="nav__links spoiler__container is-collapsed" data-target="spoiler.container">
+          <a class="nav__link link" href="news.html">Новинки</a>
+          <a class="nav__link link" href="brands.html">Одежда</a>
+          <a class="nav__link link" href="history.html">Бренды</a>
+          <a class="nav__link link" href="address.html">Аксессуары</a>
+        </div>
+      </div>
+
+      <div class="nav__subset spoiler" data-controller="spoiler">
+        <a href="catalog.html" class="nav__link nav__link--heading link spoiler__trigger" data-target="spoiler.trigger" data-action="spoiler#onTriggerAction">Мужское</a>
+        <div class="nav__links spoiler__container is-collapsed" data-target="spoiler.container">
+          <a class="nav__link link" href="news.html">Новинки</a>
+          <a class="nav__link link" href="brands.html">Одежда</a>
+          <a class="nav__link link" href="history.html">Бренды</a>
+          <a class="nav__link link" href="address.html">Аксессуары</a>
+        </div>
+      </div>
+
+      <a href="catalog.html" class="nav__link nav__link--heading link">OFFLINE GALLERY</a>
+      <a href="catalog.html" class="nav__link nav__link--heading link">DAYNIGHT.OUTLET</a>
+
+      <div class="nav__subset">
+        <div class="nav__links nav__links--site-sections">
+          <a class="nav__link link" href="news.html">Новости</a>
+          <a class="nav__link link" href="brands.html">Бренды</a>
+          <a class="nav__link link" href="history.html">История</a>
+          <a class="nav__link link" href="address.html">Адреса</a>
+          <a class="nav__link link" href="basket.html">Корзина</a>
+        </div>
       </div>
     </nav>
     <div class="form form--mobile-menu">
       <form>
-        <input class="formField" type="text" placeholder="email" />
-        <input class="formButton" type="submit" value="Подписаться" />
+        <input class="form__field" type="text" placeholder="email" />
+        <input class="form__button" type="submit" value="Подписаться" />
       </form>
     </div>
-    <nav class="nav">
+    <nav class="nav nav--mobile-menu nav--service">
       <div class="nav__links">
-        <a class="menuLink" href="payment.html">Оплата</a>
-        <a class="menuLink" href="delivery.html">Доставка</a>
+        <a class="nav__link link" href="payment.html">Оплата</a>
+        <a class="nav__link link" href="delivery.html">Доставка</a>
       </div>
     </nav>
-    {% include('../_socials.njk') %}
   </div>
 
 </div>

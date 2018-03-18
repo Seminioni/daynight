@@ -1,16 +1,18 @@
 <footer class="footer">
     <div class="container">
-        <div class="footerInner">
-            <div class="footerCell">
-                <img class="paymentsStandarts" src="https://daynight.ru/custom/day/img/img-payments.svg" alt="Visa & MasterCard">
-                <div class="menu menu--footer">
-                    <a class="menuLink" href="payment.html">Оплата</a>
-                    <a class="menuLink" href="delivery.html">Доставка</a>
-                </div>
+        <div class="footer__inner">
+            <div class="footer__cell">
+                <img class="payment-standarts" src="https://daynight.ru/custom/day/img/img-payments.svg" alt="Visa & MasterCard">
+                <nav class="nav nav--service nav--footer">
+                    <div class="nav__links">
+                      <a class="nav__link link" href="payment.html">Оплата</a>
+                      <a class="nav__link link" href="delivery.html">Доставка</a>
+                    </div>
+                </nav>
                 {% include('./_socials.njk') %}
             </div>
-            <div class="footerCell">
-                <p class="copyRight">© 2017 DAYNIGHT Санкт-Петербург All Rights Reserved</p>
+            <div class="footer__cell">
+                <p class="copyright">© 2017 DAYNIGHT Санкт-Петербург All Rights Reserved</p>
             </div>
         </div>
     </div>

@@ -3,13 +3,14 @@
 @import-normalize;
 @import "utils/_vars";
 @import "utils/sprite/_sprite";
-@import "./utils/_mixins";
+@import "utils/_mixins";
 @import "utils/_resets";
 @import "utils/_links";
 @import "utils/_radiobuttons";
 @import "utils/_buttons";
 @import "utils/_GUI";
 @import "utils/socialShareLinks";
+@import "utils/forms/index";
 
 html,
 body {
@@ -78,18 +79,17 @@ body {
 @import "components/abc";
 @import "components/address";
 @import "components/basket";
-@import "components/burger/index";
+@import "components/burger/_index";
 @import "components/breadcrumbs";
 @import "components/filter";
-@import "components/footer";
-@import "components/form";
-@import "components/header/index";
+@import "components/footer/_index";
+@import "components/header/_index";
 @import "components/latest";
 @import "components/linkToCatalog";
 @import "components/main";
 @import "components/menu";
 @import "components/modal";
-@import "components/mobile-menu/index";
+@import "components/mobile-menu/_index";
 @import "components/optionalContent";
 @import "components/others";
 @import "components/paginator";
@@ -98,6 +98,7 @@ body {
 @import "components/pluginSelect";
 @import "components/productCard";
 @import "components/sidebar";
+@import "components/spoiler/_index";
 @import "components/sliderHorizontal";
 @import "components/socials";
 @import "components/post";

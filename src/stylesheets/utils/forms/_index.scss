@@ -1,19 +1,20 @@
+//Core styles
 .form {
   width: 100%;
-  margin: 0 auto;
+  // margin: 0 auto;
 
-  .errors{
+  .errors {
     @include textSmallSize();
     color: var(--c-black);
   }
 }
 
-.formError{
+.formError {
   @include textNormalSize();
   color: var(--c-red);
 }
 
-.formField {
+.form__field {
   background-color: var(--c-white);
   width: 100%;
   border: 0;
@@ -21,17 +22,17 @@
   @include textNormalSize();
   padding: 5px 0;
   margin-bottom: 10px;
-
-  &::placeholder{
+  outline: 0;
+  &::placeholder {
     color: var(--c-light-grey);
   }
 
-  &--withFullBorder{
+  &--withFullBorder {
     border: 1px solid var(--c-black);
   }
 }
 
-.formButton {
+.form__button {
   display: block;
   width: 100%;
   height: 32px;
@@ -47,35 +48,31 @@
     background-color: var(--c-black);
   }
 
-  &:focus {
-    color: var(--c-black);
-    background-color: var(--c-white);
-  }
-
+  &:focus,
   &:active {
     color: var(--c-black);
     background-color: var(--c-white);
   }
 }
 
-.formButton--width165{
+.formButton--width165 {
   max-width: 165px;
 }
 
-.formButton--resetMargin{
+.formButton--resetMargin {
   margin: 0;
 }
 
-.formTitle{
+.formTitle {
   @include textNormalSize();
   margin-bottom: 32px;
   text-align: center;
 }
 
-.formLegend{
+.formLegend {
   @include textSmallSize();
 
-  &--absolutePositionRight{
+  &--absolutePositionRight {
     position: unset;
     top: unset;
     right: unset;
@@ -84,29 +81,29 @@
   }
 }
 
-.formLabel{
+.formLabel {
   @include textNormalSize();
 
-  &:after{
-    content: ':';
+  &:after {
+    content: ":";
   }
 
-  &--reqiured{
+  &--reqiured {
     display: block;
     margin-bottom: 7px;
 
-    &:after{
-      content: '*:';
+    &:after {
+      content: "*:";
     }
   }
 }
 
-.formFieldSet{
+.formFieldSet {
   position: relative;
   margin-bottom: 20px;
 }
 
-.formTextarea{
+.formTextarea {
   display: block;
   width: 100%;
   padding: 10px;
@@ -121,16 +118,16 @@
 }
 
 // MODS
-.form--Mobile{
+.form--mobile-menu {
   position: relative;
   padding-bottom: 23px;
 
-  .formField{
-    @include font(14px, var(--HelveticaNeue), 17px);
+  .form__field {
+    @include rhythm(14,17);
     padding-right: 110px;
   }
 
-  .formButton{
+  .form__button {
     border: 0;
     padding: 0;
     text-transform: lowercase;
@@ -141,29 +138,29 @@
     top: 0;
     right: 0;
     background: none;
-    @include font(14px, var(--HelveticaNeue), 17px);
+    @include rhythm(14,17);
 
-    &:hover{
+    &:hover {
       background: none;
       color: var(--c-black);
     }
   }
 }
 
-.form--inModal{
+.form--inModal {
   max-width: 273px;
 
   .formField {
     margin-bottom: 30px;
   }
-  .formLegend{
+  .formLegend {
     margin-top: 36px;
     text-align: center;
   }
 }
 
-@media screen and (min-width: $pre-mobile){
-  .formLegend--absolutePositionRight{
+@media screen and (min-width: $pre-mobile) {
+  .formLegend--absolutePositionRight {
     position: absolute;
     top: 0;
     right: 0;
@@ -171,3 +168,8 @@
     display: inline;
   }
 }
+//End core styles
+
+//Mods
+
+//End mods

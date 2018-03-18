@@ -28,7 +28,7 @@
   @include font(11px, var(--HelveticaNeue), 11px);
   letter-spacing: 1px;
   position: absolute;
-  text-shadow: 0 2px 4px color(var(--c-black), l(50%));
+  text-shadow: 0 2px 4px color(var(--c-black) l(50%));
   cursor: pointer;
   user-select: none;
 
