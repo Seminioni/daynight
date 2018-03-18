@@ -53,7 +53,7 @@
       padding: 10px;
       display: block;
       resize: vertical;
-      color: var(--black);
+      color: var(--c-black);
       min-height: 110px;
       min-width: 100%;
       max-width: 100%;
@@ -145,7 +145,7 @@
     border-radius: 0;
     outline: 0;
     appearance: none;
-    border-bottom: 1px solid var(--black);
+    border-bottom: 1px solid var(--c-black);
     @include rhythm(13,13);
     font-weight: 300;
     padding: 5px 5px 5px 0;
@@ -351,7 +351,7 @@
         padding-top: 0;
         padding-bottom: 0;
         &.is-highlighted {
-          color: var(--black);
+          color: var(--c-black);
         }
       }
       .choices__list {

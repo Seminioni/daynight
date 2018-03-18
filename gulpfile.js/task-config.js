@@ -18,11 +18,13 @@ module.exports = {
   stylesheets: {
     sass: {
       includePaths: [
+        './node_modules/sass-burger/'
       ]
     },
   },
 
   browserSync: {
+    open: false,
     server: {
       // should match `dest` in
       // path-config.json

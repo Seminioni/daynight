@@ -14,7 +14,7 @@
 
 .footerCell {
   width: 100%;
-  
+
   &:first-child{
     display: flex;
     justify-content: space-between;
@@ -35,16 +35,8 @@
 }
 
 .paymentsStandarts {
-  width: 87px;
   flex-shrink: 0;
-}
-
-.paymentsStandartsFullSet{
-  display: block;
-  width: 100% !important;
-  max-width: 354px !important;
-  height: auto !important;
-  margin: 53px auto !important;
+  width: 87px;
 }
 
 // Mods
@@ -66,11 +58,11 @@
   .footerInner {
     flex-direction: column;
   }
-  
+
   .footerCell {
     text-align: center;
     margin: 0 auto;
-    
+
     &:first-child{
       align-items: center;
       max-width: 500px;

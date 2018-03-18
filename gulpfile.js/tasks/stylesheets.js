@@ -25,7 +25,6 @@ var sassTask = function () {
 
   var cssnanoConfig = TASK_CONFIG.stylesheets.cssnano || {}
   cssnanoConfig.autoprefixer = false // this should always be false, since we're autoprefixing separately
-
   return gulp.src(paths.src)
     .pipe(gulpif(!global.production, sourcemaps.init()))
     .pipe(sass(TASK_CONFIG.stylesheets.sass))

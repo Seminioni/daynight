@@ -1,3 +1,4 @@
+//Core styles
 .main {
   position: relative;
   display: flex;
@@ -9,19 +10,18 @@
   @extend .container;
   padding-right: 0;
   padding-left: 0;
-}
-
-.mainContainer {
-  width: 100%;
-  max-width: 710px;
-}
-
-@media screen and (min-width: $pre-mobile) {
-  .main {
+  @media (--m) {
     padding-right: 10px;
     padding-left: 10px;
   }
-  .mainContainer {
-    padding-top: 9px;
-  }
 }
+
+.main__container {
+  width: 100%;
+  max-width: 710px;
+}
+//End core styles
+
+//Mods
+
+//End mods

@@ -1,0 +1,18 @@
+{% from 'macros/helpers.html' import spriteForLink,sprite %}
+
+<header class="header" data-controller="header">
+    <div class="container">
+        {% include('./_header-top.njk') %}
+        <nav class="nav nav--header">
+
+          <div class="nav__links">
+            <a class="nav__link link" href="news.html">Новости</a>
+            <a class="nav__link link" href="brands.html">Бренды</a>
+            <a class="nav__link link" href="history.html">История</a>
+            <a class="nav__link link" href="address.html">Адреса</a>
+            <a class="nav__link link" href="basket.html">Корзина</a>
+          </div>
+        </nav>
+        {% include('./_mobile-menu.njk') %}
+    </div>
+</header>

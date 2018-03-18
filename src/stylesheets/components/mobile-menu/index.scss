@@ -1,0 +1,40 @@
+// @import '../../utils/_mixins';
+
+//Core styles
+.mobile-menu {
+  display: none;
+  width: 100%;
+  position: fixed;
+  top: 65px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--c-white);
+  z-index: 1000000;
+  padding: 25px 36px;
+  border-top: 1px solid var(--c-grey);
+  overflow-y: scroll;
+
+  &.is-open {
+    display: unset;
+  }
+  .btn-cross {
+    position: absolute;
+    right: 16px;
+    top: 0px;
+    width: 40px;
+    height: 60px;
+    // @include reset-button();
+  }
+
+  .nav {
+    margin-top: 20px;
+    margin-bottom: 35px;
+  }
+
+}
+//End core styles
+
+//Mods
+
+//End mods

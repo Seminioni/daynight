@@ -1,15 +1,8 @@
 // Mixins
 
 @mixin rhythm($sizeValue, $heightValue) {
-  font-size: $sizeValue + px;;
+  font-size: $sizeValue + px;
   line-height: $heightValue / $sizeValue;
-}
-
-@mixin button-size($padding-y, $padding-x, $font-size, $line-height, $border-radius) {
-  padding: $padding-y $padding-x;
-  font-size: $font-size;
-  line-height: $line-height;
-  border-radius: $border-radius;
 }
 
 @mixin reset-button {
@@ -27,6 +20,13 @@
       padding : 0;
       border : 0;
   }
+}
+
+@mixin button-size($padding-y, $padding-x, $font-size, $line-height, $border-radius) {
+  padding: $padding-y $padding-x;
+  font-size: $font-size;
+  line-height: $line-height;
+  border-radius: $border-radius;
 }
 
 @mixin setTransitionFor($properties...) {
@@ -54,8 +54,6 @@
   }
 }
 
-
-
 @mixin optional-at-root($sel) {
   @at-root #{if(not &, $sel, selector-append(&, $sel))} {
     @content;
@@ -79,7 +77,6 @@
     @content;
   }
 }
-
 
 // Legacy mixins
 

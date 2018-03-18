@@ -13,73 +13,39 @@
 <body class="page">
   <div class="wrapper">
 
-    {% include ('../components/_header.njk')%}
+    {% include ('../components/header/_header.njk')%}
 
     <div class="main">
       <aside class="sidebar">
-        <div class="sidebarContainer">
-          <div class="sidebarCell">
-            <h3 class="sidebarCellTitle sidebarCellTitle--noMargin">Online Shop</h3>
+        <nav class="nav nav--aside">
+          <div class="nav__links">
+            <a href="index.html" class="nav__link nav__link--heading link">Online Shop</a>
+
+            <a href="catalog.html" class="nav__link nav__link--heading link">Женское</a>
+            <a href="catalog.html" class="nav__link link">Новинки</a>
+            <a href="catalog.html" class="nav__link link">Одежда</a>
+            <a href="catalog.html" class="nav__link link">Обувь</a>
+            <a href="catalog.html" class="nav__link link">Аксессуары</a>
+
+            <a href="catalog.html" class="nav__link nav__link--heading link">Мужское</a>
+            <a href="catalog.html" class="nav__link link">Новинки</a>
+            <a href="catalog.html" class="nav__link link">Одежда</a>
+            <a href="catalog.html" class="nav__link link">Обувь</a>
+            <a href="catalog.html" class="nav__link link">Аксессуары</a>
+
+            <a href="catalog.html" class="nav__link nav__link--heading link">offline gallery</a>
+
+            <a href="catalog.html" class="nav__link nav__link--heading link">daynight.outlet</a>
           </div>
-          <div class="sidebarCell">
-            <h3 class="sidebarCellTitle"><a class="link sidebarCellTitleLink" href="catalog.html">Женское</a></h3>
-            <div class="menu menu--withCapitalize">
-              <ul class="menuList">
-                <li class="menuListItem">
-                  <a href="catalog.html" class="link menuLink">Новинки</a>
-                </li>
-                <li class="menuListItem">
-                  <a href="catalog.html" class="link menuLink">Одежда</a>
-                </li>
-                <li class="menuListItem">
-                  <a href="catalog.html" class="link menuLink">Обувь</a>
-                </li>
-                <li class="menuListItem">
-                  <a href="catalog.html" class="link menuLink">Аксессуары</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="sidebarCell">
-            <h3 class="sidebarCellTitle"><a class="link sidebarCellTitleLink" href="catalog.html">Мужское</a></h3>
-            <div class="menu menu--withCapitalize">
-              <ul class="menuList">
-                <li class="menuListItem">
-                  <a href="catalog.html" class="link menuLink">Новинки</a>
-                </li>
-                <li class="menuListItem">
-                  <a href="catalog.html" class="link menuLink">Одежда</a>
-                </li>
-                <li class="menuListItem">
-                  <a href="catalog.html" class="link menuLink">Обувь</a>
-                </li>
-                <li class="menuListItem">
-                  <a href="catalog.html" class="link menuLink">Аксессуары</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="sidebarCell">
-            <h3 class="sidebarCellTitle">
-              <a class="link sidebarCellTitleLink" href="#">OFFLINE GALLERY</a>
-            </h3>
-          </div>
-          <div class="sidebarCell">
-            <h3 class="sidebarCellTitle">
-              <a class="link sidebarCellTitleLink" href="#">Daynight.Outlet</a>
-            </h3>
-          </div>
-          <div class="sidebarCell">
-            <div class="form">
-              <form>
-                <input class="formField" type="text" placeholder="email" />
-                <input class="formButton" type="submit" value="Подписаться" />
-              </form>
-            </div>
-          </div>
+        </nav>
+        <div class="form">
+          <form>
+            <input class="formField" type="text" placeholder="email" />
+            <input class="formButton" type="submit" value="Подписаться" />
+          </form>
         </div>
       </aside>
-      <div class="mainContainer">
+      <div class="main__container">
         {% block content %}
 
         {% endblock %}

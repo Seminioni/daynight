@@ -129,6 +129,8 @@
 
 .abcListWords {
   width: 100%;
+  @include reset-button();
+
 }
 
 .abcListWord {

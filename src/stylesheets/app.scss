@@ -1,19 +1,23 @@
 // App styles, imports etc...
 
 @import-normalize;
-@import "utils/sprite/_sprite";
-@import "utils/_resets";
 @import "utils/_vars";
+@import "utils/sprite/_sprite";
+@import "./utils/_mixins";
+@import "utils/_resets";
 @import "utils/_links";
-@import "utils/_mixins";
 @import "utils/_radiobuttons";
 @import "utils/_buttons";
-
+@import "utils/_GUI";
+@import "utils/socialShareLinks";
 
 html,
 body {
   font-family: var(--HelveticaNeue), Helvetica, Arial, sans-serif;
   font-weight: normal;
+  @media (--m) {
+    height: 100%;
+  }
 }
 
 html {
@@ -21,7 +25,7 @@ html {
 }
 
 body {
-  &.menu-is-open {
+  &.mobile-menu-is-open {
     overflow: hidden;
   }
 }
@@ -33,7 +37,7 @@ body {
 }
 
 .container {
-  max-width: 1110px;
+  max-width: 888px;
   padding-left: 15px;
   padding-right: 15px;
   min-width: 320px;
@@ -44,39 +48,48 @@ body {
   }
 }
 
-.page__wrapper {
+.wrapper {
   position: relative;
   padding-top: 65px;
   width: 100%;
   min-height: 100%;
-  @media (--xl) {
+  @media (--m) {
     padding-top: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-
-    .main {
-      flex: 1;
-    }
+    min-height: calc(100% - 135px);
   }
 }
 
-@import "utils/socialShareLinks";
+.btnCross {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 0;
+  right: 0;
+  overflow: hidden;
+  background: url("../img/img-cross16x16.svg") center center no-repeat;
+  cursor: pointer;
+}
+
+.commonMsg {
+  @include textNormalSize();
+  margin: 0 0 15px;
+}
 
 @import "components/abc";
 @import "components/address";
 @import "components/basket";
+@import "components/burger/index";
 @import "components/breadcrumbs";
-@import "components/common";
 @import "components/filter";
 @import "components/footer";
 @import "components/form";
-@import "components/header";
+@import "components/header/index";
 @import "components/latest";
 @import "components/linkToCatalog";
 @import "components/main";
 @import "components/menu";
 @import "components/modal";
+@import "components/mobile-menu/index";
 @import "components/optionalContent";
 @import "components/others";
 @import "components/paginator";
@@ -92,4 +105,3 @@ body {
 @import "components/uniList";
 @import "components/text";
 @import "components/tour";
-

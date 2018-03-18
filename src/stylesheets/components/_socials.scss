@@ -1,6 +1,6 @@
 //Core styles
-.socials{
-  display: flex;
+.socials {
+  display: inline-flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: flex-start;
@@ -8,12 +8,9 @@
   max-width: 120px;
 }
 
-.socialsLink{
-  display: inline-block;
-  svg {
-    width: 24px;
-    height: 24px;
-  }
+.socialsLink {
+  height: 24px;
+  width: 24px;
 }
 //End core styles
 
@@ -22,11 +19,11 @@
 //End mods
 
 //Media queries
-  //Core styles
+//Core styles
 
-  //End core styles
+//End core styles
 
-  //Mods
+//Mods
 
-  //End mods
+//End mods
 //End media queries

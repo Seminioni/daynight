@@ -13,6 +13,14 @@
 .latestTop {
   display: none;
   margin-bottom: 50px;
+  @media (--m) {
+    display: block;
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
 }
 
 .latestTopLink {
@@ -58,12 +66,12 @@
     height: 532px;
     background: linear-gradient(
       to top,
-      color(var(--c-white), l(90%)) 25%,
-      color(var(--c-white), l(86%)) 35%,
-      color(var(--c-white), l(74%)) 50%,
-      color(var(--c-white), l(56%)) 65%,
-      color(var(--c-white), l(46%)) 75%,
-      color(var(--c-white), l(35%)) 81%,
+      rgba(255, 255, 255, 0.9) 25%,
+      rgba(255, 255, 255, 0.86) 35%,
+      rgba(255, 255, 255, 0.74) 50%,
+      rgba(255, 255, 255, 0.56) 65%,
+      rgba(255, 255, 255, 0.46) 75%,
+      rgba(255, 255, 255, 0.36) 81%,
       transparent 100%
     );
   }
@@ -115,7 +123,7 @@
 }
 
 // Desktop
-@media screen and (min-width: $pre-mobile) {
+@media (--m) {
   .latest {
     margin-bottom: 50px;
   }
@@ -177,15 +185,6 @@
 
   .latestListItemLinkImg {
     height: 400px;
-  }
-
-  .latestTop {
-    display: block;
-    width: 100%;
-
-    img {
-      width: 100%;
-    }
   }
 
   .latestListItemLinkText {
