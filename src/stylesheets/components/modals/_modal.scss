@@ -1,3 +1,4 @@
+//Core styles
 .modal {
   position: fixed;
   top: 0;
@@ -11,7 +12,7 @@
   padding: 10px;
   z-index: 100000000;
 
-  &.active{
+  &.active {
     display: flex;
   }
 }
@@ -23,35 +24,36 @@
   background-color: var(--c-white);
   border: 1px solid var(--c-black);
   padding-left: 286px;
-  background-image: url('../../img/img-modal.jpg');
+  background-image: url("../../img/img-modal.jpg");
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: 286px auto;
   padding-top: 42px;
   position: relative;
   z-index: 1;
-
-  .logo{
+  @media (--m) {
+    padding-left: 0;
+    background-image: none;
+    max-width: 360px;
+  }
+  .logo {
     width: 229px;
     margin-bottom: 20px;
   }
 }
 
-.modalClose{
+.modalClose {
   width: 20px;
   height: 20px;
-  background: url('../../img/img-cross.svg') center center no-repeat;
+  background: url("../../img/img-cross.svg") center center no-repeat;
   position: absolute;
   top: 15px;
   right: 19px;
   z-index: 2;
   cursor: pointer;
 }
+//End core styles
 
-@media screen and (max-width: $pre-mobile) {
-  .modalContainer {
-    padding-left: 0;
-    background-image: none;
-    max-width: 360px;
-  }
-}
+//Mods
+
+//End mods

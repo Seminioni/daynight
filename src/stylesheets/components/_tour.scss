@@ -25,7 +25,7 @@
 .tourDayNightNavigationButton{
   display: none;
   color: var(--c-white);
-  @include font(11px, var(--HelveticaNeue), 11px);
+  @include rhythm(11,11);
   letter-spacing: 1px;
   position: absolute;
   text-shadow: 0 2px 4px color(var(--c-black) l(50%));
@@ -124,7 +124,7 @@
 
 .tourDayNightButton{
   display: none;
-  @include font(11px, var(--HelveticaNeue), 13px);
+  @include rhythm(11,13);
   font-weight: 300;
   letter-spacing: 1px;
   text-decoration: none;
@@ -185,25 +185,25 @@
 }
 
 .tourDayNightSlideCoverLogoSubtext{
-  @include font(14px, var(--HelveticaNeue), 17px);
+  @include rhythm(14,17px);
   font-weight: 400;
   text-align: center;
   margin: 0;
 }
 
 .tourDayNightSlideCoverTitle{
-  @include font(11px, var(--HelveticaNeue), 13px);
+  @include rhythm(11,13);
   font-weight: 500;
   margin: 0 0 15px;
 
   &--18{
-    @include font(18px, var(--HelveticaNeue), 21px);
+    @include rhythm(18,21);
     font-weight: 300;
     margin-top: 40px;
   }
 }
 .tourDayNightSlideCoverAddress{
-  @include font(11px, var(--HelveticaNeue), 13px);
+  @include rhythm(11,13);
   font-weight: 300;
   margin: 0;
 }

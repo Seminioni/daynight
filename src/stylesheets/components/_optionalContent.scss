@@ -1,39 +1,41 @@
-.optionalContent{
+//Core styles
+.optionalContent {
   display: none;
   width: 100%;
   padding: 25px;
   border-top: 1px solid var(--c-black);
   border-bottom: 1px solid var(--c-black);
-  
-  p{
+  @media (--m) {
+    display: block;
+  }
+  p {
     @include textNormalSize();
     margin-bottom: 15px;
-    
-    &:last-child{
+
+    &:last-child {
       margin-bottom: 0;
     }
   }
-  
-  a{
+
+  a {
     color: var(--c-black);
     text-decoration: underline;
-    
+
     &:hover,
-    &:active{
+    &:active {
       color: var(--c-black);
       text-decoration: none;
     }
-    
+
     &:focus,
-    &:visited{
+    &:visited {
       color: var(--c-black);
       text-decoration: underline;
     }
   }
 }
+//End core styles
 
-@media screen and (min-width: $pre-mobile) {
-  .optionalContent {
-    display: block;
-  }
-}
+//Mods
+
+//End mods

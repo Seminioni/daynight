@@ -10,7 +10,7 @@
     right: 23px;
   }
 
-  &.active{
+  &.active {
     position: fixed;
     top: 65px;
     left: 0;
@@ -21,7 +21,7 @@
   }
 }
 
-.filterInner{
+.filterInner {
   min-height: 100%;
 }
 
@@ -35,11 +35,11 @@
   padding-top: 10px;
 
   &:before {
-    content: '';
+    content: "";
     width: 17px;
     height: 17px;
     display: inline-block;
-    background: url('../img/icon-filter.svg') center center no-repeat;
+    background: url("../img/icon-filter.svg") center center no-repeat;
     vertical-align: top;
     margin-right: 13px;
   }
@@ -47,7 +47,7 @@
   &.active {
     color: var(--c-black);
     &:before {
-      background-image: url('../img/icon-filter-active.svg');
+      background-image: url("../img/icon-filter-active.svg");
     }
 
     & + .btnCross {
@@ -71,7 +71,7 @@
   max-width: 163px;
 }
 
-.filterSelectorName{
+.filterSelectorName {
   display: inline-block;
   @include textSmallSize();
   cursor: pointer;
@@ -94,7 +94,7 @@
   z-index: 100;
 }
 
-.filterSelectorList{
+.filterSelectorList {
   position: absolute;
   top: 37px;
   left: 0;
@@ -103,11 +103,11 @@
   width: 100%;
   padding: 8px 12px 12px;
 }
-.filterSelectorListItem{
+.filterSelectorListItem {
   @include textSmallSize();
   cursor: pointer;
 
-  &.current{
+  &.current {
     font-weight: 500;
   }
 }
@@ -130,7 +130,10 @@
 }
 
 @media screen and (min-width: 838px) {
-  .filterButton.active+.btnCross, .popupFilter {display: none;}
+  .filterButton.active + .btnCross,
+  .popupFilter {
+    display: none;
+  }
   .filterButton {
     display: none;
   }

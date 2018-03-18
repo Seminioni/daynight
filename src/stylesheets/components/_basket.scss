@@ -3,15 +3,15 @@
   padding: 0 25px 50px;
 }
 
-.basketStatusEmpty{
+.basketStatusEmpty {
   margin-bottom: 20px;
 
-  .basketUniStr{
+  .basketUniStr {
     text-align: center;
   }
 }
 
-.basketOrderPayment{
+.basketOrderPayment {
   margin-bottom: 20px;
 }
 
@@ -26,37 +26,37 @@
   text-align: center;
 }
 
-.basketUniTitle{
+.basketUniTitle {
   @include textNormalSize();
   margin-bottom: 16px;
 }
 
-.basketUniStr{
+.basketUniStr {
   @include textNormalSize();
   margin-bottom: 12px;
 
-  &--grey{
+  &--grey {
     color: var(--c-grey);
   }
 
-  &--small{
+  &--small {
     @include textSmallSize();
   }
 }
 
-.basketUniLink{
+.basketUniLink {
   @include textNormalSize();
   color: var(--c-black);
   text-decoration: underline;
 
   &:hover,
-  &:active{
+  &:active {
     color: var(--c-black);
     text-decoration: none;
   }
 
   &:focus,
-  &:visited{
+  &:visited {
     color: var(--c-black);
     text-decoration: underline;
   }
@@ -152,7 +152,7 @@
 
   &--minus {
     &:before {
-      content: '';
+      content: "";
       width: 10px;
       border-top: 1px solid var(--c-black);
       position: absolute;
@@ -164,7 +164,7 @@
 
   &--plus {
     &:before {
-      content: '';
+      content: "";
       width: 10px;
       border-top: 1px solid var(--c-black);
       position: absolute;
@@ -173,7 +173,7 @@
       transform: translate(-50%, -50%);
     }
     &:after {
-      content: '';
+      content: "";
       height: 10px;
       border-left: 1px solid var(--c-black);
       position: absolute;
@@ -219,7 +219,7 @@
 
   &:after,
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
@@ -242,7 +242,7 @@
   position: relative;
 
   &:before {
-    content: '';
+    content: "";
     display: block;
     width: 100%;
     border-top: 1px solid var(--c-black);
@@ -276,7 +276,7 @@
   position: relative;
   margin-bottom: 15px;
 
-  &.active{
+  &.active {
     .basketUniControlItemLabelIcon {
       transform: rotate(180deg) translateY(2px);
     }
@@ -285,7 +285,7 @@
     }
   }
 
-  &--withRightControl{
+  &--withRightControl {
     .basketUniControlItemControl {
       left: 0;
       right: unset;
@@ -350,7 +350,7 @@
   background-color: transparent;
 
   &:after {
-    content: '';
+    content: "";
     display: none;
     width: 8px;
     height: 8px;
@@ -363,7 +363,7 @@
   }
 
   &:before {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     top: 50%;
@@ -377,7 +377,8 @@
   }
 }
 
-.basketUniControlItemControlSwitcher:checked + .basketUniControlItemControlPsuedoSwitcher {
+.basketUniControlItemControlSwitcher:checked
+  + .basketUniControlItemControlPsuedoSwitcher {
   &:after {
     display: block;
   }
@@ -432,14 +433,14 @@
     display: block;
   }
 
-  .basketStatusEmpty{
-    .basketUniStr{
+  .basketStatusEmpty {
+    .basketUniStr {
       text-align: unset;
     }
   }
 
-  .basketOrderPayment{
-    .formButton{
+  .basketOrderPayment {
+    .formButton {
       max-width: 165px;
       margin: 0;
     }

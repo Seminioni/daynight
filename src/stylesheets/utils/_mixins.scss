@@ -80,25 +80,15 @@
 
 // Legacy mixins
 
-@mixin font($fontSize, $fontName, $lineHeight) {
-  font-size: $fontSize;
-  font-family: $fontName;
-  line-height: $lineHeight / $fontSize;
-}
 
 @mixin textNormalSize() {
-  @include font(11px, var(--HelveticaNeue), 17px);
+  @include rhythm(11,17);
   font-weight: 300;
   letter-spacing: 1px;
 }
 
-@mixin textNormalForMenu() {
-  @include textNormalSize();
-  line-height: 15px;
-}
-
 @mixin textSmallSize() {
-  @include font(9px, var(--HelveticaNeue), 17px);
+  @include rhythm(9,17);
   font-weight: 300;
   letter-spacing: 1px;
 }

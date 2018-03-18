@@ -26,7 +26,7 @@
 }
 .postBackLinkText{
   display: none;
-  @include font(9px, var(--HelveticaNeue), 11px);
+  @include rhythm(9,11);
   color: var(--c-grey);
 
   &:before{

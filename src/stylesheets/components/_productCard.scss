@@ -105,7 +105,7 @@
 }
 
 .productCurrentSizeValue {
-  @include font(11px, var(--HelveticaNeue), 13px);
+  @include rhythm(11,13);
   color: var(--c-black);
   font-weight: 500;
 }

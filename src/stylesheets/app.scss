@@ -60,6 +60,28 @@ body {
   }
 }
 
+.main {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  min-height: 500px;
+  height: 100%;
+  @extend .container;
+  padding-right: 0;
+  padding-left: 0;
+  @media (--m) {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
+
+.main__container {
+  width: 100%;
+  max-width: 710px;
+}
+
 .btnCross {
   position: absolute;
   width: 16px;
@@ -80,27 +102,25 @@ body {
 @import "components/address";
 @import "components/basket";
 @import "components/burger/_index";
-@import "components/breadcrumbs";
+@import "components/breadcrumbs/_index";
 @import "components/filter";
 @import "components/footer/_index";
 @import "components/header/_index";
 @import "components/latest";
 @import "components/linkToCatalog";
-@import "components/main";
-@import "components/menu";
-@import "components/modal";
+@import "components/navigation/_index";
+@import "components/modals/_index";
 @import "components/mobile-menu/_index";
 @import "components/optionalContent";
 @import "components/others";
-@import "components/paginator";
-@import "components/popupContainer";
-@import "components/popupFilter";
+@import "components/paginator/_index";
+@import "components/popup/_index";
 @import "components/pluginSelect";
 @import "components/productCard";
-@import "components/sidebar";
+@import "components/sidebar/_index";
 @import "components/spoiler/_index";
 @import "components/sliderHorizontal";
-@import "components/socials";
+@import "components/socials/_index";
 @import "components/post";
 @import "components/uniAccordion";
 @import "components/uniList";

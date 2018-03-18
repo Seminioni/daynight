@@ -1,36 +1,39 @@
+//Core styles
 .paginator{
   width: 100%;
   margin-bottom: 50px;
   padding: 0 19px;
+  @media (--m) {
+    padding: 0;
+  }
 }
 .paginatorItem{
   @include textNormalSize();
   text-decoration: none;
   color: var(--c-black);
   margin: 0 8px;
-  
+
   &:first-child{
     margin-left: 0;
   }
   &:last-child{
     margin-right: 0;
   }
-  
+
   &:hover,
   &:active,
   &:focus,
   &:visited{
     color: var(--c-black);
   }
-  
+
   &.active,
   &.current{
     font-weight: 500;
   }
 }
+//End core styles
 
-@media screen and (min-width: $pre-mobile) {
-  .paginator {
-    padding: 0;
-  }
-}
+//Mods
+
+//End mods

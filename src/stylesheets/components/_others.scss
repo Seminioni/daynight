@@ -22,7 +22,8 @@
   margin-top: 50px;
 }
 
-.news_next, #s_next {
+.news_next,
+#s_next {
   width: 20px;
   height: 20px;
   background: var(--c-white) url(../img/img_str_next.png) no-repeat 50% 50%;
@@ -35,7 +36,8 @@
   display: none;
 }
 
-.news_prev, #s_prev {
+.news_prev,
+#s_prev {
   width: 20px;
   height: 20px;
   background: var(--c-white) url(../img/img_str_prev.png) no-repeat 50% 50%;
@@ -48,7 +50,8 @@
   display: none;
 }
 
-#s_next, #s_prev {
+#s_next,
+#s_prev {
   display: block;
   position: absolute;
   top: 50%;
@@ -75,7 +78,8 @@
   visibility: visible;
 }
 
-.news_slide.cycle-slide-active .news_prev, .news_slide.cycle-slide-active .news_next {
+.news_slide.cycle-slide-active .news_prev,
+.news_slide.cycle-slide-active .news_next {
   display: inline-block;
 }
 
@@ -188,7 +192,8 @@
   font-weight: bold;
 }
 
-.modal_window_container input[type="text"], .modal_window_container input[type="tel"] {
+.modal_window_container input[type="text"],
+.modal_window_container input[type="tel"] {
   display: block;
   width: calc(100% - 50px);
   padding: 0 25px;
@@ -254,7 +259,8 @@
   margin-right: 15px;
 }
 
-.productGalleryContainer .uniItem--sale, .productGalleryContainer .uniItem--new {
+.productGalleryContainer .uniItem--sale,
+.productGalleryContainer .uniItem--new {
   z-index: 1000;
 }
 
@@ -294,7 +300,8 @@
 
 .modal_window_container table td {
   font-size: 11px;
-  font-family: "Conv_HelveticaNeueCyr", "Helvetica Neue LT W01", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Conv_HelveticaNeueCyr", "Helvetica Neue LT W01",
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.54545;
   font-weight: 300;
   letter-spacing: 1px;
@@ -305,26 +312,10 @@
   border: 0;
 }
 
-.copyRightLink {
-  font-size: 9px;
-  font-family: "Conv_HelveticaNeueCyr", "Helvetica Neue LT W01", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  line-height: 1.54545;
-  font-weight: 300;
-  letter-spacing: 1px;
-  color: var(--c-black);
-  text-decoration: underline;
-}
-
-.copyRightLink:hover,
-.copyRightLink:focus,
-.copyRightLink:active,
-.copyRightLink:visited {
-  color: var(--c-black);
-}
-
 .cart_param {
   font-size: 11px;
-  font-family: "Conv_HelveticaNeueCyr", "Helvetica Neue LT W01", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Conv_HelveticaNeueCyr", "Helvetica Neue LT W01",
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.54545;
   font-weight: 300;
   letter-spacing: 1px;
@@ -336,7 +327,8 @@
 
 .addressHours {
   font-size: 11px;
-  font-family: "Conv_HelveticaNeueCyr", "Helvetica Neue LT W01", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Conv_HelveticaNeueCyr", "Helvetica Neue LT W01",
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.54545;
   font-weight: 300;
   letter-spacing: 1px;
@@ -346,12 +338,13 @@
 
 .socialShareLinks {
   padding: 40px 0;
-  width: 100%
+  width: 100%;
 }
 
 .socialShareLinksTitle {
   font-size: 11px;
-  font-family: "Conv_HelveticaNeueCyr", "Helvetica Neue LT W01", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Conv_HelveticaNeueCyr", "Helvetica Neue LT W01",
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.54545;
   font-weight: 300;
   letter-spacing: 1px;
@@ -359,7 +352,7 @@
   font-weight: 500;
   text-align: center;
   margin-bottom: 30px;
-  text-transform: uppercase
+  text-transform: uppercase;
 }
 
 .socialShareLinksList {
@@ -374,7 +367,7 @@
   justify-content: space-between;
   -webkit-box-align: start;
   -ms-flex-align: start;
-  align-items: flex-start
+  align-items: flex-start;
 }
 
 .socialShareLinksListItem {
@@ -382,11 +375,11 @@
   display: inline-block;
   height: 27px;
   text-align: center;
-  border-left: 1px solid var(--c-black)
+  border-left: 1px solid var(--c-black);
 }
 
 .socialShareLinksListItem:first-child {
-  border-left: 0
+  border-left: 0;
 }
 
 .socialShareLinksListLink {
@@ -398,35 +391,20 @@
   background-size: contain;
   padding-left: 39px;
   font-size: 11px;
-  font-family: "Conv_HelveticaNeueCyr", "Helvetica Neue LT W01", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Conv_HelveticaNeueCyr", "Helvetica Neue LT W01",
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.54545;
   font-weight: 300;
   letter-spacing: 1px;
   line-height: 24px;
-  color: var(--c-black)
-}
-
-.socialShareLinksListLink--instagram {
-  background-image: url("../img/ico-instagram@2x.png")
-}
-
-.socialShareLinksListLink--fb {
-  background-image: url("../img/ico-fb@2x.png")
-}
-
-.socialShareLinksListLink--vk {
-  background-image: url("../img/ico-vk@2x.png")
-}
-
-.socialShareLinksListLink--telegram {
-  background-image: url("../img/ico-telegram@2x.png")
+  color: var(--c-black);
 }
 
 @media screen and (max-width: 520px) {
   .socialShareLinks {
     border-top: 1px solid var(--c-black);
     border-bottom: 1px solid var(--c-black);
-    margin-bottom: 15px
+    margin-bottom: 15px;
   }
   .socialShareLinksList {
     -webkit-box-orient: vertical;
@@ -435,18 +413,18 @@
     flex-direction: column;
     -webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center
+    align-items: center;
   }
   .socialShareLinksListItem {
     border-left: 0;
-    margin-bottom: 20px
+    margin-bottom: 20px;
   }
   .socialShareLinksListItem:last-child {
-    margin: 0
+    margin: 0;
   }
   .socialShareLinksListLink {
     background: none;
-    padding: 0
+    padding: 0;
   }
 }
 

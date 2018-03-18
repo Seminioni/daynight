@@ -1,21 +1,27 @@
-.textContainer{
-  h1{
+//Core styles
+.textContainer {
+  h1 {
     @include textNormalSize();
     font-weight: 500;
   }
-  
-  p{
+
+  p {
     @include textNormalSize();
     padding: 0 25px;
     margin-bottom: 16px;
-    
-    &:last-child{
+
+    &:last-child {
       margin-bottom: 0;
     }
   }
-  
-  img{
+
+  img {
     width: 100%;
     margin-bottom: 20px;
   }
 }
+//End core styles
+
+//Mods
+
+//End mods

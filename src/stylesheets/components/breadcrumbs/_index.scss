@@ -1,15 +1,21 @@
-.breadcrumbs{
+//Core styles
+.breadcrumbs {
   width: 100%;
 }
 
-.breadcrumbsLink{
+.breadcrumbsLink {
   display: inline-block;
   @include textNormalSize();
   color: var(--c-grey);
   padding-left: 4px;
-  
-  &:before{
-    content: '<';
+
+  &:before {
+    content: "<";
     padding-right: 8px;
   }
 }
+//End core styles
+
+//Mods
+
+//End mods
