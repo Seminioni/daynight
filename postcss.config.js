@@ -1,4 +1,6 @@
 let plugins = [
+  require('stylelint')({}),
+  require("postcss-reporter")({ clearReportedMessages: true }),
   require("postcss-flexbugs-fixes")({}),
   require("postcss-normalize")({
     allowDuplicates: true

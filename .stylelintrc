@@ -7,7 +7,6 @@
         "color-hex-case": "upper",
         "color-hex-length": "long",
         "color-named": "never",
-        "selector-no-id": true,
         "selector-combinator-space-after": "always",
         "selector-attribute-quotes": "always",
         "selector-attribute-operator-space-before": "never",
@@ -23,10 +22,14 @@
         "font-family-name-quotes": "always-unless-keyword",
         "comment-whitespace-inside": "always",
         "at-rule-no-vendor-prefix": true,
+        "at-rule-empty-line-before": [
+          "always",
+          except: ["after-same-name", "inside-block", "blockless-after-same-name-blockless", "blockless-after-blockless", "first-nested"],
+          ignore: ["after-comment", "first-nested", "inside-block", "blockless-after-same-name-blockless", "blockless-after-blockless"]
+        ],
         "rule-empty-line-before": "always-multi-line",
         "selector-pseudo-element-colon-notation": "single",
         "selector-pseudo-class-parentheses-space-inside": "always",
-        "selector-no-universal": true,
         "media-feature-range-operator-space-before": "always",
         "media-feature-range-operator-space-after": "always",
         "media-feature-parentheses-space-inside": "never",
