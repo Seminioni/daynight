@@ -1,13 +1,14 @@
 //Core styles
 .sidebar {
   display: none;
-  position: relative;
   flex-basis: 156px;
-  min-height: 100%;
   flex-shrink: 0;
+  min-height: 100%;
   padding-right: 20px;
+  position: relative;
   @media (--m) {
     display: block;
+
     .form {
       margin-top: 120px;
     }

@@ -1,15 +1,15 @@
 //Core styles
 .modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  align-items: center;
   background-color: color(var(--c-white) l(90%));
+  bottom: 0;
   display: none;
   justify-content: center;
-  align-items: center;
+  left: 0;
   padding: 10px;
+  position: fixed;
+  right: 0;
+  top: 0;
   z-index: 100000000;
 
   &.active {
@@ -18,39 +18,40 @@
 }
 
 .modalContainer {
-  width: 100%;
+  background-color: var(--c-white);
+  background-image: url('../../img/img-modal.jpg');
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: 286px auto;
+  border: 1px solid var(--c-black);
   max-width: 668px;
   min-height: 333px;
-  background-color: var(--c-white);
-  border: 1px solid var(--c-black);
   padding-left: 286px;
-  background-image: url("../../img/img-modal.jpg");
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  background-size: 286px auto;
   padding-top: 42px;
   position: relative;
+  width: 100%;
   z-index: 1;
   @media (--m) {
-    padding-left: 0;
     background-image: none;
     max-width: 360px;
+    padding-left: 0;
   }
+
   .logo {
-    width: 229px;
     margin-bottom: 20px;
+    width: 229px;
   }
 }
 
 .modalClose {
-  width: 20px;
-  height: 20px;
-  background: url("../../img/img-cross.svg") center center no-repeat;
-  position: absolute;
-  top: 15px;
-  right: 19px;
-  z-index: 2;
+  background: url('../../img/img-cross.svg') center center no-repeat;
   cursor: pointer;
+  height: 20px;
+  position: absolute;
+  right: 19px;
+  top: 15px;
+  width: 20px;
+  z-index: 2;
 }
 //End core styles
 

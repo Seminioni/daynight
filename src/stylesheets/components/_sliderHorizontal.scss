@@ -1,12 +1,14 @@
 .sliderHorizontal{
-  width: 100%;
   height: 250px;
   overflow: hidden;
+  width: 100%;
 }
+
 .sliderHorizontalContainer{
-  width: auto;
   white-space: nowrap;
+  width: auto;
 }
+
 .sliderHorizontalImg{
   display: inline-block;
 }

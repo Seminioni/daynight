@@ -1,6 +1,6 @@
 .productCard {
-  width: 100%;
   padding: 0 25px 25px;
+  width: 100%;
 
   .formButton--favorite {
     display: none;
@@ -18,16 +18,16 @@
 }
 
 .productGallery {
+  margin-bottom: 15px;
   position: relative;
   width: 100%;
-  margin-bottom: 15px;
 }
 
 .productGalleryContainer {
+  margin: 0 auto;
+  max-width: 325px;
   position: relative;
   width: calc(100% - 40px);
-  max-width: 325px;
-  margin: 0 auto;
 }
 
 .productGalleryImg {
@@ -39,17 +39,17 @@
 }
 
 .productName {
-  display: block;
   @include textNormalSize();
   color: var(--c-black);
+  display: block;
   font-weight: 500;
   margin-bottom: 5px;
 }
 
 .productNameLink {
   @include textNormalSize();
-  font-weight: inherit;
   color: var(--c-black);
+  font-weight: inherit;
   text-decoration: none;
 
   &:hover,
@@ -66,9 +66,9 @@
 }
 
 .productType {
-  display: block;
   @include textNormalSize();
   color: var(--c-black);
+  display: block;
   font-weight: 500;
 }
 
@@ -83,13 +83,13 @@
   color: var(--c-black);
   font-weight: 500;
   position: absolute;
-  top: 0;
   right: 0;
+  top: 0;
 }
 
 .productSizes {
-  position: relative;
   margin: 5px 0 25px;
+  position: relative;
 }
 
 .productCurrentSize {
@@ -97,9 +97,9 @@
 }
 
 .productCurrentSizeLabel {
-  display: inline-block;
   @include textNormalSize();
   color: var(--c-black);
+  display: inline-block;
   font-weight: 500;
   margin-right: 16px;
 }
@@ -111,12 +111,12 @@
 }
 
 .productTableOfSizesAnchor {
-  position: absolute;
-  top: 4px;
-  right: 0;
   @include textNormalSize();
   color: var(--c-black);
   cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 4px;
 }
 
 .productCardGrid {
@@ -136,6 +136,7 @@
 
 .productCardFooter {
   padding-top: 25px;
+
   .socials {
     margin: 0 auto;
   }
@@ -150,6 +151,7 @@
     .productDescriptionInner {
       height: unset;
     }
+
     .productDescriptionBtn {
       display: none;
     }
@@ -158,14 +160,14 @@
 
 .productDescriptionLabel{
   @include textNormalSize();
-  margin-top: 15px;
   margin-bottom: 6px;
+  margin-top: 15px;
 }
 
 .productDescriptionInner {
-  overflow: hidden;
-  height: 32px;
   @include textNormalSize();
+  height: 32px;
+  overflow: hidden;
 
   p {
     @include textNormalSize();
@@ -199,7 +201,6 @@
     }
   }
 }
-
 @media screen and (min-width: $tablet) {
   .productCard {
     padding: 0;
@@ -209,9 +210,9 @@
     }
 
     .formButton{
-      max-width: 165px;
       margin-left: 0;
       margin-right: 0;
+      max-width: 165px;
     }
 
     .formButton--favorite {
@@ -220,10 +221,10 @@
   }
 
   .productCardInner {
+    align-items: flex-start;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    align-items: flex-start;
   }
 
   .productGallery,
@@ -251,9 +252,9 @@
     position: relative;
 
     &:after {
+      border-top: 1px solid var(--c-black);
       content: '';
       display: inline-block;
-      border-top: 1px solid var(--c-black);
       position: relative;
       transform: translateX(0);
     }
@@ -266,8 +267,8 @@
   }
 
   .productSizes {
-    margin-top: 15px;
     margin-bottom: 70px;
+    margin-top: 15px;
   }
 
   .productCardFooter {

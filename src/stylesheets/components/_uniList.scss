@@ -1,55 +1,55 @@
 .uniList {
-  width: 100%;
+  align-items: flex-start;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  align-items: flex-start;
   padding-left: 19px;
   padding-right: 19px;
+  width: 100%;
 }
 
 .uniItem {
+  color: var(--c-black);
   display: block;
-  width: 50%;
   margin-bottom: 18px;
   padding-left: 4px;
   padding-right: 4px;
-  color: var(--c-black);
+  width: 50%;
 }
 
 .uniItemCover {
   display: block;
-  position: relative;
-  overflow: hidden;
-  width: 100%;
   height: 270px;
   margin-bottom: 9px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
 }
 
 .uniItemCoverImg {
-  height: 100px;
+  height: 100%;
+  left: 50%;
   position: absolute;
   top: 0;
-  left: 50%;
   transform: translateX(-50%);
 }
 
 .uniItemDate {
-  display: block;
   @include textSmallSize();
+  display: block;
   line-height: 1;
   margin-bottom: 1px;
 }
 
 .uniItemTitle {
-  display: block;
   @include textNormalSize();
+  display: block;
   font-weight: 500;
 }
 
 .uniItemPrice {
-  display: block;
   @include textNormalSize();
+  display: block;
 }
 
 // Mods
@@ -62,13 +62,16 @@
   .uniItem {
     margin-bottom: 20px;
   }
+
   .uniItemCover,
   .uniItemCoverImg {
     height: 228px;
   }
+
   .uniItemCover {
     margin-bottom: 6px;
   }
+
   .uniItemTitle {
     margin-bottom: 1px;
   }
@@ -76,23 +79,23 @@
   .uniItemShoes {
     .uniItemCoverImg {
       height: 117px;
-      transform: translate(-50%, -50%);
-      top: 50%;
       left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
     }
   }
 }
 
 .uniItem--sale,
 .uniItem--new {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  z-index: 1;
   @include textSmallSize();
+  bottom: 0;
   color: var(--c-white);
-  text-transform: uppercase;
+  left: 0;
   padding: 2px 7px 3px;
+  position: absolute;
+  text-transform: uppercase;
+  z-index: 1;
 }
 
 .uniItem--sale {
@@ -104,8 +107,8 @@
 }
 
 .uniItem--zero {
-  margin: 0 !important;
   height: 0;
+  margin: 0 !important;
 }
 
 .uniList--withAsymmetry {
@@ -120,8 +123,8 @@
     &:nth-child(odd) {
       .uniItem {
         &:nth-child(1) {
-          width: 100%;
           max-width: 330px;
+          width: 100%;
 
           .uniItemCover {
             height: 450px;
@@ -133,8 +136,8 @@
         }
 
         &:nth-child(2) {
-          width: 100%;
           max-width: 297px;
+          width: 100%;
 
           .uniItemCover {
             height: 350px;
@@ -150,8 +153,8 @@
     &:nth-child(even) {
       .uniItem {
         &:nth-child(1) {
-          width: 100%;
           max-width: 279px;
+          width: 100%;
 
           .uniItemCover {
             height: 350px;
@@ -163,8 +166,8 @@
         }
 
         &:nth-child(2) {
-          width: 100%;
           max-width: 303px;
+          width: 100%;
 
           .uniItemCover {
             height: 400px;
@@ -179,15 +182,16 @@
   }
 }
 
-@media screen and (max-width: $pre-mobile) {
+@media (--s) {
   .uniList--withOnlyImgs {
     flex-direction: column;
-    padding: 0;
     margin-bottom: 20px;
+    padding: 0;
 
     .uniItem {
       width: 100%;
     }
+
     .uniItem,
     .uniItemDate,
     .uniItemTitle,
@@ -202,36 +206,32 @@
     }
   }
 }
-
 @media screen and (min-width: 540px) {
   .uniList--withAsymmetry {
     .uniItem {
-      padding: 0 16px;
       margin: 0;
+      padding: 0 16px;
     }
 
     .uniListRow {
-      display: flex;
       align-items: flex-end;
+      display: flex;
       justify-content: space-between;
       margin-bottom: 42px;
     }
   }
 }
-
 @media screen and (min-width: $pre-mobile) {
   .uniList {
     padding: 0;
   }
 }
-
 @media screen and (min-width: 730px) {
   .uniItem {
-    width: 180px;
     margin-bottom: 42px;
+    width: 180px;
   }
 }
-
 @media screen and (min-width: 750px) {
   .uniList:not(.uniList--long) {
     .uniItem {
@@ -239,7 +239,6 @@
     }
   }
 }
-
 @media screen and (min-width: 828px) {
   .uniList--long {
     .uniItem {
@@ -247,17 +246,17 @@
     }
   }
 }
-
 @media screen and (min-width: 838px) {
   .uniList--long {
     .uniItem {
       padding: 0;
     }
   }
+
   .uniList--withAsymmetry {
     .uniItem {
-      padding: 0;
       margin: 0;
+      padding: 0;
     }
   }
 }

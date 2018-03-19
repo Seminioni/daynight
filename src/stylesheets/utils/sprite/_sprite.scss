@@ -10,27 +10,27 @@
 // At the bottom of this section, we provide information about the spritesheet itself
 // $spritesheet: width height image $spritesheet-sprites;
 $icon-burger-name: 'icon-burger';
-$icon-burger-x: 0px;
-$icon-burger-y: 0px;
-$icon-burger-offset-x: 0px;
-$icon-burger-offset-y: 0px;
+$icon-burger-x: 0;
+$icon-burger-y: 0;
+$icon-burger-offset-x: 0;
+$icon-burger-offset-y: 0;
 $icon-burger-width: 54px;
 $icon-burger-height: 45px;
 $icon-burger-total-width: 69px;
 $icon-burger-total-height: 54px;
 $icon-burger-image: 'sprite.png';
-$icon-burger: (0px, 0px, 0px, 0px, 54px, 45px, 69px, 54px, 'sprite.png', 'icon-burger', );
+$icon-burger: (0, 0, 0, 0, 54px, 45px, 69px, 54px, 'sprite.png', 'icon-burger', );
 $icon-exit-name: 'icon-exit';
 $icon-exit-x: 54px;
-$icon-exit-y: 0px;
+$icon-exit-y: 0;
 $icon-exit-offset-x: -54px;
-$icon-exit-offset-y: 0px;
+$icon-exit-offset-y: 0;
 $icon-exit-width: 15px;
 $icon-exit-height: 14px;
 $icon-exit-total-width: 69px;
 $icon-exit-total-height: 54px;
 $icon-exit-image: 'sprite.png';
-$icon-exit: (54px, 0px, -54px, 0px, 15px, 14px, 69px, 54px, 'sprite.png', 'icon-exit', );
+$icon-exit: (54px, 0, -54px, 0, 15px, 14px, 69px, 54px, 'sprite.png', 'icon-exit', );
 $icon-loop-gold-name: 'icon-loop--gold';
 $icon-loop-gold-x: 54px;
 $icon-loop-gold-y: 14px;
@@ -54,38 +54,38 @@ $icon-loop-total-height: 54px;
 $icon-loop-image: 'sprite.png';
 $icon-loop: (54px, 29px, -54px, -29px, 12px, 15px, 69px, 54px, 'sprite.png', 'icon-loop', );
 $icon-top-arrow-name: 'icon-top-arrow';
-$icon-top-arrow-x: 0px;
+$icon-top-arrow-x: 0;
 $icon-top-arrow-y: 45px;
-$icon-top-arrow-offset-x: 0px;
+$icon-top-arrow-offset-x: 0;
 $icon-top-arrow-offset-y: -45px;
 $icon-top-arrow-width: 21px;
 $icon-top-arrow-height: 9px;
 $icon-top-arrow-total-width: 69px;
 $icon-top-arrow-total-height: 54px;
 $icon-top-arrow-image: 'sprite.png';
-$icon-top-arrow: (0px, 45px, 0px, -45px, 21px, 9px, 69px, 54px, 'sprite.png', 'icon-top-arrow', );
+$icon-top-arrow: (0, 45px, 0, -45px, 21px, 9px, 69px, 54px, 'sprite.png', 'icon-top-arrow', );
 $icon-burger-2x-name: 'icon-burger@2x';
-$icon-burger-2x-x: 0px;
-$icon-burger-2x-y: 0px;
-$icon-burger-2x-offset-x: 0px;
-$icon-burger-2x-offset-y: 0px;
+$icon-burger-2x-x: 0;
+$icon-burger-2x-y: 0;
+$icon-burger-2x-offset-x: 0;
+$icon-burger-2x-offset-y: 0;
 $icon-burger-2x-width: 108px;
 $icon-burger-2x-height: 90px;
 $icon-burger-2x-total-width: 138px;
 $icon-burger-2x-total-height: 108px;
 $icon-burger-2x-image: 'sprite@2x.png';
-$icon-burger-2x: (0px, 0px, 0px, 0px, 108px, 90px, 138px, 108px, 'sprite@2x.png', 'icon-burger@2x', );
+$icon-burger-2x: (0, 0, 0, 0, 108px, 90px, 138px, 108px, 'sprite@2x.png', 'icon-burger@2x', );
 $icon-exit-2x-name: 'icon-exit@2x';
 $icon-exit-2x-x: 108px;
-$icon-exit-2x-y: 0px;
+$icon-exit-2x-y: 0;
 $icon-exit-2x-offset-x: -108px;
-$icon-exit-2x-offset-y: 0px;
+$icon-exit-2x-offset-y: 0;
 $icon-exit-2x-width: 30px;
 $icon-exit-2x-height: 28px;
 $icon-exit-2x-total-width: 138px;
 $icon-exit-2x-total-height: 108px;
 $icon-exit-2x-image: 'sprite@2x.png';
-$icon-exit-2x: (108px, 0px, -108px, 0px, 30px, 28px, 138px, 108px, 'sprite@2x.png', 'icon-exit@2x', );
+$icon-exit-2x: (108px, 0, -108px, 0, 30px, 28px, 138px, 108px, 'sprite@2x.png', 'icon-exit@2x', );
 $icon-loop-gold-2x-name: 'icon-loop--gold@2x';
 $icon-loop-gold-2x-x: 108px;
 $icon-loop-gold-2x-y: 28px;
@@ -109,16 +109,16 @@ $icon-loop-2x-total-height: 108px;
 $icon-loop-2x-image: 'sprite@2x.png';
 $icon-loop-2x: (108px, 58px, -108px, -58px, 24px, 30px, 138px, 108px, 'sprite@2x.png', 'icon-loop@2x', );
 $icon-top-arrow-2x-name: 'icon-top-arrow@2x';
-$icon-top-arrow-2x-x: 0px;
+$icon-top-arrow-2x-x: 0;
 $icon-top-arrow-2x-y: 90px;
-$icon-top-arrow-2x-offset-x: 0px;
+$icon-top-arrow-2x-offset-x: 0;
 $icon-top-arrow-2x-offset-y: -90px;
 $icon-top-arrow-2x-width: 42px;
 $icon-top-arrow-2x-height: 18px;
 $icon-top-arrow-2x-total-width: 138px;
 $icon-top-arrow-2x-total-height: 108px;
 $icon-top-arrow-2x-image: 'sprite@2x.png';
-$icon-top-arrow-2x: (0px, 90px, 0px, -90px, 42px, 18px, 138px, 108px, 'sprite@2x.png', 'icon-top-arrow@2x', );
+$icon-top-arrow-2x: (0, 90px, 0, -90px, 42px, 18px, 138px, 108px, 'sprite@2x.png', 'icon-top-arrow@2x', );
 $spritesheet-width: 69px;
 $spritesheet-height: 54px;
 $spritesheet-image: 'sprite.png';
@@ -169,25 +169,24 @@ $retina-groups: ($icon-burger-group, $icon-exit-group, $icon-loop-gold-group, $i
 //
 // // HTML
 // <i class="icon icon-home"></i>
+
 @mixin sprite-width($sprite) {
   width: nth($sprite, 5);
 }
-
 @mixin sprite-height($sprite) {
   height: nth($sprite, 6);
 }
-
 @mixin sprite-position($sprite) {
   $sprite-offset-x: nth($sprite, 3);
   $sprite-offset-y: nth($sprite, 4);
+
   background-position: $sprite-offset-x  $sprite-offset-y;
 }
-
 @mixin sprite-image($sprite) {
   $sprite-image: nth($sprite, 9);
+
   background-image: url(#{$sprite-image});
 }
-
 @mixin sprite($sprite) {
   @include sprite-image($sprite);
   @include sprite-position($sprite);
@@ -205,19 +204,19 @@ $retina-groups: ($icon-burger-group, $icon-exit-group, $icon-loop-gold-group, $i
 // .icon-home {
 //   @include retina-sprite($icon-home-group);
 // }
+
 @mixin sprite-background-size($sprite) {
   $sprite-total-width: nth($sprite, 7);
   $sprite-total-height: nth($sprite, 8);
+
   background-size: $sprite-total-width $sprite-total-height;
 }
-
 @mixin retina-sprite($retina-group) {
   $normal-sprite: nth($retina-group, 2);
   $retina-sprite: nth($retina-group, 3);
   @include sprite($normal-sprite);
-
   @media (-webkit-min-device-pixel-ratio: 2),
-         (min-resolution: 192dpi) {
+    (min-resolution: 192dpi) {
     @include sprite-image($retina-sprite);
     @include sprite-background-size($normal-sprite);
   }
@@ -227,9 +226,11 @@ $retina-groups: ($icon-burger-group, $icon-exit-group, $icon-loop-gold-group, $i
 //   but can be overridden inside of SCSS
 //
 // @include sprites($spritesheet-sprites);
+
 @mixin sprites($sprites) {
   @each $sprite in $sprites {
     $sprite-name: nth($sprite, 10);
+
     .#{$sprite-name} {
       @include sprite($sprite);
     }
@@ -240,9 +241,11 @@ $retina-groups: ($icon-burger-group, $icon-exit-group, $icon-loop-gold-group, $i
 //   This yields the same output as CSS retina template but can be overridden in SCSS
 //
 // @include retina-sprites($retina-groups);
+
 @mixin retina-sprites($retina-groups) {
   @each $retina-group in $retina-groups {
     $sprite-name: nth($retina-group, 1);
+
     .#{$sprite-name} {
       @include retina-sprite($retina-group);
     }

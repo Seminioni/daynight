@@ -1,11 +1,11 @@
 //Core styles
 .socials {
+  align-items: flex-start;
   display: inline-flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  align-items: flex-start;
-  width: 100%;
   max-width: 120px;
+  width: 100%;
 }
 
 .socials__link {

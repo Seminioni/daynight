@@ -36,6 +36,7 @@
 .sprite,
 .link-as-icon {
   display: inline-block;
+
   svg {
     width: 100%;
     height: 100%;
@@ -46,28 +47,32 @@
   position: absolute;
   width: 25px;
   height: 25px;
+
   &:after,
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     top: 50%;
     height: 1px;
     width: 15px;
     left: 50%;
-    top: 50%;
     background-color: var(--c-black);
     @media (--m) {
       background-color: var(--c-black);
       @include setTransitionFor(background);
     }
   }
+
   &:after {
     transform: translate(-50%, -50%) rotate(45deg);
   }
+
   &:before {
     transform: translate(-50%, -50%) rotate(-45deg);
   }
+
   &:hover {
+
     &:after,
     &:before {
       background-color: var(--с-black);
@@ -82,12 +87,14 @@
   width: 40px;
   height: 40px;
   transform: translateY(-50%);
+
   &:hover {
     cursor: pointer;
   }
+
   &:after,
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     top: 50%;
     height: 1px;
@@ -95,39 +102,49 @@
     background-color: color(var(--c-black) l(80%));
     @include setTransitionFor(background);
   }
+
   &--prev {
     left: -32px;
+
     &:after,
     &:before {
       left: 0;
       transform: translateY(-50%, -50%);
     }
+
     &:after {
       transform-origin: 0 100%;
       transform: rotate(45deg);
     }
+
     &:before {
       transform-origin: 0 100%;
       transform: rotate(-45deg);
     }
   }
+
   &--next {
     right: -32px;
+
     &:after,
     &:before {
       right: 0;
       transform: translateY(-50%, -50%);
     }
+
     &:after {
       transform-origin: 100% 0%;
       transform: rotate(45deg);
     }
+
     &:before {
       transform-origin: 100% 0%;
       transform: rotate(-45deg);
     }
   }
+
   &:hover {
+
     &:after,
     &:before {
       background-color: color(var(--c-black) l(0));

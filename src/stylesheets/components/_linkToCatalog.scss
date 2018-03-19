@@ -1,12 +1,12 @@
 .linkToCatalog{
-  width: 80px;
-  position: fixed;
-  bottom: 30px;
-  z-index: 3;
-  text-transform: uppercase;
   background: transparent;
+  bottom: 30px;
   left: 50%;
+  position: fixed;
+  text-transform: uppercase;
   transform: translateX(-50%);
+  width: 80px;
+  z-index: 3;
 
   &:hover,
   &:focus,
@@ -17,22 +17,23 @@
 }
 
 .linkToCatalogText{
-  display: block;
-  text-align: center;
   @include rhythm(13,15);
+  color: var(--c-black);
+  display: block;
   font-weight: 300;
   margin-bottom: 11px;
-  color: var(--c-black);
+  text-align: center;
 
   &:first-child{
     font-weight: 500;
   }
 }
+
 .linkToCatalogArrow{
+  @include arrow();
   display: block;
   margin: 18px auto 0;
   z-index:3;
-  @include arrow();
 }
 
 @media screen and (min-width: $pre-mobile){

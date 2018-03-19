@@ -3,20 +3,20 @@
 }
 
 .postHeader{
-  position: relative;
   padding-left: 26px;
   padding-right: 26px;
+  position: relative;
 }
 
 .postBackLink{
-  position: absolute;
-  top: 0;
-  right: 26px;
-  display: inline-block;
-  width: 40px;
-  height: 40px;
   background: url('../img/img-cross16x16.svg') top right no-repeat;
   cursor: pointer;
+  display: inline-block;
+  height: 40px;
+  position: absolute;
+  right: 26px;
+  top: 0;
+  width: 40px;
 
   &:active{
     .postBackLinkText{
@@ -24,10 +24,11 @@
     }
   }
 }
+
 .postBackLinkText{
-  display: none;
   @include rhythm(9,11);
   color: var(--c-grey);
+  display: none;
 
   &:before{
     content: '< ';
@@ -37,9 +38,9 @@
 .postTitle{
   @include textNormalSize();
   font-weight: 500;
-  text-transform: uppercase;
-  padding-right: 44px;
   margin-bottom: 8px;
+  padding-right: 44px;
+  text-transform: uppercase;
 }
 
 .postCreated{
@@ -47,8 +48,8 @@
 }
 
 .postContent{
-  padding: 15px 26px;
   @include textNormalSize();
+  padding: 15px 26px;
 
   h2{
     @include textNormalSize();
@@ -84,10 +85,10 @@
   }
 
   img{
-    margin-bottom: 15px;
-    width: auto;
-    max-width: 100%;
     height: auto;
+    margin-bottom: 15px;
+    max-width: 100%;
+    width: auto;
   }
 
   ul{
@@ -95,10 +96,11 @@
     margin-bottom: 20px;
 
     li{
+      margin-bottom: 5px;
+
       &:before{
         content: '- ';
       }
-      margin-bottom: 5px;
     }
   }
 
@@ -124,14 +126,14 @@
 
 @media screen and (min-width: $pre-mobile) {
   .postBackLink{
-    position: unset;
-    top: unset;
-    right: unset;
-    display: block;
-    width: 250px;
-    height: unset;
     background: none;
+    display: block;
+    height: unset;
     margin-bottom: 15px;
+    position: unset;
+    right: unset;
+    top: unset;
+    width: 250px;
   }
 
   .postContent--only20th{

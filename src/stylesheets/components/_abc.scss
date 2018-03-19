@@ -1,21 +1,21 @@
 .abcMobile {
-  width: 100%;
-  position: relative;
   padding-bottom: 100px;
+  position: relative;
+  width: 100%;
 }
 
 .abcMobileGrid {
+  align-items: center;
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
-  align-items: center;
-  width: 250px;
   margin: 0 auto;
+  width: 250px;
 
   &.active{
+    padding: 0 25px;
     position: relative;
     width: 100%;
-    padding: 0 25px;
 
     .abcMobileLetter:not(.active){
       display: none;
@@ -29,6 +29,7 @@
       .abcMobileListWords{
         display: block;
       }
+
       .abcMobileListWord {
         line-height: 2;
       }
@@ -37,13 +38,13 @@
 }
 
 .abcMobileLetter {
+  height: 50px;
   position: relative;
   width: 50px;
-  height: 50px;
 
   &.active{
-    width: 100%;
     height: unset;
+    width: 100%;
   }
 }
 
@@ -67,8 +68,8 @@
 }
 
 .abcMobileCurrentChoice {
-  width: calc(100% - 50px);
   margin: 0 auto 50px;
+  width: calc(100% - 50px);
 
   &.active {
     .abcMobileCurrentChoiceValue {
@@ -83,42 +84,42 @@
 
 .abcMobileCurrentChoiceValue {
   @include textNormalSize();
+  border-bottom: 1px solid var(--c-black);
   color: var(--c-light-grey);
   padding: 5px 0;
-  border-bottom: 1px solid var(--c-black);
 }
 
 .abcMobileCurrentChoiceReset {
-  display: none;
   @include textNormalSize();
+  background-color: var(--c-white);
+  display: none;
+  padding: 16px;
   position: absolute;
   right: 25px;
-  background-color: var(--c-white);
-  padding: 16px;
   z-index: 1;
 }
 
 .abc {
-  width: 100%;
+  align-items: flex-start;
   display: none;
   flex-flow: row nowrap;
   justify-content: space-between;
-  align-items: flex-start;
   margin: 0 auto;
+  width: 100%;
 }
 
 .abcRow {
-  width: 100%;
+  align-items: flex-start;
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
-  align-items: flex-start;
+  width: 100%;
 }
 
 .abcLetter {
-  width: 100%;
-  padding-right: 20px;
   margin-bottom: 12px;
+  padding-right: 20px;
+  width: 100%;
 }
 
 .abcLetterName {
@@ -128,8 +129,8 @@
 }
 
 .abcListWords {
-  width: 100%;
   @include reset-button();
+  width: 100%;
 
 }
 
@@ -150,6 +151,7 @@
   .abc {
     display: flex;
   }
+
   .abcMobile {
     display: none;
   }

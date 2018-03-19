@@ -1,8 +1,9 @@
 //Core styles
 .spoiler__container {
-  overflow: hidden;
   @include setTransitionFor(max-height, opacity);
   max-height: 1800px;
+  overflow: hidden;
+
   &.is-collapsed {
     max-height: 0;
     opacity: 0;

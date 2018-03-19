@@ -4,7 +4,6 @@
   font-size: $sizeValue + px;
   line-height: $heightValue / $sizeValue;
 }
-
 @mixin reset-button {
   overflow : visible;
   margin : 0;
@@ -17,62 +16,57 @@
   -moz-user-select : text;
 
   &::-moz-focus-inner {
-      padding : 0;
-      border : 0;
+    padding : 0;
+    border : 0;
   }
 }
-
 @mixin button-size($padding-y, $padding-x, $font-size, $line-height, $border-radius) {
   padding: $padding-y $padding-x;
   font-size: $font-size;
   line-height: $line-height;
   border-radius: $border-radius;
 }
-
 @mixin setTransitionFor($properties...) {
   transition: 0.2s ease-in-out;
   transition-property: $properties;
 }
-
 @mixin arrowSmall($side) {
   position: relative;
   display: inline-block;
   @if $side == right {
+
     &:after,
     &:before {
       vertical-align: text-bottom;
     }
+
     &:after {
       content: '>';
       margin-left: 10px;
     }
   } @else {
+
     &:before {
       content: '<';
       margin-right: 10px;
     }
   }
 }
-
 @mixin optional-at-root($sel) {
   @at-root #{if(not &, $sel, selector-append(&, $sel))} {
     @content;
   }
 }
-
 @mixin placeholder {
   @include optional-at-root('::-webkit-input-placeholder') {
     @content;
   }
-
   @include optional-at-root(':-moz-placeholder') {
     @content;
   }
-
   @include optional-at-root('::-moz-placeholder') {
     @content;
   }
-
   @include optional-at-root(':-ms-input-placeholder') {
     @content;
   }
@@ -83,16 +77,16 @@
 
 @mixin textNormalSize() {
   @include rhythm(11,17);
+
   font-weight: 300;
   letter-spacing: 1px;
 }
-
 @mixin textSmallSize() {
   @include rhythm(9,17);
+
   font-weight: 300;
   letter-spacing: 1px;
 }
-
 @mixin arrow() {
   width: 17px;
   height: 7px;
@@ -121,7 +115,6 @@
     transform: rotate(-32deg);
   }
 }
-
 @mixin arrowSmall() {
   width: 11px;
   height: 6px;

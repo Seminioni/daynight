@@ -4,13 +4,13 @@
 }
 
 .breadcrumbsLink {
-  display: inline-block;
   @include textNormalSize();
   color: var(--c-grey);
+  display: inline-block;
   padding-left: 4px;
 
   &:before {
-    content: "<";
+    content: '<';
     padding-right: 8px;
   }
 }

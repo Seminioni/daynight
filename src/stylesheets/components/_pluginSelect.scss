@@ -1,12 +1,12 @@
 .yuroidStylizedSelectWrapper {
+  border-bottom: 1px solid var(--c-black);
   position: relative;
   width: 100%;
-  border-bottom: 1px solid var(--c-black);
 }
 
 .yuroidStylizedSelectCurrent {
-  width: 100%;
   padding: 10px;
+  width: 100%;
 }
 
 .yuroidStylizedSelectCurrentValue {
@@ -16,11 +16,11 @@
 }
 
 .yuroidStylizedSelectList {
+  background-color: color(var(--c-white) l(80%));
+  background-color: var(--c-light-indigo);
   display: none;
   position: absolute;
   width: 100%;
-  background-color: color(var(--c-white) l(80%));
-  background-color: var(--c-light-indigo);
   z-index: 10;
 
   &.active {
@@ -39,7 +39,7 @@
 }
 
 .yuroidStylizedSelectArrow {
-  display: block;
   @include arrowSmall();
+  display: block;
   float: right;
 }

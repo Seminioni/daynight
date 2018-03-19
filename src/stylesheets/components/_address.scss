@@ -1,16 +1,19 @@
 .address {
-  position: relative;
   padding-top: 33px;
-  
-  &.active{
+  position: relative;
+
+  &.active {
     padding-bottom: 17px;
+
     .addressImgWrapper,
-    .addressPhoneStreetWrapper{
+    .addressPhoneStreetWrapper {
       display: block;
     }
+
     .addressBuild {
       border-bottom-color: transparent;
     }
+
     .addressBuildNameArrow {
       transform: translateY(6px) rotate(180deg);
     }
@@ -18,8 +21,8 @@
 }
 
 .addressImgWrapper {
-  width: 100%;
   display: none;
+  width: 100%;
 }
 
 .addressImg {
@@ -27,12 +30,12 @@
 }
 
 .addressBuild {
+  border-bottom: 1px solid var(--c-black);
+  left: 0;
+  padding: 13px 25px 4px;
   position: absolute;
   top: 0;
-  left: 0;
   width: 100%;
-  border-bottom: 1px solid var(--c-black);
-  padding: 13px 25px 4px;
 }
 
 .addressBuildName {
@@ -40,10 +43,10 @@
 }
 
 .addressBuildNameArrow {
+  @include arrowSmall();
   display: inline-block;
   float: right;
   transform: translateY(8px);
-  @include arrowSmall();
 }
 
 .addressPhoneStreetWrapper {
@@ -52,18 +55,18 @@
 }
 
 .addressStreets {
-  width: 100%;
-  white-space: nowrap;
   margin: 25px 0 10px;
+  white-space: nowrap;
+  width: 100%;
 }
 
 .addressStreet {
-  width: 50%;
+  @include textNormalSize();
   display: inline-block;
   white-space: normal;
-  @include textNormalSize();
-  
-  &:last-child{
+  width: 50%;
+
+  &:last-child {
     padding-left: 5px;
   }
 }
@@ -72,56 +75,64 @@
   @include textNormalSize();
 }
 
-@media screen and (min-width: $pre-mobile){
+@media screen and (min-width: $pre-mobile) {
   .address {
+    align-items: flex-start;
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
-    align-items: flex-start;
     padding: 0 0 20px;
-    
-    &.active{
+
+    &.active {
       padding: 0 0 20px;
     }
   }
+
   .addressBuild {
+    border-bottom: 0;
+    left: unset;
+    margin-bottom: 10px;
+    padding: 0 0 0 20px;
     position: unset;
     top: unset;
-    left: unset;
     width: 100%;
-    border-bottom: 0;
-    padding: 0 0 0 20px;
-    margin-bottom: 10px;
   }
+
   .addressBuildName {
     font-weight: 500;
   }
-  .addressBuildNameArrow{
+
+  .addressBuildNameArrow {
     display: none;
   }
+
   .addressImgWrapper {
-    max-width: 520px;
     display: block;
+    max-width: 520px;
   }
+
   .addressPhoneStreetWrapper {
     display: block;
     padding: 0 0 0 20px;
   }
-  .addressInfo{
-    position: relative;
+
+  .addressInfo {
     max-width: 191px;
+    position: relative;
     width: 100%;
   }
-  .addressStreets{
-    white-space: normal;
+
+  .addressStreets {
     margin: 0;
+    white-space: normal;
   }
-  .addressStreet{
+
+  .addressStreet {
     display: block;
-    width: 100%;
     margin-bottom: 10px;
-    
-    &:last-child{
+    width: 100%;
+
+    &:last-child {
       padding: 0;
     }
   }

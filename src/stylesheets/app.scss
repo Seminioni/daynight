@@ -1,16 +1,16 @@
 // App styles, imports etc...
 
 @import-normalize;
-@import "utils/_vars";
-@import "utils/sprite/_sprite";
-@import "utils/_mixins";
-@import "utils/_resets";
-@import "utils/_links";
-@import "utils/_radiobuttons";
-@import "utils/_buttons";
-@import "utils/_GUI";
-@import "utils/socialShareLinks";
-@import "utils/forms/index";
+@import 'utils/vars';
+@import 'utils/sprite/sprite';
+@import 'utils/mixins';
+@import 'utils/resets';
+@import 'utils/links';
+@import 'utils/radiobuttons';
+@import 'utils/buttons';
+@import 'utils/GUI';
+@import 'utils/socialShareLinks';
+@import 'utils/forms/index';
 
 html,
 body {
@@ -26,6 +26,7 @@ html {
 }
 
 body {
+
   &.mobile-menu-is-open {
     overflow: hidden;
   }
@@ -38,11 +39,12 @@ body {
 }
 
 .container {
+  margin: 0 auto;
   max-width: 888px;
+  min-width: 320px;
   padding-left: 15px;
   padding-right: 15px;
-  min-width: 320px;
-  margin: 0 auto;
+
   &--padding-off {
     padding-left: 0;
     padding-right: 0;
@@ -50,79 +52,81 @@ body {
 }
 
 .wrapper {
-  position: relative;
-  padding-top: 65px;
-  width: 100%;
   min-height: 100%;
+  padding-top: 65px;
+  position: relative;
+  width: 100%;
   @media (--m) {
-    padding-top: 0;
     min-height: calc(100% - 135px);
+    padding-top: 0;
   }
 }
 
 .main {
-  position: relative;
+  @extend .container;
+
+  align-items: stretch;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: flex-start;
-  align-items: stretch;
-  min-height: 500px;
   height: 100%;
-  @extend .container;
-  padding-right: 0;
+  justify-content: flex-start;
+  min-height: 500px;
   padding-left: 0;
+  padding-right: 0;
+  position: relative;
   @media (--m) {
-    padding-right: 10px;
     padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
 .main__container {
-  width: 100%;
   max-width: 710px;
+  width: 100%;
 }
 
 .btnCross {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  top: 0;
-  right: 0;
-  overflow: hidden;
-  background: url("../img/img-cross16x16.svg") center center no-repeat;
+  background: url('../img/img-cross16x16.svg') center center no-repeat;
   cursor: pointer;
+  height: 16px;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 16px;
 }
 
 .commonMsg {
   @include textNormalSize();
+
   margin: 0 0 15px;
 }
 
-@import "components/abc";
-@import "components/address";
-@import "components/basket";
-@import "components/burger/_index";
-@import "components/breadcrumbs/_index";
-@import "components/filter";
-@import "components/footer/_index";
-@import "components/header/_index";
-@import "components/latest";
-@import "components/linkToCatalog";
-@import "components/navigation/_index";
-@import "components/modals/_index";
-@import "components/mobile-menu/_index";
-@import "components/optionalContent";
-@import "components/others";
-@import "components/paginator/_index";
-@import "components/popup/_index";
-@import "components/pluginSelect";
-@import "components/productCard";
-@import "components/sidebar/_index";
-@import "components/spoiler/_index";
-@import "components/sliderHorizontal";
-@import "components/socials/_index";
-@import "components/post";
-@import "components/uniAccordion";
-@import "components/uniList";
-@import "components/text";
-@import "components/tour";
+@import 'components/abc';
+@import 'components/address';
+@import 'components/basket';
+@import 'components/burger/index';
+@import 'components/breadcrumbs/index';
+@import 'components/filter';
+@import 'components/footer/index';
+@import 'components/header/index';
+@import 'components/latest';
+@import 'components/linkToCatalog';
+@import 'components/navigation/index';
+@import 'components/modals/index';
+@import 'components/mobile-menu/index';
+@import 'components/optionalContent';
+@import 'components/others';
+@import 'components/paginator/index';
+@import 'components/popup/index';
+@import 'components/pluginSelect';
+@import 'components/productCard';
+@import 'components/sidebar/index';
+@import 'components/spoiler/index';
+@import 'components/sliderHorizontal';
+@import 'components/socials/index';
+@import 'components/post';
+@import 'components/uniAccordion';
+@import 'components/uniList';
+@import 'components/text';
+@import 'components/tour';

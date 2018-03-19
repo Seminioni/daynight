@@ -1,36 +1,38 @@
 //Core styles
 .mobile-menu {
-  display: none;
-  width: 100%;
-  position: fixed;
-  top: 65px;
-  left: 0;
-  right: 0;
-  bottom: 0;
   background-color: var(--c-white);
-  z-index: 1000000;
-  padding: 10px 35px 35px 35px;
+  bottom: 0;
+  display: none;
+  left: 0;
   overflow-y: scroll;
-  @media (--m) {
-    display: none;
-  }
+  padding: 10px 35px 35px;
+  position: fixed;
+  right: 0;
+  top: 65px;
+  width: 100%;
+  z-index: 1000000;
+
   &.is-open {
     display: unset;
     @media (--m) {
       display: none;
     }
   }
+
   .btn-cross {
+    @include reset-button();
+    height: 60px;
     position: absolute;
     right: 16px;
-    top: 0px;
+    top: 0;
     width: 40px;
-    height: 60px;
-    @include reset-button();
   }
 
   .form--mobile-menu {
     padding-bottom: 0;
+  }
+  @media (--m) {
+    display: none;
   }
 
 }
@@ -44,33 +46,36 @@
     @include rhythm(12, 20);
     color: var(--c-grey);
   }
+
   .nav__link--heading {
-    color: var(--c-black);
     @include rhythm(16,28);
+    color: var(--c-black);
   }
 
   .nav__links--site-sections {
-    margin-top: 35px;
     margin-bottom: 60px;
+    margin-top: 35px;
     padding-top: 25px;
+
     &:before {
+      border-top: 1px solid #000000;
       content: '';
       display: block;
-      width: 110px;
-      border-top: 1px solid #000;
       transform: translateY(-25px);
+      width: 110px;
     }
+
     .nav__link {
-      @include rhythm(14,28)
+      @include rhythm(14,28);
     }
   }
-
 }
 
 .nav--service {
   .nav__link {
-    font-size: 14px;
     color: var(--c-black);
+    font-size: 14px;
+
     &:not(:last-of-type) {
       margin-right: 10px;
     }

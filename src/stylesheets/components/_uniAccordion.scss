@@ -1,29 +1,15 @@
-.uniAccordion {
-  margin: 24px 0 0;
-  &.active {
-    .uniAccordionName {
-      margin-bottom: 10px;
-    }
-    .uniAccordionContainer {
-      display: block;
-    }
-    .uniAccordionNameArrow{
-      transform: rotate(180deg);
-    }
-  }
-}
-
+//Core styles
 .uniAccordionName {
-  display: inline-block;
   @include textNormalSize();
+  cursor: pointer;
+  display: inline-block;
   font-weight: 500;
   user-select: none;
-  cursor: pointer;
 }
 
-.uniAccordionNameArrow{
-  display: inline-block;
+.uniAccordionNameArrow {
   @include arrowSmall();
+  display: inline-block;
   margin-left: 18px;
 }
 
@@ -46,3 +32,26 @@
     }
   }
 }
+
+.uniAccordion {
+  margin: 24px 0 0;
+
+  &.active {
+    .uniAccordionName {
+      margin-bottom: 10px;
+    }
+
+    .uniAccordionContainer {
+      display: block;
+    }
+
+    .uniAccordionNameArrow {
+      transform: rotate(180deg);
+    }
+  }
+}
+//End core styles
+
+//Mods
+
+//End mods

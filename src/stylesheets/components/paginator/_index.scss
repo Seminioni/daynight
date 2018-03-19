@@ -1,34 +1,36 @@
 //Core styles
-.paginator{
-  width: 100%;
+.paginator {
   margin-bottom: 50px;
   padding: 0 19px;
+  width: 100%;
   @media (--m) {
     padding: 0;
   }
 }
-.paginatorItem{
+
+.paginatorItem {
   @include textNormalSize();
-  text-decoration: none;
   color: var(--c-black);
   margin: 0 8px;
+  text-decoration: none;
 
-  &:first-child{
+  &:first-child {
     margin-left: 0;
   }
-  &:last-child{
+
+  &:last-child {
     margin-right: 0;
   }
 
   &:hover,
   &:active,
   &:focus,
-  &:visited{
+  &:visited {
     color: var(--c-black);
   }
 
   &.active,
-  &.current{
+  &.current {
     font-weight: 500;
   }
 }

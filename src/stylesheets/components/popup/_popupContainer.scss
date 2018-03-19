@@ -1,26 +1,26 @@
 //Core styles
 .popupContainer {
-  display: none;
-  width: 100%;
-  position: fixed;
-  top: 65px;
-  left: 0;
-  right: 0;
-  bottom: 0;
   background-color: var(--c-white);
-  z-index: 1000000;
-  padding: 25px 36px 0;
+  bottom: 0;
+  display: none;
+  left: 0;
   overflow-y: scroll;
+  padding: 25px 36px 0;
+  position: fixed;
+  right: 0;
+  top: 65px;
+  width: 100%;
+  z-index: 1000000;
 
   &.active {
     display: block;
   }
 
   .btnCross {
-    top: 3px;
-    right: 15px;
-    width: 44px;
     height: 44px;
+    right: 15px;
+    top: 3px;
+    width: 44px;
   }
   @media (--m) {
     display: none !important;
@@ -32,10 +32,10 @@
 }
 
 .popupBottom {
+  align-items: center;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  align-items: center;
   margin-bottom: 40px;
 }
 //End core styles

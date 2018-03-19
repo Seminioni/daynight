@@ -1,39 +1,63 @@
 {
-    "extends": "stylelint-config-standard",
-    "rules": {
-        "indentation": 2,
-        "string-quotes": "single",
-        "no-duplicate-selectors": true,
-        "color-hex-case": "upper",
-        "color-hex-length": "long",
-        "color-named": "never",
-        "selector-combinator-space-after": "always",
-        "selector-attribute-quotes": "always",
-        "selector-attribute-operator-space-before": "never",
-        "selector-attribute-operator-space-after": "never",
-        "selector-attribute-brackets-space-inside": "never",
-        "declaration-block-trailing-semicolon": "always",
-        "declaration-no-important": true,
-        "declaration-colon-space-before": "never",
-        "declaration-colon-space-after": "always",
-        "property-no-vendor-prefix": true,
-        "number-leading-zero": "always",
-        "function-url-quotes": "always",
-        "font-family-name-quotes": "always-unless-keyword",
-        "comment-whitespace-inside": "always",
-        "at-rule-no-vendor-prefix": true,
-        "at-rule-empty-line-before": [
-          "always",
-          except: ["after-same-name", "inside-block", "blockless-after-same-name-blockless", "blockless-after-blockless", "first-nested"],
-          ignore: ["after-comment", "first-nested", "inside-block", "blockless-after-same-name-blockless", "blockless-after-blockless"]
-        ],
-        "rule-empty-line-before": "always-multi-line",
-        "selector-pseudo-element-colon-notation": "single",
-        "selector-pseudo-class-parentheses-space-inside": "always",
-        "media-feature-range-operator-space-before": "always",
-        "media-feature-range-operator-space-after": "always",
-        "media-feature-parentheses-space-inside": "never",
-        "media-feature-colon-space-before": "never",
-        "media-feature-colon-space-after": "always"
-    }
+  "extends": ["stylelint-config-standard", "stylelint-config-sass-guidelines"],
+  "plugins": ["stylelint-scss"],
+  "rules": {
+    "indentation": 2,
+    "string-quotes": "single",
+    "no-duplicate-selectors": true,
+    "color-hex-case": "upper",
+    "color-hex-length": "long",
+    "color-named": "never",
+    "selector-combinator-space-after": "always",
+    "selector-attribute-quotes": "always",
+    "selector-attribute-operator-space-before": "never",
+    "selector-attribute-operator-space-after": "never",
+    "selector-attribute-brackets-space-inside": "never",
+    "declaration-block-trailing-semicolon": "always",
+    "declaration-no-important": true,
+    "declaration-colon-space-before": "never",
+    "declaration-colon-space-after": "always",
+    "property-no-vendor-prefix": true,
+    "number-leading-zero": "always",
+    "function-url-quotes": "always",
+    "font-family-name-quotes": "always-unless-keyword",
+    "comment-whitespace-inside": "always",
+    "selector-class-pattern": ".",
+    "at-rule-no-vendor-prefix": true,
+    "declaration-empty-line-before": "never",
+    "max-nesting-depth": 3,
+    "function-comma-space-after": "never-single-line",
+    "at-rule-empty-line-before": [
+      "always",
+      "except": [
+        "after-same-name",
+        "inside-block",
+        "blockless-after-same-name-blockless",
+        "blockless-after-blockless",
+        "first-nested"
+      ],
+      "ignore": [
+        "after-comment",
+        "first-nested",
+        "inside-block",
+        "blockless-after-same-name-blockless",
+        "blockless-after-blockless"
+      ]
+    ],
+    "rule-empty-line-before": [
+      "always-multi-line",
+      except: ["after-single-line-comment", "first-nested"]
+    ],
+    "selector-pseudo-element-colon-notation": "single",
+    "selector-pseudo-class-parentheses-space-inside": "never",
+    "media-feature-range-operator-space-before": "always",
+    "media-feature-range-operator-space-after": "always",
+    "media-feature-parentheses-space-inside": "never",
+    "media-feature-colon-space-before": "never",
+    "media-feature-colon-space-after": "always"
+  },
+  "ignoreFiles": [
+    "src/stylesheets/utils/sprite/*",
+    "src/stylesheets/utils/_mixins.scss"
+  ]
 }

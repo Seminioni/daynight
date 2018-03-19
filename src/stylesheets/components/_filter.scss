@@ -1,22 +1,22 @@
 .filter {
-  position: relative;
   padding-left: 23px;
   padding-right: 23px;
+  position: relative;
 
   .btnCross {
     display: none;
-    width: 37px;
     height: 37px;
     right: 23px;
+    width: 37px;
   }
 
   &.active {
-    position: fixed;
-    top: 65px;
-    left: 0;
-    right: 0;
-    bottom: 0;
     background-color: var(--c-white);
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 65px;
     z-index: 10;
   }
 }
@@ -26,28 +26,29 @@
 }
 
 .filterButton {
-  display: block;
   @include textNormalSize();
   color: var(--c-light-grey);
-  white-space: nowrap;
-  width: 100px;
+  display: block;
   height: 37px;
   padding-top: 10px;
+  white-space: nowrap;
+  width: 100px;
 
   &:before {
-    content: "";
-    width: 17px;
-    height: 17px;
+    background: url('../img/icon-filter.svg') center center no-repeat;
+    content: '';
     display: inline-block;
-    background: url("../img/icon-filter.svg") center center no-repeat;
-    vertical-align: top;
+    height: 17px;
     margin-right: 13px;
+    vertical-align: top;
+    width: 17px;
   }
 
   &.active {
     color: var(--c-black);
+
     &:before {
-      background-image: url("../img/icon-filter-active.svg");
+      background-image: url('../img/icon-filter-active.svg');
     }
 
     & + .btnCross {
@@ -57,52 +58,53 @@
 }
 
 .filterSelectors {
-  position: relative;
+  align-items: flex-start;
   display: none;
   flex-flow: row nowrap;
   justify-content: space-between;
-  align-items: flex-start;
   margin-bottom: 20px;
+  position: relative;
 }
 
 .filterSelector {
+  max-width: 163px;
   position: relative;
   width: 100%;
-  max-width: 163px;
 }
 
 .filterSelectorName {
-  display: inline-block;
   @include textSmallSize();
   cursor: pointer;
+  display: inline-block;
   vertical-align: top;
 }
 
 .filterSelectorArrow {
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 12px;
   @include arrowSmall();
+  display: inline-block;
+  margin-left: 12px;
+  vertical-align: middle;
 }
 
 .filterReset {
-  position: absolute;
-  top: 0;
-  right: 0;
   @include textSmallSize();
   cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
   z-index: 100;
 }
 
 .filterSelectorList {
+  background-color: color(var(--c-white) l(80%));
+  left: 0;
+  padding: 8px 12px 12px;
   position: absolute;
   top: 37px;
-  left: 0;
-  background-color: color(var(--c-white) l(80%));
-  z-index: 1;
   width: 100%;
-  padding: 8px 12px 12px;
+  z-index: 1;
 }
+
 .filterSelectorListItem {
   @include textSmallSize();
   cursor: pointer;
@@ -113,27 +115,28 @@
 }
 
 // Media
+
 @media screen and (min-width: $pre-mobile) {
   .filter {
-    padding-right: 0;
     padding-left: 0;
+    padding-right: 0;
 
     &.active {
-      position: absolute;
-      top: 0;
-      left: unset;
-      right: unset;
       bottom: 0;
+      left: unset;
+      position: absolute;
+      right: unset;
+      top: 0;
       width: calc(100% - 176px);
     }
   }
 }
-
 @media screen and (min-width: 838px) {
   .filterButton.active + .btnCross,
   .popupFilter {
     display: none;
   }
+
   .filterButton {
     display: none;
   }

@@ -1,0 +1,28 @@
+{% extends 'layouts/application.njk' %}
+{% from 'macros/helpers.html' import spriteForLink,sprite %}
+
+{% block content %}
+
+<div class="uniList">
+   {% for i in range(0, 9) %}
+    <a class="uniItem" href="post.html">
+        <span class="uniItemCover">
+            <img class="uniItemCoverImg" src="https://daynight.ru/userfiles/news/newslist/2/12089_5-novinok-v-daynight-na-posadsko.jpg" alt="">
+        </span>
+        <time class="uniItemDate">28.09.2017</time>
+        <span class="uniItemTitle">5 новинок недели</span>
+    </a>
+
+  {% endfor %}
+
+    <a href="#" class="uniItem uniItem--zero"></a>
+</div>
+
+<div class="paginator">
+    <span class="paginatorItem active">Посмотреть всё</span>
+    <a class="paginatorItem" href="#">2</a>
+    <a class="paginatorItem next" href="#">...</a>
+    <a class="paginatorItem end" href="#">»</a>
+</div>
+
+{% endblock %}
