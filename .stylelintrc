@@ -25,6 +25,7 @@
     "selector-class-pattern": ".",
     "at-rule-no-vendor-prefix": true,
     "declaration-empty-line-before": "never",
+    "no-descending-specificity": true,
     "max-nesting-depth": 3,
     "function-comma-space-after": "never-single-line",
     "at-rule-empty-line-before": [

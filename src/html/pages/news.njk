@@ -3,26 +3,19 @@
 
 {% block content %}
 
-<div class="uniList">
+<div class="list">
    {% for i in range(0, 9) %}
-    <a class="uniItem" href="post.html">
-        <span class="uniItemCover">
-            <img class="uniItemCoverImg" src="https://daynight.ru/userfiles/news/newslist/2/12089_5-novinok-v-daynight-na-posadsko.jpg" alt="">
+    <a class="list__item link" href="post.html">
+        <span class="list__item-cover">
+            <img class="list__item-cover-img" src="https://daynight.ru/userfiles/news/newslist/2/12089_5-novinok-v-daynight-na-posadsko.jpg" alt="">
         </span>
-        <time class="uniItemDate">28.09.2017</time>
-        <span class="uniItemTitle">5 новинок недели</span>
+        <time class="list__item-date">28.09.2017</time>
+        <p class="list__item-title">5 новинок недели</p>
     </a>
 
   {% endfor %}
-
-    <a href="#" class="uniItem uniItem--zero"></a>
 </div>
 
-<div class="paginator">
-    <span class="paginatorItem active">Посмотреть всё</span>
-    <a class="paginatorItem" href="#">2</a>
-    <a class="paginatorItem next" href="#">...</a>
-    <a class="paginatorItem end" href="#">»</a>
-</div>
+{% include('components/_pagination.njk') %}
 
 {% endblock %}

@@ -64,7 +64,6 @@ body {
 
 .main {
   @extend .container;
-
   align-items: stretch;
   display: flex;
   flex-flow: row nowrap;
@@ -98,7 +97,6 @@ body {
 
 .commonMsg {
   @include textNormalSize();
-
   margin: 0 0 15px;
 }
 
@@ -127,6 +125,6 @@ body {
 @import 'components/socials/index';
 @import 'components/post';
 @import 'components/uniAccordion';
-@import 'components/uniList';
+@import 'components/list/index';
 @import 'components/text';
 @import 'components/tour';

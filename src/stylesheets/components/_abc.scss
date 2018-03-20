@@ -1,158 +1,150 @@
-.abcMobile {
-  padding-bottom: 100px;
-  position: relative;
-  width: 100%;
-}
-
-.abcMobileGrid {
-  align-items: center;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
-  margin: 0 auto;
-  width: 250px;
-
-  &.active{
-    padding: 0 25px;
-    position: relative;
-    width: 100%;
-
-    .abcMobileLetter:not(.active){
-      display: none;
-    }
-
-    .abcMobileLetter{
-      .abcMobileLetterName {
-        display: none;
-      }
-
-      .abcMobileListWords{
-        display: block;
-      }
-
-      .abcMobileListWord {
-        line-height: 2;
-      }
-    }
-  }
-}
-
-.abcMobileLetter {
-  height: 50px;
-  position: relative;
-  width: 50px;
-
-  &.active{
-    height: unset;
-    width: 100%;
-  }
-}
-
-.abcMobileLetterName {
-  @include textNormalSize();
-  font-weight: 500;
-  line-height: 50px;
-  text-align: center;
-}
-
-.abcMobileListWords {
+//Core styles
+.abc {
   display: none;
 }
 
-.abcMobileListWord {
-  @include textNormalSize();
-}
-
-.abcMobileListLink {
-  color: var(--c-black);
-}
-
-.abcMobileCurrentChoice {
+.abc__choise {
   margin: 0 auto 50px;
   width: calc(100% - 50px);
+}
+//End core styles
+//Mods
+.abc--desktop {
+  @media (--m) {
+    align-items: flex-start;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 100%;
+  }
 
-  &.active {
-    .abcMobileCurrentChoiceValue {
-      color: var(--c-black);
+  .abc__column {
+    align-items: flex-start;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .abc__letter {
+    margin-bottom: 12px;
+    padding-right: 20px;
+    width: 100%;
+  }
+
+  .abc__letter-name {
+    @include textNormalSize();
+    font-weight: 500;
+    margin-bottom: 14px;
+  }
+
+  .abc__listwords {
+    @include reset-button();
+    width: 100%;
+  }
+
+  .abc__word {
+    @include textSmallSize();
+    text-transform: uppercase;
+
+    &.active {
+      font-weight: 500;
+    }
+  }
+
+  .abc__list-link {
+    color: var(--c-black);
+  }
+}
+
+.abc--mobile {
+  padding-bottom: 100px;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  @media (--m) {
+    display: none;
+  }
+
+  .abc__grid {
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    margin: 0 auto;
+    width: 250px;
+  }
+
+  .abc__letter {
+    height: 50px;
+    position: relative;
+    width: 50px;
+  }
+
+  .abc__letter-name {
+    @include rhythm(11, 50);
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 50px;
+    text-align: center;
+  }
+
+  .abc__listwords {
+    display: none;
+  }
+
+  .abc__choise-value {
+    @include textNormalSize();
+    border-bottom: 1px solid var(--c-black);
+    color: var(--c-black);
+    padding: 5px 0;
+  }
+
+  .abc__reset-btn {
+    @include reset-button();
+    @include rhythm(11, 14);
+    background-color: var(--c-white);
+    display: none;
+    padding: 16px;
+    position: absolute;
+    right: 25px;
+    z-index: 1;
+  }
+
+  &.letter-is-selected {
+    .abc__reset-btn {
+      display: block;
     }
 
-    .abcMobileCurrentChoiceReset {
+    .abc__grid {
+      padding: 0 25px;
+      position: relative;
+      width: 100%;
+    }
+
+    .abc__letter {
+      height: unset;
+      width: 100%;
+    }
+
+    .abc__letter:not(.is-selected) {
+      display: none;
+    }
+
+    .abc__letter-name {
+      display: none;
+    }
+
+    .abc__word {
+      @include rhythm(11, 22);
+      font-weight: 300;
+    }
+
+    .abc__listwords {
       display: block;
     }
   }
 }
-
-.abcMobileCurrentChoiceValue {
-  @include textNormalSize();
-  border-bottom: 1px solid var(--c-black);
-  color: var(--c-light-grey);
-  padding: 5px 0;
-}
-
-.abcMobileCurrentChoiceReset {
-  @include textNormalSize();
-  background-color: var(--c-white);
-  display: none;
-  padding: 16px;
-  position: absolute;
-  right: 25px;
-  z-index: 1;
-}
-
-.abc {
-  align-items: flex-start;
-  display: none;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  margin: 0 auto;
-  width: 100%;
-}
-
-.abcRow {
-  align-items: flex-start;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
-  width: 100%;
-}
-
-.abcLetter {
-  margin-bottom: 12px;
-  padding-right: 20px;
-  width: 100%;
-}
-
-.abcLetterName {
-  @include textNormalSize();
-  font-weight: 500;
-  margin-bottom: 14px;
-}
-
-.abcListWords {
-  @include reset-button();
-  width: 100%;
-
-}
-
-.abcListWord {
-  @include textSmallSize();
-  text-transform: uppercase;
-
-  &.active {
-    font-weight: 500;
-  }
-}
-
-.abcListLink {
-  color: var(--c-black);
-}
-
-@media screen and (min-width: $pre-mobile) {
-  .abc {
-    display: flex;
-  }
-
-  .abcMobile {
-    display: none;
-  }
-}
+//End mods
