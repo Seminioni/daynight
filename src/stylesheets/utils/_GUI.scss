@@ -20,7 +20,6 @@
   // @include rhythm(18, 18);
 }
 
-
 .f-weight-light {
   font-weight: 300;
 }
@@ -50,7 +49,7 @@
 
   &:after,
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     height: 1px;
@@ -72,7 +71,6 @@
   }
 
   &:hover {
-
     &:after,
     &:before {
       background-color: var(--с-black);
@@ -94,12 +92,11 @@
 
   &:after,
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     height: 1px;
     width: 15px;
-    background-color: color(var(--c-black) l(80%));
     @include setTransitionFor(background);
   }
 
@@ -142,14 +139,4 @@
       transform: rotate(-45deg);
     }
   }
-
-  &:hover {
-
-    &:after,
-    &:before {
-      background-color: color(var(--c-black) l(0));
-    }
-  }
 }
-
-

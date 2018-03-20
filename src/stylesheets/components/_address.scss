@@ -1,94 +1,25 @@
-.address {
-  padding-top: 33px;
-  position: relative;
-
-  &.active {
-    padding-bottom: 17px;
-
-    .addressImgWrapper,
-    .addressPhoneStreetWrapper {
-      display: block;
-    }
-
-    .addressBuild {
-      border-bottom-color: transparent;
-    }
-
-    .addressBuildNameArrow {
-      transform: translateY(6px) rotate(180deg);
-    }
+//Core styles
+.address__img-wrapper {
+  display: none;
+  width: 100%;
+  @media (--m) {
+    display: block;
+    max-width: 520px;
   }
 }
 
-.addressImgWrapper {
-  display: none;
+.address__img {
   width: 100%;
 }
 
-.addressImg {
-  width: 100%;
-}
-
-.addressBuild {
+.address__build {
   border-bottom: 1px solid var(--c-black);
   left: 0;
   padding: 13px 25px 4px;
   position: absolute;
   top: 0;
   width: 100%;
-}
-
-.addressBuildName {
-  @include textNormalSize();
-}
-
-.addressBuildNameArrow {
-  @include arrowSmall();
-  display: inline-block;
-  float: right;
-  transform: translateY(8px);
-}
-
-.addressPhoneStreetWrapper {
-  display: none;
-  padding: 0 25px;
-}
-
-.addressStreets {
-  margin: 25px 0 10px;
-  white-space: nowrap;
-  width: 100%;
-}
-
-.addressStreet {
-  @include textNormalSize();
-  display: inline-block;
-  white-space: normal;
-  width: 50%;
-
-  &:last-child {
-    padding-left: 5px;
-  }
-}
-
-.addressPhone {
-  @include textNormalSize();
-}
-
-@media screen and (min-width: $pre-mobile) {
-  .address {
-    align-items: flex-start;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    padding: 0 0 20px;
-
-    &.active {
-      padding: 0 0 20px;
-    }
-  }
-
-  .addressBuild {
+  @media (--m) {
     border-bottom: 0;
     left: unset;
     margin-bottom: 10px;
@@ -97,37 +28,53 @@
     top: unset;
     width: 100%;
   }
+  &:hover {
+    cursor: pointer;
+  }
+}
 
-  .addressBuildName {
+.address__build-name {
+  @include textNormalSize();
+  @media (--m) {
     font-weight: 500;
   }
+}
 
-  .addressBuildNameArrow {
+.address__arrow {
+  @include arrowSmall();
+  display: inline-block;
+  float: right;
+  transform: translateY(8px);
+  @media (--m) {
     display: none;
   }
+}
 
-  .addressImgWrapper {
-    display: block;
-    max-width: 520px;
-  }
-
-  .addressPhoneStreetWrapper {
+.address__contacts {
+  display: none;
+  padding: 0 25px;
+  @media (--m) {
     display: block;
     padding: 0 0 0 20px;
   }
+}
 
-  .addressInfo {
-    max-width: 191px;
-    position: relative;
-    width: 100%;
-  }
-
-  .addressStreets {
+.address__streets {
+  margin: 25px 0 10px;
+  white-space: nowrap;
+  width: 100%;
+  @media (--m) {
     margin: 0;
     white-space: normal;
   }
+}
 
-  .addressStreet {
+.address__street {
+  @include textNormalSize();
+  display: inline-block;
+  white-space: normal;
+  width: 50%;
+  @media (--m) {
     display: block;
     margin-bottom: 10px;
     width: 100%;
@@ -136,4 +83,49 @@
       padding: 0;
     }
   }
+
+  &:last-child {
+    padding-left: 5px;
+  }
 }
+
+.address__phone {
+  @include textNormalSize();
+}
+
+.address {
+  padding-top: 33px;
+  position: relative;
+
+  &.is-active {
+    padding-bottom: 17px;
+
+    .address__img-wrapper,
+    .address__contacts {
+      display: block;
+    }
+
+    .address__build {
+      border-bottom-color: transparent;
+    }
+
+    .address__arrow {
+      transform: translateY(6px) rotate(180deg);
+    }
+  }
+  @media (--m) {
+    align-items: flex-start;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    padding: 0 0 20px;
+
+    &.is-active {
+      padding: 0 0 20px;
+    }
+  }
+}
+//End core styles
+//Mods
+
+//End mods

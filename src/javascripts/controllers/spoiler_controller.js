@@ -5,7 +5,8 @@ export default class Spoiler extends Controller {
   static targets = ['trigger', 'container'];
 
   toggleSpoiler() {
-    toggleClass(this.spoiler, 'is-collapsed')
+    const className = this.element.getAttribute('data-classname')
+    toggleClass(this.spoiler, className)
   }
 
   onTriggerAction(e) {

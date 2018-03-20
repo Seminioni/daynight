@@ -1,15 +1,15 @@
-.post{
+.post {
   padding-bottom: 30px;
 }
 
-.postHeader{
+.postHeader {
   padding-left: 26px;
   padding-right: 26px;
   position: relative;
 }
 
-.postBackLink{
-  background: url('../img/img-cross16x16.svg') top right no-repeat;
+.postBackLink {
+  background: url("../img/img-cross16x16.svg") top right no-repeat;
   cursor: pointer;
   display: inline-block;
   height: 40px;
@@ -18,24 +18,24 @@
   top: 0;
   width: 40px;
 
-  &:active{
-    .postBackLinkText{
+  &:active {
+    .postBackLinkText {
       color: var(--c-black);
     }
   }
 }
 
-.postBackLinkText{
-  @include rhythm(9,11);
+.postBackLinkText {
+  @include rhythm(9, 11);
   color: var(--c-grey);
   display: none;
 
-  &:before{
-    content: '< ';
+  &:before {
+    content: "< ";
   }
 }
 
-.postTitle{
+.postTitle {
   @include textNormalSize();
   font-weight: 500;
   margin-bottom: 8px;
@@ -43,26 +43,26 @@
   text-transform: uppercase;
 }
 
-.postCreated{
+.postCreated {
   @include textSmallSize();
 }
 
-.postContent{
+.postContent {
   @include textNormalSize();
   padding: 15px 26px;
 
-  h2{
+  h2 {
     @include textNormalSize();
     font-weight: 500;
     margin: 25px 0 20px;
   }
 
-  p{
+  p {
     @include textNormalSize();
     margin-bottom: 15px;
   }
 
-  a{
+  a {
     @include textNormalSize();
     color: var(--c-black);
     text-decoration: underline;
@@ -70,62 +70,63 @@
     &:hover,
     &:focus,
     &:active,
-    &:visited{
+    &:visited {
       color: var(--c-black);
     }
 
     &:hover,
-    &:active{
+    &:active {
       text-decoration: none;
     }
 
-    &:focus{
+    &:focus {
       text-decoration: underline;
     }
   }
 
-  img{
+  img {
     height: auto;
     margin-bottom: 15px;
     max-width: 100%;
     width: auto;
   }
 
-  ul{
+  ul {
     list-style: none;
     margin-bottom: 20px;
 
-    li{
+    li {
       margin-bottom: 5px;
 
-      &:before{
-        content: '- ';
+      &:before {
+        content: "- ";
       }
     }
   }
 
-  strong, b{
+  strong,
+  b {
     font-weight: 500;
   }
 }
 
-.postContent--onlyNews img{
+.postContent--onlyNews img {
   max-width: 300px;
   width: 100%;
 }
 
-.postContent--only20th{
+.postContent--only20th {
   display: none;
 }
 
-.postFooter{
-  .socials{
+.post__footer {
+  .socials {
     margin: 0 auto;
   }
 }
 
-@media screen and (min-width: $pre-mobile) {
-  .postBackLink{
+@media (--m) {
+  .postBackLink {
     background: none;
     display: block;
     height: unset;
@@ -136,26 +137,26 @@
     width: 250px;
   }
 
-  .postContent--only20th{
+  .postContent--only20th {
     display: block;
   }
 
-  .postBackLinkText{
+  .postBackLinkText {
     display: block;
   }
 
   .postHeader,
-  .postContent{
+  .postContent {
     padding-left: 0;
     padding-right: 0;
   }
 
-  .postTitle{
+  .postTitle {
     padding-right: 0;
   }
 
-  .postFooter{
-    .socials{
+  .post__footer {
+    .socials {
       display: none;
     }
   }
