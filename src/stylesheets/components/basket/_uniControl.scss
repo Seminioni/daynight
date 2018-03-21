@@ -1,0 +1,135 @@
+//Core styles
+.basket__unicontrol {
+  margin-top: 15px;
+  width: 100%;
+}
+
+.basket__unicontrol-title {
+  @include textNormalSize();
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.basket__unicontrol-item {
+  margin-bottom: 15px;
+  position: relative;
+  width: 100%;
+
+  &.active {
+    .basket__unicontrol-lable-icon {
+      transform: rotate(180deg) translateY(2px);
+    }
+
+    .basket__unicontrol-desc {
+      display: block;
+    }
+  }
+
+  &--withRightControl {
+    .basket__unicontrol-item-controls {
+      left: 0;
+      right: unset;
+    }
+
+    .basket__unicontrol-lable {
+      padding-left: 40px;
+      padding-right: 10px;
+    }
+  }
+}
+
+.basket__unicontrol-lable {
+  @include textNormalSize();
+  margin-bottom: 8px;
+  padding-right: 80px;
+}
+
+.basket__unicontrol-lable-icon {
+  @include arrowSmall();
+  display: inline-block;
+  @media (--m) {
+    display: none;
+  }
+}
+
+.basket__unicontrol-desc {
+  @include textNormalSize();
+  color: var(--c-grey);
+  display: none;
+  @media (--m) {
+    display: block;
+  }
+}
+
+.basket__unicontrol-price {
+  @include textNormalSize();
+  font-weight: 500;
+  position: absolute;
+  right: 40px;
+  top: 0;
+}
+
+.basket__unicontrol-item-controls {
+  height: 32px;
+  position: absolute;
+  right: 0;
+  top: -8px;
+  width: 32px;
+}
+
+.basket__unicontrol-switcher {
+  display: block;
+  height: 32px;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 32px;
+}
+
+.basket__unicontrol-pseudoswitcher {
+  background-color: transparent;
+  cursor: pointer;
+  height: 32px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 32px;
+
+  &:after {
+    background-color: var(--c-black);
+    border-radius: 50%;
+    content: "";
+    display: none;
+    height: 8px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+  }
+
+  &:before {
+    background-color: transparent;
+    border: 1px solid var(--c-black);
+    border-radius: 50%;
+    content: "";
+    display: block;
+    height: 14px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 14px;
+  }
+}
+
+.basket__unicontrol-switcher:checked + .basket__unicontrol-pseudoswitcher {
+  &:after {
+    display: block;
+  }
+}
+//End core styles
+//Mods
+
+//End mods

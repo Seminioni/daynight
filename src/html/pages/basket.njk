@@ -2,135 +2,139 @@
 
 {% block content %}
 
+{# Корзина в состоянии "пусто" #}
 <div class="basket basket--is-empty">
     {% include "components/basket/_promo.njk" %}
     <p class="basketUniStr">Корзина пуста. <a class="basketUniLink" href="#">Перейти к покупкам</a></p>
+</div>
 
+{# Корзина в состоянии "перейти к оплате заказа" #}
+<div class="basket basket--payment">
+  <h2 class="basketUniTitle">Оплата заказа №147 на сумму 9570 руб.</h2>
+  <p class="basketUniStr basketUniStr--grey basketUniStr--small">Оформляя заказ Вы соглашаетесь на обработку и хранение ваших персональных данных.</p>
+  <div class="form">
+      <form>
+          <input type="submit" class="form__button" value="оплатить">
+      </form>
+  </div>
+</div>
 
-    {# <div class="basketOrderPayment">
-        <h2 class="basketUniTitle">Оплата заказа №147 на сумму 9570 руб.</h2>
-        <p class="basketUniStr basketUniStr--grey basketUniStr--small">Оформляя заказ Вы соглашаетесь на обработку и хранение ваших персональных данных.</p>
-        <div class="form">
-            <form>
-                <input type="submit" class="form__button" value="оплатить">
-            </form>
-        </div>
-    </div> #}
+{# Корзина в состоянии "присутствуют товары" #}
+<div class="basket basket--is-not-empty">
+    {% include "components/basket/_promo.njk" %}
 
-    {# {% include "components/basket/_promo.njk" %}
-
-    <ul class="basketProductList">
+    <ul class="basket__list">
         {% for item in range(0,2) %}
-          <li class="basketProductListItem">
-            <div class="basketProductCard">
-                <div class="basketProductCardCell">
-                    <div class="basketProductCardImgWrapper">
-                        <img src="images/content/img-demo4.jpg" alt="" class="basketProductCardImg">
+          <li class="basket__item">
+            <div class="product-card">
+                <div class="product-card__cell">
+                    <div class="product-card__img-wrapper">
+                        <img src="images/content/img-demo4.jpg" alt="" class="product-card__img">
                     </div>
-                    <div class="basketProductCardMainInfo">
-                        <h3 class="basketProductCardMainInfoTitle">
+                    <div class="product-card__info">
+                        <h3 class="product-card__title">
                             Наименование  #{{item}}<span>товара</span>
                         </h3>
-                        <ul class="basketProductCardMainInfoList">
-                            <li class="basketProductCardMainInfoListItem">Женское / Джинсы R13</li>
-                            <li class="basketProductCardMainInfoListItem">Denim</li>
-                            <li class="basketProductCardMainInfoListItem">Размер: 30</li>
-                            <li class="basketProductCardMainInfoListItem">Артикул: R13W4021-208</li>
+                        <ul class="product-card__desc">
+                            <li class="product-card__desc-item">Женское / Джинсы R13</li>
+                            <li class="product-card__desc-item">Denim</li>
+                            <li class="product-card__desc-item">Размер: 30</li>
+                            <li class="product-card__desc-item">Артикул: R13W4021-208</li>
                         </ul>
                     </div>
                 </div>
-                <div class="basketProductCardCell">
-
-                    <div class="basketProductCardCounter">
-                        <h3 class="basketProductCardCountertitle">Количество</h3>
-                        <div class="basketProductCardCounterContainer">
-                            <span class="basketProductCardCounterButton basketProductCardCounterButton--minus"></span>
-                            <input class="basketProductCardCounterValue" type="text" value="1">
-                            <span class="basketProductCardCounterButton basketProductCardCounterButton--plus"></span>
+                <div class="product-card__cell">
+                    <div class="counter">
+                        <h3 class="counter__title">Количество</h3>
+                        <div class="counter__container" data-controller="stepper">
+                            <span class="counter__btn counter__btn--minus" data-action="click->stepper#down"></span>
+                            <input class="counter__val" type="text" value="1" data-target="stepper.input">
+                            <span class="counter__btn counter__btn--plus" data-action="click->stepper#up"></span>
                         </div>
                     </div>
 
-                    <div class="basketProductCardUniBox">
-                        <h3 class="basketProductCardUniBoxName">Цена/₽</h3>
-                        <div class="basketProductCardUniBoxValue">000 000</div>
+                    <div class="product-card__unibox">
+                        <h3 class="product-card__unibox-name">Цена/₽</h3>
+                        <div class="product-card__unibox-value">000 000</div>
                     </div>
 
-                    <div class="basketProductCardUniBox">
-                        <h3 class="basketProductCardUniBoxName">Скидка</h3>
-                        <div class="basketProductCardUniBoxValue">70%</div>
+                    <div class="product-card__unibox">
+                        <h3 class="product-card__unibox-name">Скидка</h3>
+                        <div class="product-card__unibox-value">70%</div>
                     </div>
 
-                    <div class="basketProductCardUniBox">
-                        <h3 class="basketProductCardUniBoxName">Итого/₽</h3>
-                        <div class="basketProductCardUniBoxValue">000 000</div>
+                    <div class="product-card__unibox">
+                        <h3 class="product-card__unibox-name">Итого/₽</h3>
+                        <div class="product-card__unibox-value">000 000</div>
                     </div>
 
-                    <div class="basketProductCardRemoveButton">
-                        <span class="basketProductCardRemoveButtonText">Удалить</span>
-                        <span class="basketProductCardRemoveButtonCross"></span>
+                    <div class="product-card__remove-btn remove-btn">
+                        <span class="remove-btn__text">Удалить</span>
+                        <span class="remove-btn__icon icon-cross"></span>
                     </div>
                 </div>
             </div>
           </li>
         {% endfor %}
-
     </ul>
 
-    <div class="basketTotalCost">
-        <span class="basketTotalCostValue">Итого: 8 820 ₽</span>
+    <div class="basket__total-cost">
+        <span class="basket__total-cost-val">Итого: 8 820 ₽</span>
     </div>
 
-    <div class="basketUniControl">
-        <h3 class="basketUniControlTitle">Способ доставки</h3>
-        <div class="basketUniControlItem">
-            <div class="basketUniControlItemLabel">Курьерская доставка до&nbsp;двери в&nbsp;любую точку РФ&nbsp;<span class="basketUniControlItemLabelIcon"></span></div>
-            <div class="basketUniControlItemDescription">
+    <div class="basket__unicontrol">
+        <h3 class="basket__unicontrol-title">Способ доставки</h3>
+        <div class="basket__unicontrol-item">
+            <div class="basket__unicontrol-lable">Курьерская доставка до&nbsp;двери в&nbsp;любую точку РФ&nbsp;<span class="basket__unicontrol-lable-icon"></span></div>
+            <div class="basket__unicontrol-desc">
                 <p>Товар доставляется бесплатно курьером до&nbsp;двери Вашего дома при сумме заказа от&nbsp;10 000 рублей.</p>
                 <p>В&nbsp;случае заказа на&nbsp;сумму менее 10 000 рублей, доставка будет стоить 750 рублей.</p>
                 <p>Стоимость 750 руб.</p>
                 <p>Бесплатно от суммы 10000 руб.</p>
             </div>
-            <div class="basketUniControlPrice">750 ₽</div>
-            <div class="basketUniControlItemControl">
-                <input class="basketUniControlItemControlSwitcher" type="radio" id="delivery1" name="delivery" value="courier" checked>
-                <label class="basketUniControlItemControlPsuedoSwitcher" for="delivery1"></label>
+            <div class="basket__unicontrol-price">750 ₽</div>
+            <div class="basket__unicontrol-item-controls">
+                <input class="basket__unicontrol-switcher" type="radio" id="delivery1" name="delivery" value="courier" checked>
+                <label class="basket__unicontrol-pseudoswitcher" for="delivery1"></label>
             </div>
         </div>
-        <div class="basketUniControlItem">
-            <div class="basketUniControlItemLabel">Самовывоз из магазина в Санкт-Петербурге&nbsp;<span class="basketUniControlItemLabelIcon"></span></div>
-            <div class="basketUniControlItemDescription">
+        <div class="basket__unicontrol-item">
+            <div class="basket__unicontrol-lable">Самовывоз из магазина в Санкт-Петербурге&nbsp;<span class="basket__unicontrol-lable-icon"></span></div>
+            <div class="basket__unicontrol-desc">
                 <p>Вы можете самостоятельно забрать свой заказ в магазине в Санкт-Петербурге.</p>
             </div>
-            <div class="basketUniControlPrice">0 ₽</div>
-            <div class="basketUniControlItemControl">
-                <input class="basketUniControlItemControlSwitcher" type="radio" id="delivery2" name="delivery" value="nocourier">
-                <label class="basketUniControlItemControlPsuedoSwitcher" for="delivery2"></label>
+            <div class="basket__unicontrol-price">0 ₽</div>
+            <div class="basket__unicontrol-item-controls">
+                <input class="basket__unicontrol-switcher" type="radio" id="delivery2" name="delivery" value="nocourier">
+                <label class="basket__unicontrol-pseudoswitcher" for="delivery2"></label>
             </div>
         </div>
     </div>
-    <div class="basketTotalCost">
-        <span class="basketTotalCostValue">Итого: 8 820 ₽</span>
+
+    <div class="basket__total-cost">
+        <span class="basket__total-cost-val">Итого: 8 820 ₽</span>
     </div>
-    <div class="basketUniControl">
-        <h3 class="basketUniControlTitle">Выберите способ оплаты</h3>
-        <div class="basketUniControlItem basketUniControlItem--withRightControl">
-            <div class="basketUniControlItemLabel">Оплата банковской картой через Yandex.Касса&nbsp;<span class="basketUniControlItemLabelIcon"></span></div>
-            <div class="basketUniControlItemDescription">
+
+    <div class="basket__unicontrol">
+        <h3 class="basket__unicontrol-title">Выберите способ оплаты</h3>
+        <div class="basket__unicontrol-item basket__unicontrol-item--withRightControl">
+            <div class="basket__unicontrol-lable">Оплата банковской картой через Yandex.Касса&nbsp;<span class="basket__unicontrol-lable-icon"></span></div>
+            <div class="basket__unicontrol-desc">
                 <p>Оформляя заказ Вы соглашаетесь на обработку и хранение ваших персональных данных.</p>
             </div>
-            <div class="basketUniControlItemControl">
-                <input class="basketUniControlItemControlSwitcher" type="radio" id="payment1" name="payment" value="yandex" checked>
-                <label class="basketUniControlItemControlPsuedoSwitcher" for="payment1"></label>
+            <div class="basket__unicontrol-item-controls">
+                <input class="basket__unicontrol-switcher" type="radio" id="payment1" name="payment" value="yandex" checked>
+                <label class="basket__unicontrol-pseudoswitcher" for="payment1"></label>
             </div>
         </div>
-        <div class="basketUniControlItem basketUniControlItem--withRightControl">
-            <div class="basketUniControlItemLabel">Наличными или картой при самовывозе из магазина&nbsp;<span class="basketUniControlItemLabelIcon"></span></div>
-            <div class="basketUniControlItemDescription">
+        <div class="basket__unicontrol-item basket__unicontrol-item--withRightControl">
+            <div class="basket__unicontrol-lable">Наличными или картой при самовывозе из магазина&nbsp;<span class="basket__unicontrol-lable-icon"></span></div>
+            <div class="basket__unicontrol-desc">
                 <p>Заказ необходимо оплатить при получении в магазине. Оформляя заказ Вы соглашаетесь на обработку и хранение ваших персональных данных.</p>
             </div>
-            <div class="basketUniControlItemControl">
-                <input class="basketUniControlItemControlSwitcher" type="radio" id="payment2" name="payment" value="cash">
-                <label class="basketUniControlItemControlPsuedoSwitcher" for="payment2"></label>
+            <div class="basket__unicontrol-item-controls">
+                <input class="basket__unicontrol-switcher" type="radio" id="payment2" name="payment" value="cash">
+                <label class="basket__unicontrol-pseudoswitcher" for="payment2"></label>
             </div>
         </div>
     </div>
@@ -138,53 +142,53 @@
     <div class="form">
         <form action="">
             <fieldset class="form__fieldSet">
-                <legend class="formLabel formLabel--reqiured">ФИО или название компании</legend>
+                <legend class="form__label form__label--reqiured">ФИО или название компании</legend>
                 <input type="text" class="form__field form__field--withFullBorder" required>
             </fieldset>
             <fieldset class="form__fieldSet">
-                <legend class="formLabel formLabel--reqiured">E-mail</legend>
+                <legend class="form__label form__label--reqiured">E-mail</legend>
                 <input type="text" class="form__field form__field--withFullBorder" required>
             </fieldset>
             <fieldset class="form__fieldSet">
-                <legend class="formLabel formLabel--reqiured">Контактные телефоны (с кодом города)</legend>
+                <legend class="form__label form__label--reqiured">Контактные телефоны (с кодом города)</legend>
                 <input type="text" class="form__field form__field--withFullBorder" required>
             </fieldset>
             <fieldset class="form__fieldSet">
-                <legend class="formLabel formLabel--reqiured">Индекс</legend>
+                <legend class="form__label form__label--reqiured">Индекс</legend>
                 <input type="text" class="form__field form__field--withFullBorder" >
             </fieldset>
             <fieldset class="form__fieldSet">
-                <legend class="formLabel formLabel--reqiured">Город</legend>
+                <legend class="form__label form__label--reqiured">Город</legend>
                 <input type="text" class="form__field form__field--withFullBorder" required>
             </fieldset>
             <fieldset class="form__fieldSet">
-                <legend class="formLabel formLabel--reqiured">Улица, проспект и пр.</legend>
+                <legend class="form__label form__label--reqiured">Улица, проспект и пр.</legend>
                 <input type="text" class="form__field form__field--withFullBorder" >
             </fieldset>
             <fieldset class="form__fieldSet">
-                <legend class="formLabel formLabel--reqiured">Номер дома</legend>
+                <legend class="form__label form__label--reqiured">Номер дома</legend>
                 <input type="text" class="form__field form__field--withFullBorder" >
             </fieldset>
             <fieldset class="form__fieldSet">
-                <legend class="formLabel formLabel--reqiured">Корпус</legend>
+                <legend class="form__label form__label--reqiured">Корпус</legend>
                 <input type="text" class="form__field form__field--withFullBorder" >
             </fieldset>
             <fieldset class="form__fieldSet">
-                <legend class="formLabel formLabel--reqiured">Квартира, офис</legend>
+                <legend class="form__label form__label--reqiured">Квартира, офис</legend>
                 <input type="text" class="form__field form__field--withFullBorder" >
             </fieldset>
             <fieldset class="form__fieldSet">
-                <legend class="formLabel formLabel--reqiured">Комментарии</legend>
+                <legend class="form__label form__label--reqiured">Комментарии</legend>
                 <textarea class="formTextarea">
                 </textarea>
             </fieldset>
             <fieldset class="form__fieldSet">
                 <input class="form__button form__button--width165 form__button--resetMargin" type="submit" value="продолжить">
-                <span class="formLegend formLegend--absolutePositionRight">* — Поля, обязательные для заполнения</span>
+                <span class="form__legend form__legend--absolutePositionRight">* — Поля, обязательные для заполнения</span>
             </fieldset>
-            <p class="formError">* Не все обязательные поля заполнены</p>
+            <p class="form__error">* Не все обязательные поля заполнены</p>
         </form>
-    </div> #}
+    </div>
 </div>
 
 {% endblock %}

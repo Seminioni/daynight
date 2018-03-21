@@ -19,7 +19,7 @@
 
 .modalContainer {
   background-color: var(--c-white);
-  background-image: url('../../img/img-modal.jpg');
+  background-image: url("../../img/img-modal.jpg");
   background-position: 0 0;
   background-repeat: no-repeat;
   background-size: 286px auto;
@@ -44,7 +44,7 @@
 }
 
 .modalClose {
-  background: url('../../img/img-cross.svg') center center no-repeat;
+  background: url("../../img/img-cross.svg") center center no-repeat;
   cursor: pointer;
   height: 20px;
   position: absolute;

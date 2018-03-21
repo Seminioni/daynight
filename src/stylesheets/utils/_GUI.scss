@@ -1,5 +1,4 @@
 // GUI styles
-
 .h1 {
   // @extend .f-weight-light;
   // @include rhythm(36, 36);
@@ -37,28 +36,28 @@
   display: inline-block;
 
   svg {
-    width: 100%;
     height: 100%;
+    width: 100%;
   }
 }
 
 .icon-cross {
+  height: 25px;
   position: absolute;
   width: 25px;
-  height: 25px;
 
   &:after,
   &:before {
+    background-color: var(--c-black);
     content: "";
+    height: 1px;
+    left: 50%;
     position: absolute;
     top: 50%;
-    height: 1px;
-    width: 15px;
-    left: 50%;
-    background-color: var(--c-black);
+    width: 100%;
     @media (--m) {
-      background-color: var(--c-black);
       @include setTransitionFor(background);
+      background-color: var(--c-black);
     }
   }
 
@@ -80,11 +79,11 @@
 
 .arrow {
   display: inline-block;
+  height: 40px;
   position: absolute;
   top: 50%;
-  width: 40px;
-  height: 40px;
   transform: translateY(-50%);
+  width: 40px;
 
   &:hover {
     cursor: pointer;
@@ -92,12 +91,12 @@
 
   &:after,
   &:before {
+    @include setTransitionFor(background);
     content: "";
+    height: 1px;
     position: absolute;
     top: 50%;
-    height: 1px;
     width: 15px;
-    @include setTransitionFor(background);
   }
 
   &--prev {
@@ -110,13 +109,13 @@
     }
 
     &:after {
-      transform-origin: 0 100%;
       transform: rotate(45deg);
+      transform-origin: 0 100%;
     }
 
     &:before {
-      transform-origin: 0 100%;
       transform: rotate(-45deg);
+      transform-origin: 0 100%;
     }
   }
 
@@ -130,13 +129,13 @@
     }
 
     &:after {
-      transform-origin: 100% 0%;
       transform: rotate(45deg);
+      transform-origin: 100% 0%;
     }
 
     &:before {
-      transform-origin: 100% 0%;
       transform: rotate(-45deg);
+      transform-origin: 100% 0%;
     }
   }
 }

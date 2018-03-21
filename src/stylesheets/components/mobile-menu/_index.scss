@@ -26,6 +26,13 @@
     right: 16px;
     top: 0;
     width: 40px;
+
+    .icon-cross {
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      width: 20px;
+    }
   }
 
   .form--mobile-menu {
@@ -59,7 +66,7 @@
 
     &:before {
       border-top: 1px solid #000000;
-      content: '';
+      content: "";
       display: block;
       transform: translateY(-25px);
       width: 110px;

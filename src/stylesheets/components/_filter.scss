@@ -35,8 +35,8 @@
   width: 100px;
 
   &:before {
-    background: url('../img/icon-filter.svg') center center no-repeat;
-    content: '';
+    background: url("../img/icon-filter.svg") center center no-repeat;
+    content: "";
     display: inline-block;
     height: 17px;
     margin-right: 13px;
@@ -48,7 +48,7 @@
     color: var(--c-black);
 
     &:before {
-      background-image: url('../img/icon-filter-active.svg');
+      background-image: url("../img/icon-filter-active.svg");
     }
 
     & + .btnCross {

@@ -3,7 +3,7 @@
   "plugins": ["stylelint-scss"],
   "rules": {
     "indentation": 2,
-    "string-quotes": "single",
+    "string-quotes": "double",
     "no-duplicate-selectors": true,
     "color-hex-case": "upper",
     "color-hex-length": "long",
@@ -27,7 +27,7 @@
     "declaration-empty-line-before": "never",
     "no-descending-specificity": true,
     "max-nesting-depth": 3,
-    "function-comma-space-after": "never-single-line",
+    "function-comma-space-after": "always-single-line",
     "at-rule-empty-line-before": [
       "always",
       "except": [

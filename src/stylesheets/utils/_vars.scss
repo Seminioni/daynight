@@ -1,5 +1,4 @@
 // Variables
-
 :root {
   --c-white: #FFFFFF;
   --c-black: #000000;
@@ -7,7 +6,7 @@
   --c-light-grey: #C8C8C8;
   --c-red: #E33705;
   --c-light-indigo: #9013FE;
-  --HelveticaNeue: 'HelveticaNeue';
+  --HelveticaNeue: "HelveticaNeue";
 }
 
 @custom-media --s (width <= 768px);

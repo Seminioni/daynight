@@ -123,16 +123,16 @@
   color: var(--c-black);
 }
 
-.basketProductCardMainInfoListItem a {
+.product-card__desc-item a {
   @include textNormalSize();
   color: var(--c-black);
   text-decoration: none;
 }
 
-.basketProductCardMainInfoListItem a:hover,
-.basketProductCardMainInfoListItem a:focus,
-.basketProductCardMainInfoListItem a:active,
-.basketProductCardMainInfoListItem a:visited {
+.product-card__desc-item a:hover,
+.product-card__desc-item a:focus,
+.product-card__desc-item a:active,
+.product-card__desc-item a:visited {
   color: var(--c-black);
 }
 
@@ -191,8 +191,8 @@
   text-transform: uppercase;
 }
 
-.modal_window_container input[type='text'],
-.modal_window_container input[type='tel'] {
+.modal_window_container input[type="text"],
+.modal_window_container input[type="tel"] {
   background: var(--c-white);
   border: 0;
   color: color(var(--c-black) l(70%));
@@ -206,7 +206,7 @@
   width: calc(100% - 50px);
 }
 
-.modal_window_container input[type='submit'] {
+.modal_window_container input[type="submit"] {
   background: #C75380;
   border: 0;
   border-radius: 25px;
@@ -285,7 +285,7 @@
   color: var(--c-red);
 }
 
-.formLegend + .cart_table {
+.form__legend + .cart_table {
   margin-top: 10px;
 }
 
@@ -298,8 +298,8 @@
 }*/
 
 .modal_window_container table td {
-  font-family: 'Conv_HelveticaNeueCyr', 'Helvetica Neue LT W01',
-    'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Conv_HelveticaNeueCyr", "Helvetica Neue LT W01",
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
   font-weight: 300;
   letter-spacing: 1px;
@@ -312,8 +312,8 @@
 }
 
 .cart_param {
-  font-family: 'Conv_HelveticaNeueCyr', 'Helvetica Neue LT W01',
-    'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Conv_HelveticaNeueCyr", "Helvetica Neue LT W01",
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
   font-weight: 300;
   letter-spacing: 1px;
@@ -326,8 +326,8 @@
 
 .addressHours {
   display: block;
-  font-family: 'Conv_HelveticaNeueCyr', 'Helvetica Neue LT W01',
-    'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Conv_HelveticaNeueCyr", "Helvetica Neue LT W01",
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
   font-weight: 300;
   letter-spacing: 1px;
@@ -342,8 +342,8 @@
 
 .socialShareLinksTitle {
   color: var(--c-black);
-  font-family: 'Conv_HelveticaNeueCyr', 'Helvetica Neue LT W01',
-    'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Conv_HelveticaNeueCyr", "Helvetica Neue LT W01",
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
   font-weight: 300;
   font-weight: 500;
@@ -387,8 +387,8 @@
   background-size: contain;
   color: var(--c-black);
   display: inline-block;
-  font-family: 'Conv_HelveticaNeueCyr', 'Helvetica Neue LT W01',
-    'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Conv_HelveticaNeueCyr", "Helvetica Neue LT W01",
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
   font-weight: 300;
   height: 24px;
@@ -471,7 +471,7 @@
     padding: 0 23px;
   }
 
-  .basketUniControlItemLabel {
+  .basket__unicontrol-lable {
     cursor: pointer;
   }
 }

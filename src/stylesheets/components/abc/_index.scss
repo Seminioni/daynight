@@ -59,11 +59,11 @@
 }
 
 .abc--mobile {
+  display: flex;
+  flex-direction: column;
   padding-bottom: 100px;
   position: relative;
   width: 100%;
-  display: flex;
-  flex-direction: column;
   @media (--m) {
     display: none;
   }

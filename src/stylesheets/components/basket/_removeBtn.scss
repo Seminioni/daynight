@@ -1,0 +1,40 @@
+//Core styles
+.product-card__remove-btn {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 64px;
+  @media (--m) {
+    height: unset;
+    position: relative;
+    right: unset;
+    top: unset;
+    width: auto;
+  }
+
+  .remove-btn__text {
+    @include rhythm(11, 16);
+    display: none;
+    font-weight: 300;
+    @media screen and (min-width: 400px) {
+      display: block;
+    }
+  }
+
+  .remove-btn__icon {
+    height: 10px;
+    right: 0;
+    top: -2px;
+    transform: translateY(50%);
+    width: 10px;
+    @media (--m) {
+      top: calc(50% - 13px);
+      transform: translateY(-50%);
+    }
+  }
+}
+//End core styles
+//Mods
+
+//End mods

@@ -1,0 +1,38 @@
+//Core styles
+.basketUniTitle {
+  @include textNormalSize();
+  margin-bottom: 16px;
+}
+
+.basketUniStr {
+  @include textNormalSize();
+  margin-bottom: 12px;
+}
+
+.basketUniLink {
+  @include textNormalSize();
+  color: var(--c-black);
+  text-decoration: underline;
+
+  &:hover,
+  &:active {
+    color: var(--c-black);
+    text-decoration: none;
+  }
+
+  &:focus,
+  &:visited {
+    color: var(--c-black);
+    text-decoration: underline;
+  }
+}
+//End core styles
+//Mods
+.basketUniStr--grey {
+  color: var(--c-grey);
+}
+
+.basketUniStr--small {
+  @include textSmallSize();
+}
+//End mods
