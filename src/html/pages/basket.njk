@@ -1,48 +1,35 @@
-<div class="basket">
-    <div class="basketStatusEmpty">
-        <div class="basketPromo">
-            <div class="form">
-                <form>
-                    <h2 class="basketPromoTitle">Код купона на скидку</h2>
-                    <input type="text" class="formField"/>
-                    <input type="submit" class="formButton" value="активировать">
-                </form>
-            </div>
-        </div>
-        <p class="basketUniStr">Корзина пуста. <a class="basketUniLink" href="#">Перейти к покупкам</a></p>
-    </div>
+{% extends 'layouts/application.njk' %}
+
+{% block content %}
+
+<div class="basket basket--is-empty">
+    {% include "components/basket/_promo.njk" %}
+    <p class="basketUniStr">Корзина пуста. <a class="basketUniLink" href="#">Перейти к покупкам</a></p>
 
 
-    <div class="basketOrderPayment">
+    {# <div class="basketOrderPayment">
         <h2 class="basketUniTitle">Оплата заказа №147 на сумму 9570 руб.</h2>
         <p class="basketUniStr basketUniStr--grey basketUniStr--small">Оформляя заказ Вы соглашаетесь на обработку и хранение ваших персональных данных.</p>
         <div class="form">
             <form>
-                <input type="submit" class="formButton" value="оплатить">
+                <input type="submit" class="form__button" value="оплатить">
             </form>
         </div>
-    </div>
+    </div> #}
 
-    <div class="basketPromo">
-        <div class="form">
-            <form>
-                <h2 class="basketPromoTitle">Код купона на скидку</h2>
-                <input type="text" class="formField"/>
-                <input type="submit" class="formButton" value="активировать">
-            </form>
-        </div>
-    </div>
+    {# {% include "components/basket/_promo.njk" %}
 
     <ul class="basketProductList">
-        <li class="basketProductListItem">
+        {% for item in range(0,2) %}
+          <li class="basketProductListItem">
             <div class="basketProductCard">
                 <div class="basketProductCardCell">
                     <div class="basketProductCardImgWrapper">
-                        <img src="img/img-demo4.jpg" alt="" class="basketProductCardImg">
+                        <img src="images/content/img-demo4.jpg" alt="" class="basketProductCardImg">
                     </div>
                     <div class="basketProductCardMainInfo">
                         <h3 class="basketProductCardMainInfoTitle">
-                            Наименование <span>товара</span>
+                            Наименование  #{{item}}<span>товара</span>
                         </h3>
                         <ul class="basketProductCardMainInfoList">
                             <li class="basketProductCardMainInfoListItem">Женское / Джинсы R13</li>
@@ -84,62 +71,15 @@
                     </div>
                 </div>
             </div>
-        </li>
-        <li class="basketProductListItem">
-            <div class="basketProductCard">
-                <div class="basketProductCardCell">
-                    <div class="basketProductCardImgWrapper">
-                        <img src="img/img-demo4.jpg" alt="" class="basketProductCardImg">
-                    </div>
-                    <div class="basketProductCardMainInfo">
-                        <h3 class="basketProductCardMainInfoTitle">
-                            Наименование <span>товара</span>
-                        </h3>
-                        <ul class="basketProductCardMainInfoList">
-                            <li class="basketProductCardMainInfoListItem">Женское / Джинсы R13</li>
-                            <li class="basketProductCardMainInfoListItem">Denim</li>
-                            <li class="basketProductCardMainInfoListItem">Размер: 30</li>
-                            <li class="basketProductCardMainInfoListItem">Артикул: R13W4021-208</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="basketProductCardCell">
+          </li>
+        {% endfor %}
 
-                    <div class="basketProductCardCounter">
-                        <h3 class="basketProductCardCountertitle">Количество</h3>
-                        <div class="basketProductCardCounterContainer">
-                            <span class="basketProductCardCounterButton basketProductCardCounterButton--minus"></span>
-                            <input class="basketProductCardCounterValue" type="text" value="1">
-                            <span class="basketProductCardCounterButton basketProductCardCounterButton--plus"></span>
-                        </div>
-                    </div>
-
-                    <div class="basketProductCardUniBox">
-                        <h3 class="basketProductCardUniBoxName">Цена/₽</h3>
-                        <div class="basketProductCardUniBoxValue">000 000</div>
-                    </div>
-
-                    <div class="basketProductCardUniBox">
-                        <h3 class="basketProductCardUniBoxName">Скидка</h3>
-                        <div class="basketProductCardUniBoxValue">70%</div>
-                    </div>
-
-                    <div class="basketProductCardUniBox">
-                        <h3 class="basketProductCardUniBoxName">Итого/₽</h3>
-                        <div class="basketProductCardUniBoxValue">000 000</div>
-                    </div>
-
-                    <div class="basketProductCardRemoveButton">
-                        <span class="basketProductCardRemoveButtonText">Удалить</span>
-                        <span class="basketProductCardRemoveButtonCross"></span>
-                    </div>
-                </div>
-            </div>
-        </li>
     </ul>
+
     <div class="basketTotalCost">
         <span class="basketTotalCostValue">Итого: 8 820 ₽</span>
     </div>
+
     <div class="basketUniControl">
         <h3 class="basketUniControlTitle">Способ доставки</h3>
         <div class="basketUniControlItem">
@@ -197,52 +137,54 @@
 
     <div class="form">
         <form action="">
-            <fieldset class="formFieldSet">
+            <fieldset class="form__fieldSet">
                 <legend class="formLabel formLabel--reqiured">ФИО или название компании</legend>
-                <input type="text" class="formField formField--withFullBorder" required>
+                <input type="text" class="form__field form__field--withFullBorder" required>
             </fieldset>
-            <fieldset class="formFieldSet">
+            <fieldset class="form__fieldSet">
                 <legend class="formLabel formLabel--reqiured">E-mail</legend>
-                <input type="text" class="formField formField--withFullBorder" required>
+                <input type="text" class="form__field form__field--withFullBorder" required>
             </fieldset>
-            <fieldset class="formFieldSet">
+            <fieldset class="form__fieldSet">
                 <legend class="formLabel formLabel--reqiured">Контактные телефоны (с кодом города)</legend>
-                <input type="text" class="formField formField--withFullBorder" required>
+                <input type="text" class="form__field form__field--withFullBorder" required>
             </fieldset>
-            <fieldset class="formFieldSet">
+            <fieldset class="form__fieldSet">
                 <legend class="formLabel formLabel--reqiured">Индекс</legend>
-                <input type="text" class="formField formField--withFullBorder" >
+                <input type="text" class="form__field form__field--withFullBorder" >
             </fieldset>
-            <fieldset class="formFieldSet">
+            <fieldset class="form__fieldSet">
                 <legend class="formLabel formLabel--reqiured">Город</legend>
-                <input type="text" class="formField formField--withFullBorder" required>
+                <input type="text" class="form__field form__field--withFullBorder" required>
             </fieldset>
-            <fieldset class="formFieldSet">
+            <fieldset class="form__fieldSet">
                 <legend class="formLabel formLabel--reqiured">Улица, проспект и пр.</legend>
-                <input type="text" class="formField formField--withFullBorder" >
+                <input type="text" class="form__field form__field--withFullBorder" >
             </fieldset>
-            <fieldset class="formFieldSet">
+            <fieldset class="form__fieldSet">
                 <legend class="formLabel formLabel--reqiured">Номер дома</legend>
-                <input type="text" class="formField formField--withFullBorder" >
+                <input type="text" class="form__field form__field--withFullBorder" >
             </fieldset>
-            <fieldset class="formFieldSet">
+            <fieldset class="form__fieldSet">
                 <legend class="formLabel formLabel--reqiured">Корпус</legend>
-                <input type="text" class="formField formField--withFullBorder" >
+                <input type="text" class="form__field form__field--withFullBorder" >
             </fieldset>
-            <fieldset class="formFieldSet">
+            <fieldset class="form__fieldSet">
                 <legend class="formLabel formLabel--reqiured">Квартира, офис</legend>
-                <input type="text" class="formField formField--withFullBorder" >
+                <input type="text" class="form__field form__field--withFullBorder" >
             </fieldset>
-            <fieldset class="formFieldSet">
+            <fieldset class="form__fieldSet">
                 <legend class="formLabel formLabel--reqiured">Комментарии</legend>
                 <textarea class="formTextarea">
                 </textarea>
             </fieldset>
-            <fieldset class="formFieldSet">
-                <input class="formButton formButton--width165 formButton--resetMargin" type="submit" value="продолжить">
+            <fieldset class="form__fieldSet">
+                <input class="form__button form__button--width165 form__button--resetMargin" type="submit" value="продолжить">
                 <span class="formLegend formLegend--absolutePositionRight">* — Поля, обязательные для заполнения</span>
             </fieldset>
             <p class="formError">* Не все обязательные поля заполнены</p>
         </form>
-    </div>
+    </div> #}
 </div>
+
+{% endblock %}

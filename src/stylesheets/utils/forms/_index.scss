@@ -61,11 +61,11 @@
   }
 }
 
-.formButton--width165 {
+.form__button--width165 {
   max-width: 165px;
 }
 
-.formButton--resetMargin {
+.form__button--resetMargin {
   margin: 0;
 }
 
@@ -105,9 +105,10 @@
   }
 }
 
-.formFieldSet {
+.form__fieldSet {
   position: relative;
   margin-bottom: 20px;
+  border: 0;
 }
 
 .formTextarea {

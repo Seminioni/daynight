@@ -1,0 +1,38 @@
+//Core styles
+.basket__promo {
+  margin-bottom: 20px;
+  width: 100%;
+  @media (--m) {
+    margin-bottom: 25px;
+    margin-top: 20px;
+
+    .basket__promo-title,
+    .form__field,
+    .form__button {
+      display: inline-block;
+    }
+
+    .form {
+      margin: 0;
+      width: auto;
+    }
+
+    .form__field {
+      margin: 0 24px 0 12px;
+      width: 110px;
+    }
+
+    .form__button {
+      width: 165px;
+    }
+  }
+}
+
+.basket__promo-title {
+  @include textNormalSize();
+  text-align: center;
+}
+//End core styles
+//Mods
+
+//End mods

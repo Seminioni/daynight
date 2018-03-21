@@ -1,31 +1,10 @@
-.basket {
-  padding: 0 25px 50px;
-  width: 100%;
-}
-
-.basketStatusEmpty {
-  margin-bottom: 20px;
-
-  .basketUniStr {
-    text-align: center;
-  }
-}
+@import 'core';
 
 .basketOrderPayment {
   margin-bottom: 20px;
 }
 
 // promo
-.basketPromo {
-  margin-bottom: 20px;
-  width: 100%;
-}
-
-.basketPromoTitle {
-  @include textNormalSize();
-  text-align: center;
-}
-
 .basketUniTitle {
   @include textNormalSize();
   margin-bottom: 16px;
@@ -205,8 +184,11 @@
 }
 
 .basketProductCardRemoveButtonText {
-  @include textNormalSize();
   display: none;
+}
+
+.basketProductCardCountertitle {
+  @include textNormalSize();
 }
 
 .basketProductCardRemoveButtonCross {
@@ -399,47 +381,12 @@
   }
 }
 @media screen and (min-width: $pre-mobile) {
-  .basket {
-    padding: 0;
-  }
-
-  .basketPromo {
-    margin-bottom: 25px;
-    margin-top: 20px;
-
-    .basketPromoTitle,
-    .formField,
-    .formButton {
-      display: inline-block;
-    }
-
-    .form {
-      margin: 0;
-      width: auto;
-    }
-
-    .formField {
-      margin: 0 24px 0 12px;
-      width: 110px;
-    }
-
-    .formButton {
-      width: 165px;
-    }
-  }
-
   .basketUniControlItemLabelIcon {
     display: none;
   }
 
   .basketUniControlItemDescription {
     display: block;
-  }
-
-  .basketStatusEmpty {
-    .basketUniStr {
-      text-align: unset;
-    }
   }
 
   .basketOrderPayment {
@@ -467,28 +414,6 @@
 
   .basketProductCardImgWrapper {
     padding-top: 22px;
-  }
-
-  .basketPromo {
-    .basketPromoTitle,
-    .formField,
-    .formButton {
-      display: inline-block;
-    }
-
-    .form {
-      margin: 0;
-      width: auto;
-    }
-
-    .formField {
-      margin: 0 24px 0 12px;
-      width: 118px;
-    }
-
-    .formButton {
-      width: 165px;
-    }
   }
 
   .basketProductCardRemoveButton {
@@ -555,3 +480,5 @@
     padding-top: 0;
   }
 }
+
+@import 'promo';

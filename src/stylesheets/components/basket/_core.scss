@@ -1,0 +1,23 @@
+//Core styles
+.basket {
+  padding: 0 25px 50px;
+  width: 100%;
+  @media (--m) {
+    padding: 0;
+  }
+}
+//End core styles
+//Mods
+.basket--is-empty {
+  margin-bottom: 20px;
+
+  .basketUniStr {
+    text-align: center;
+  }
+  @media (--m) {
+    .basketUniStr {
+      text-align: unset;
+    }
+  }
+}
+//End mods
