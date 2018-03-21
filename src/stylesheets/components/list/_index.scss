@@ -28,10 +28,10 @@
 }
 
 .list__item-date {
-  @extend .f-weight-light;
   @include rhythm(9, 16);
   display: block;
   font-size: 9px;
+  font-weight: 300;
   letter-spacing: 1px;
   line-height: 1.88889;
 }
@@ -40,6 +40,13 @@
   @include rhythm(11, 14);
   display: block;
   font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.list__item-price {
+  @include rhythm(11, 14);
+  display: block;
+  font-weight: 300;
   letter-spacing: 1px;
 }
 
@@ -59,7 +66,47 @@
   top: 0;
   transform: translateX(-50%);
 }
+
+.list__item-sale,
+.list__item-new {
+  @include rhythm(9, 16);
+  bottom: 0;
+  font-weight: 300;
+  left: 0;
+  letter-spacing: 1px;
+  padding: 2px 7px 3px;
+  position: absolute;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.list__item-sale {
+  background: var(--c-red);
+  color: var(--c-white);
+}
+
+.list__item-new {
+  background: var(--c-black);
+  color: var(--c-white);
+}
 //End core styles
 //Mods
+.list--long {
+  .list__item {
+    margin-bottom: 20px;
+  }
+
+  .list__item-cover,
+  .list__item-cover-img {
+    height: 228px;
+  }
+  @media (--m) {
+    .list__item {
+      margin-bottom: 20px;
+      padding: 0;
+      width: 163px;
+    }
+  }
+}
 
 //End mods

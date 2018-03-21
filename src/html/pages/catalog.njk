@@ -1,0 +1,50 @@
+{% extends 'layouts/application.njk' %}
+
+{% block content %}
+
+{# {% include "components/_filter.njk" %} #}
+
+<div class="list list--long">
+    <a class="list__item link" href="card.html">
+        <p class="list__item-cover">
+            <span class="list__item-sale">SALE</span>
+            <img class="list__item-cover-img" src="images/content/img-demo2.jpg" alt="">
+        </p>
+        <span class="list__item-title">Платье Helmut Lang</span>
+        <span class="list__item-price">58 830 ₽</span>
+    </a>
+    <a class="list__item link" href="card.html">
+        <p class="list__item-cover">
+            <span class="list__item-new">NEW</span>
+            <img class="list__item-cover-img" src="images/content/img-demo2.jpg" alt="">
+        </p>
+        <span class="list__item-title">Платье Helmut Lang</span>
+        <span class="list__item-price">58 830 ₽</span>
+    </a>
+    <a class="list__item link" href="card.html">
+        <p class="list__item-cover">
+            <img class="list__item-cover-img" src="images/content/img-demo3.jpg" alt="">
+        </p>
+        <span class="list__item-title">Платье Helmut Lang</span>
+        <span class="list__item-price">58 830 ₽</span>
+    </a>
+    {% for item in range(0,5) %}
+      <a class="list__item link" href="card.html">
+        <p class="list__item-cover">
+            <img class="list__item-cover-img" src="images/content/img-demo2.jpg" alt="">
+        </p>
+        <span class="list__item-title">Платье Helmut Lang</span>
+        <span class="list__item-price">58 830 ₽</span>
+      </a>
+    {% endfor %}
+    <a href="#" class="list__item list__item--zero"></a>
+</div>
+
+{% include "components/_pagination.njk" %}
+
+<p class="commonMsg">Извините, ничего не найдено.</p>
+
+{% endblock %}
+
+
+

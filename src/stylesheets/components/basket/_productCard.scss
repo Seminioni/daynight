@@ -31,8 +31,8 @@
   width: calc((99 / 325) * 100%);
   @media (--m) {
     flex-shrink: 0;
-    width: 100%;
     padding-top: 22px;
+    width: 100%;
   }
 }
 

@@ -1,11 +1,15 @@
+{% extends 'layouts/application.njk' %}
+
+{% block content %}
+
 <div class="productCard">
     <div class="breadcrumbs">
-        <a href="catalog.html" class="breadcrumbsLink">в каталог</a>
+        <a href="catalog.html" class="breadcrumbsLink link">в каталог</a>
     </div>
     <div class="productCardInner">
         <div class="productGallery">
             <div class="productGalleryContainer">
-                <img class="productGalleryImg" src="img/img-demo4.jpg" alt="">
+                <img class="productGalleryImg" src="images/content/img-demo4.jpg" alt="">
             </div>
             <div class="productGalleryNavigation">
                 <div class="productGalleryNavigationArrow"></div>
@@ -53,48 +57,59 @@
                     <p class="productString">Размерная сетка бренда: Usa</p>
                 </div>
                 <div class="productCardGridCell">
-                    <input class="formButton" type="button" value="в корзину" />
-                    <input class="formButton formButton--favorite" type="button" value="в избранное" />
+                    <input class="form__button" type="button" value="в корзину" />
+                    <input class="form__button form__button--favorite" type="button" value="в избранное" />
                 </div>
                 <div class="productCardGridCell">
-                    <div class="uniAccordion" data-name="Доставка и возврат">
-                        <p><strong>Доставка</strong></p>
-                        <p>Все заказы, оформленные в нашем магазине, доставляются исключительно проверенными курьерскими службами из рук в руки по всей территории РФ. После обработки заказа, на указанный контактный адрес электронной почты Вам будет выслан номер для отслеживания отправления. Бесплатная доставка по территории РФ возможна при покупке от 15 000 ₽.</p>
-                        <p><strong>Возврат</strong></p>
-                        <p>Согласно закону "О защите прав потребителя" обмен и возврат товара надлежащего качества возможен в течение 14 дней со дня получения заказа.</p>
-                        <p><a href="#">Ознакомиться с условиями полностью</a></p>
+                    <div class="uniAccordion spoiler" data-name="Доставка и возврат" data-controller="spoiler" data-classname="is-collapsed">
+                        <p class="spoiler__trigger" data-target="spoiler.trigger" data-action="click->spoiler#onTriggerAction"><strong>Доставка и возврат</strong></p>
+                        <div class="spoiler__container is-collapsed" data-target="spoiler.container">
+                          <p>Все заказы, оформленные в нашем магазине, доставляются исключительно проверенными курьерскими службами из рук в руки по всей территории РФ. После обработки заказа, на указанный контактный адрес электронной почты Вам будет выслан номер для отслеживания отправления. Бесплатная доставка по территории РФ возможна при покупке от 15 000 ₽.</p>
+                          <p><strong>Возврат</strong></p>
+                          <p>Согласно закону "О защите прав потребителя" обмен и возврат товара надлежащего качества возможен в течение 14 дней со дня получения заказа.</p>
+                          <p><a href="#">Ознакомиться с условиями полностью</a></p>
+                        </div>
                     </div>
 
-                    <div class="uniAccordion" data-name="Задать вопрос">
-                        <div class="form">
+                    <div class="uniAccordion" data-name="Задать вопрос" data-controller="spoiler" data-classname="is-collapsed">
+                        <p class="spoiler__trigger" data-target="spoiler.trigger" data-action="click->spoiler#onTriggerAction">Задать вопрос</p>
+                        <div class="spoiler__container is-collapsed" data-target="spoiler.container">
+                          <div class="form">
                             <form action="">
-                                <fieldset class="formFieldSet">
+                                <fieldset class="form__fieldSet">
                                     <legend class="form__label">ФИО</legend>
-                                    <input type="text" class="formField formField--withFullBorder" required>
+                                    <input type="text" class="form__field form__field--withFullBorder" required>
                                 </fieldset>
-                                <fieldset class="formFieldSet">
+                                <fieldset class="form__fieldSet">
                                     <legend class="form__label">E-mail</legend>
-                                    <input type="text" class="formField formField--withFullBorder" required>
+                                    <input type="text" class="form__field form__field--withFullBorder" required>
                                 </fieldset>
-                                <fieldset class="formFieldSet">
+                                <fieldset class="form__fieldSet">
                                     <legend class="form__label">Ваш вопрос</legend>
                                     <textarea class="formTextarea"></textarea>
                                 </fieldset>
-                                <fieldset class="formFieldSet">
-                                    <input class="formButton formButton--width165 formButton--resetMargin" type="submit" value="отправить">
+                                <fieldset class="form__fieldSet">
+                                    <input class="form__button form__button--width165 form__button--resetMargin" type="submit" value="отправить">
                                 </fieldset>
                                 <p class="productString productString--grey">Нажимая &laquo;отправить&raquo; вы соглашаетесь на обработку персональных данных в соответствии с
                                     <a href="#">Политикой конфиденциальности</a>
                                 </p>
                             </form>
+                          </div>
                         </div>
+
                     </div>
 
                 </div>
             </div>
             <div class="productCardFooter">
-                <%- partial('_partials/_socials')%>
+                {% include "components/_socials.njk" %}
             </div>
         </div>
     </div>
 </div>
+
+{% endblock %}
+
+
+
