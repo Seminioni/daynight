@@ -2,7 +2,7 @@
   padding: 0 25px 25px;
   width: 100%;
 
-  .formButton--favorite {
+  .form__button--favorite {
     display: none;
     margin-top: 8px;
   }
@@ -21,6 +21,21 @@
   margin-bottom: 15px;
   position: relative;
   width: 100%;
+  .arrow--left {
+    @include arrow(left, 25);
+    position: absolute;
+    left: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .arrow--right {
+    @include arrow(right, 25);
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
 
 .productGalleryContainer {
@@ -144,18 +159,6 @@
 
 .productDescription {
   margin-bottom: 15px;
-
-  &.active {
-    margin-bottom: 5px;
-
-    .productDescriptionInner {
-      height: unset;
-    }
-
-    .productDescriptionBtn {
-      display: none;
-    }
-  }
 }
 
 .productDescriptionLabel {
@@ -166,8 +169,8 @@
 
 .productDescriptionInner {
   @include textNormalSize();
-  height: 32px;
-  overflow: hidden;
+  // height: 32px;
+  // overflow: hidden;
 
   p {
     @include textNormalSize();
@@ -180,9 +183,8 @@
   @include textNormalSize();
   color: var(--c-black);
   cursor: pointer;
-
-  &:after {
-    content: "...";
+  &.is-hidden {
+    display: none;
   }
 }
 
@@ -209,7 +211,7 @@
       display: block;
     }
 
-    .formButton {
+    .form__button {
       margin-left: 0;
       margin-right: 0;
       max-width: 165px;

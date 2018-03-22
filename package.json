@@ -9,9 +9,12 @@
     "start": "gulp",
     "build": "gulp build",
     "gh-pages": "gulp gh-pages",
-    "deploy": "yarn build && surge -p ./public -d daynight.surge.sh"
+    "deploy": "yarn build && surge -p ./public -d day-and-night.surge.sh"
   },
-  "dependencies": {},
+  "dependencies": {
+    "drift-zoom": "^1.2.0",
+    "siema": "^1.5.1"
+  },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",

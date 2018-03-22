@@ -45,8 +45,8 @@
 }
 
 .basket__unicontrol-lable-icon {
-  @include arrowSmall();
-  display: inline-block;
+  @include arrow(down, 15);
+  position: relative;
   @media (--m) {
     display: none;
   }

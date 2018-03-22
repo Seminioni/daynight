@@ -4,16 +4,14 @@
 
 <div class="productCard">
     <div class="breadcrumbs">
-        <a href="catalog.html" class="breadcrumbsLink link">в каталог</a>
+        <a href="catalog.html" class="breadcrumbs__link link"><i class="breadcrumbs__link-icon"></i>в каталог</a>
     </div>
     <div class="productCardInner">
         <div class="productGallery">
-            <div class="productGalleryContainer">
+            <div class="productGalleryContainer" data-controller="card-slider">
                 <img class="productGalleryImg" src="images/content/img-demo4.jpg" alt="">
-            </div>
-            <div class="productGalleryNavigation">
-                <div class="productGalleryNavigationArrow"></div>
-                <div class="productGalleryNavigationArrow"></div>
+                <img class="productGalleryImg" src="images/content/img-demo4.jpg" alt="">
+                <img class="productGalleryImg" src="images/content/img-demo4.jpg" alt="">
             </div>
         </div>
         <div class="productMainContent">
@@ -44,12 +42,14 @@
                 <div class="productCardGridCell">
                     <div id="productDescription" class="productDescription">
                         <p class="productDescriptionLabel">Описание</p>
-                        <div class="productDescriptionInner">
-                            <p>Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях. При создании генератора мы использовали небезизвестный универсальный код речей. Текст генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет сделать текст более привлекательным и живым для визуально-слухового восприятия.</p>
+                        <div class="show-more is-collapsed" data-controller="show-more" data-show-more-length="15">
+                          <div class="productDescriptionInner">
+                              <p data-target="show-more.string" data-action="click->show-more#onTriggerAction">Сайт рыбатекст поможет  дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях. При создании генератора мы использовали небезизвестный универсальный код речей. Текст генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет сделать текст более привлекательным и живым для визуально-слухового восприятия.
 
-                            <p>По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит любой макет непонятным смыслом и придаст неповторимый колорит советских времен.</p>
+                              По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит любой макет непонятным смыслом и придаст неповторимый колорит советских времен.</p>
+                          </div>
+                          <span class="productDescriptionBtn" data-target="show-more.trigger" data-action="click->show-more#onTriggerAction">подробнее</span>
                         </div>
-                        <span class="productDescriptionBtn">подробнее</span>
                     </div>
                     <p class="productString">Размер на модели: 2</p>
                     <p class="productString">Уход: химчистка</p>
@@ -61,9 +61,10 @@
                     <input class="form__button form__button--favorite" type="button" value="в избранное" />
                 </div>
                 <div class="productCardGridCell">
-                    <div class="uniAccordion spoiler" data-name="Доставка и возврат" data-controller="spoiler" data-classname="is-collapsed">
-                        <p class="spoiler__trigger" data-target="spoiler.trigger" data-action="click->spoiler#onTriggerAction"><strong>Доставка и возврат</strong></p>
-                        <div class="spoiler__container is-collapsed" data-target="spoiler.container">
+                    <div class="uniAccordion spoiler is-collapsed" data-controller="spoiler" data-classname="is-collapsed">
+                        <p class="uniAccordionName spoiler__trigger" data-target="spoiler.trigger" data-action="click->spoiler#onTriggerAction">Доставка и возврат <span class="uniAccordionNameArrow"></span></p>
+                        <div class="uniAccordionContainer spoiler__container is-collapsed" data-target="spoiler.container">
+                          <p><strong>Доставка</strong></p>
                           <p>Все заказы, оформленные в нашем магазине, доставляются исключительно проверенными курьерскими службами из рук в руки по всей территории РФ. После обработки заказа, на указанный контактный адрес электронной почты Вам будет выслан номер для отслеживания отправления. Бесплатная доставка по территории РФ возможна при покупке от 15 000 ₽.</p>
                           <p><strong>Возврат</strong></p>
                           <p>Согласно закону "О защите прав потребителя" обмен и возврат товара надлежащего качества возможен в течение 14 дней со дня получения заказа.</p>
@@ -71,9 +72,9 @@
                         </div>
                     </div>
 
-                    <div class="uniAccordion" data-name="Задать вопрос" data-controller="spoiler" data-classname="is-collapsed">
-                        <p class="spoiler__trigger" data-target="spoiler.trigger" data-action="click->spoiler#onTriggerAction">Задать вопрос</p>
-                        <div class="spoiler__container is-collapsed" data-target="spoiler.container">
+                    <div class="uniAccordion is-collapsed" data-controller="spoiler" data-classname="is-collapsed">
+                        <p class="uniAccordionName spoiler__trigger" data-target="spoiler.trigger" data-action="click->spoiler#onTriggerAction">Задать вопрос <span class="uniAccordionNameArrow"></span></p>
+                        <div class="uniAccordionContainer spoiler__container is-collapsed" data-target="spoiler.container">
                           <div class="form">
                             <form action="">
                                 <fieldset class="form__fieldSet">

@@ -3,15 +3,31 @@
   width: 100%;
 }
 
-.breadcrumbsLink {
+.breadcrumbs__link {
   @include textNormalSize();
+  @include setTransitionFor(color);
   color: var(--c-grey);
   display: inline-block;
   padding-left: 4px;
+  &:hover {
+    color: var(--c-black);
+    .breadcrumbs__link-icon {
+      &:after,
+      &:before {
+        background: var(--c-black);
+      }
+    }
+  }
+}
 
+.breadcrumbs__link-icon {
+  @include arrow(left, 10);
+  position: relative;
+  margin-right: 10px;
+  vertical-align: middle;
+  &:after,
   &:before {
-    content: "<";
-    padding-right: 8px;
+    background: var(--c-grey);
   }
 }
 //End core styles

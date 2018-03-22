@@ -6,7 +6,10 @@ export default class Spoiler extends Controller {
 
   toggleSpoiler() {
     const className = this.element.getAttribute('data-classname')
-    toggleClass(this.spoiler, className)
+    toggleClass([
+      [this.spoiler, className],
+      [this.element, className]
+    ])
   }
 
   onTriggerAction(e) {

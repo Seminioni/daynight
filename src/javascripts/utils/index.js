@@ -19,21 +19,34 @@ export function addClass(el, className) {
   else el.className += " " + className;
 }
 /**
- * @param  HTMLElement
+ * @param  HTMLElement || Object
  * @param  className
  */
 export function toggleClass(el, className) {
-  if (el.classList) {
-    el.classList.toggle(className);
-  } else {
-    let classes = el.className.split(" ");
-    const existingIndex = classes.indexOf(className);
+  function toggle(el, className) {
+    if (el.classList) {
+      el.classList.toggle(className);
+    } else {
+      let classes = el.className.split(" ");
+      const existingIndex = classes.indexOf(className);
 
-    if (existingIndex >= 0) classes.splice(existingIndex, 1);
-    else classes.push(className);
+      if (existingIndex >= 0) classes.splice(existingIndex, 1);
+      else classes.push(className);
 
-    el.className = classes.join(" ");
+      el.className = classes.join(" ");
+    }
   }
+
+  if (Array.isArray(el)) {
+    el.forEach(pair => {
+      const [HTMLElement, className] = pair;
+      toggle(HTMLElement, className)
+    });
+  } else {
+    toggle(el, className);
+  }
+
+
 }
 /**
  * @param  HTMLElement

@@ -36,16 +36,18 @@
 
 .address__build-name {
   @include textNormalSize();
+  position: relative;
   @media (--m) {
     font-weight: 500;
   }
 }
 
 .address__arrow {
-  @include arrowSmall();
-  display: inline-block;
-  float: right;
-  transform: translateY(8px);
+  @include arrow(down, 15);
+  @include setTransitionFor(transform);
+  position: absolute;
+  right: 2px;
+  top: 0;
   @media (--m) {
     display: none;
   }
@@ -111,7 +113,7 @@
     }
 
     .address__arrow {
-      transform: translateY(6px) rotate(180deg);
+      transform: rotate(180deg);
     }
   }
   @media (--m) {

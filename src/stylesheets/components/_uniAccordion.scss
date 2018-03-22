@@ -5,17 +5,22 @@
   display: inline-block;
   font-weight: 500;
   user-select: none;
+  vertical-align: middle;
 }
 
 .uniAccordionNameArrow {
-  @include arrowSmall();
-  display: inline-block;
+  @include setTransitionFor(transform);
+  position: relative;
+  @include arrow(down, 15);
   margin-left: 18px;
+  vertical-align: middle;
 }
 
 .uniAccordionContainer {
-  display: none;
-
+  display: block;
+  > * {
+    margin-top: 10px;
+  }
   p {
     @include textNormalSize();
     margin-bottom: 10px;
@@ -31,23 +36,21 @@
       text-decoration: none;
     }
   }
+
+  fieldset {
+    padding: 0;
+  }
 }
 
 .uniAccordion {
   margin: 24px 0 0;
-
-  &.active {
-    .uniAccordionName {
-      margin-bottom: 10px;
-    }
-
-    .uniAccordionContainer {
-      display: block;
-    }
-
+  &.is-collapsed {
     .uniAccordionNameArrow {
-      transform: rotate(180deg);
+      transform: rotate(0deg);
     }
+  }
+  .uniAccordionNameArrow {
+    transform: rotate(180deg);
   }
 }
 //End core styles

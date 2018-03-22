@@ -3,14 +3,15 @@
 {% block content %}
 
 {% for i in range(0, 2) %}
-<div class="address" data-controller="spoiler" data-target="spoiler.container" data-classname="is-active">
+<div class="address" data-controller="spoiler" data-classname="is-active">
     <div class="address__img-wrapper">
         <img class="address__img" src="https://daynight.ru/userfiles/editor/myimg/423_dn2.png" alt="">
     </div>
-    <div class="address__info">
-        <div class="address__build" data-target="spoiler.trigger" data-action="click->spoiler#onTriggerAction">
-            <h2 class="address__build-name">Магазин DayNight #{{i}}<span class="address__arrow arrow arrow--down"></span></h2>
-        </div>
+    <div>
+      <div class="address__build" data-target="spoiler.trigger" data-action="click->spoiler#onTriggerAction">
+        <h2 class="address__build-name">Магазин DayNight #{{i}}<span class="address__arrow"></span></h2>
+    </div>
+    <div class="address__info" data-target="spoiler.container">
         <div class="address__contacts" >
             <div class="address__streets">
                 <div class="address__street">
@@ -27,6 +28,8 @@
             </div>
         </div>
     </div>
+    </div>
+
 </div>
 {% endfor %}
 

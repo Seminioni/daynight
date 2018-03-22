@@ -80,7 +80,7 @@
 }
 
 .filterSelectorArrow {
-  @include arrowSmall();
+  @include arrow(down, 15);
   display: inline-block;
   margin-left: 12px;
   vertical-align: middle;

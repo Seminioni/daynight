@@ -30,7 +30,7 @@
 }
 
 .linkToCatalogArrow{
-  @include arrow();
+  @include arrow(left, 10);
   display: block;
   margin: 18px auto 0;
   z-index:3;

@@ -1,0 +1,81 @@
+// Arrow mixin
+@mixin arrow($type, $size) {
+  display: inline-block;
+  height: 100%;
+  // height: unquote($size + "px");
+  width: unquote($size + "px");
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:after,
+  &:before {
+    @include setTransitionFor(background);
+    content: "";
+    background-color: var(--c-black);
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    width: unquote($size / 2 + "px");
+    transform: translateY(-50%);
+  }
+
+  @if $type == "left" {
+    &:after,
+    &:before {
+      left: 0;
+    }
+
+    &:after {
+      transform: rotate(45deg);
+      transform-origin: 0 50%;
+    }
+
+    &:before {
+      transform: rotate(-45deg);
+      transform-origin: 0 50%;
+    }
+  } @else if $type == "right" {
+    &:after,
+    &:before {
+      right: 0;
+    }
+
+    &:after {
+      transform: rotate(45deg);
+      transform-origin: 100% 50%;
+    }
+
+    &:before {
+      transform: rotate(-45deg);
+      transform-origin: 100% 50%;
+    }
+  } @else if $type == "top" {
+    &:after {
+      transform: rotate(-225deg);
+      transform-origin: 0 0%;
+    }
+
+    &:before {
+      transform: rotate(45deg);
+      transform-origin: 0 0%;
+    }
+  } @else if $type == "down" {
+    &:after,
+    &:before {
+      // left: 50%;
+    }
+
+    &:after {
+      left: 0%;
+      transform: translateY(-50%) rotate(45deg);
+      transform-origin: 100% 50%;
+    }
+
+    &:before {
+      right: 0%;
+      transform: translateY(-50%) rotate(-45deg);
+      transform-origin: 0 50%;
+    }
+  }
+}
