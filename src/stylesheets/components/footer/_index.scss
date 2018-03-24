@@ -6,7 +6,7 @@
   width: 100%;
 
   .nav--footer .nav__link {
-    @include rhythm(11,11);
+    @include rhythm(11, 11);
     text-transform: uppercase;
   }
   @media (--m) {
@@ -67,9 +67,3 @@
   max-width: 440px;
 }
 //End mods
-
-@media screen and (min-width: $pre-mobile) {
-  .paymentsStandartsFullSet {
-    margin: 25px 0 !important;
-  }
-}

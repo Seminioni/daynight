@@ -9,7 +9,6 @@
 }
 
 .postBackLink {
-  background: url("../img/img-cross16x16.svg") top right no-repeat;
   cursor: pointer;
   display: inline-block;
   height: 40px;
@@ -27,12 +26,11 @@
 
 .postBackLinkText {
   @include rhythm(9, 11);
+  @include arrow(left, 8, var(--c-grey), var(--c-grey));
+  position: relative;
+  padding-left: 8px;
   color: var(--c-grey);
   display: none;
-
-  &:before {
-    content: "< ";
-  }
 }
 
 .postTitle {
@@ -55,6 +53,10 @@
     @include textNormalSize();
     font-weight: 500;
     margin: 25px 0 20px;
+  }
+
+  .center {
+    text-align: center;
   }
 
   p {
@@ -89,6 +91,10 @@
     margin-bottom: 15px;
     max-width: 100%;
     width: auto;
+    &.paymentsStandartsFullSet {
+      margin: 25px 0;
+      max-width: 353px;
+    }
   }
 
   ul {

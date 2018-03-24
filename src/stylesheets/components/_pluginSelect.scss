@@ -39,7 +39,7 @@
 }
 
 .yuroidStylizedSelectArrow {
-  @include arrow(down, 15);
+  @include arrow(down, 10, var(--c-black), var(--c-black));
   display: block;
   float: right;
 }

@@ -11,7 +11,7 @@
 .uniAccordionNameArrow {
   @include setTransitionFor(transform);
   position: relative;
-  @include arrow(down, 15);
+  @include arrow(down, 15, var(--c-black), var(--c-black));
   margin-left: 18px;
   vertical-align: middle;
 }

@@ -21,21 +21,17 @@ export default class ShowMore extends Controller {
   }
 
   onTriggerAction() {
-    const condition = this.element.classList.contains('is-collapsed');
+    const isCollapsed = this.element.classList.contains('is-collapsed');
     const shortString = JSON.parse(this.data.get('short-string'));
 
     if (!shortString) {
-      if (condition) {
-        toggleClass([
-          [this.triggerTarget, 'is-hidden'],
-          [this.element, 'is-collapsed']
-        ]);
+      toggleClass([
+        [this.triggerTarget, 'is-hidden'],
+        [this.element, 'is-collapsed']
+      ]);
+      if (isCollapsed) {
         this.string.textContent = this.originalString;
       } else {
-        toggleClass([
-          [this.triggerTarget, 'is-hidden'],
-          [this.element, 'is-collapsed']
-        ]);
         this.string.textContent = this.editedString;
       }
     } else {

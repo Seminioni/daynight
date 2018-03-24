@@ -51,7 +51,6 @@
         {% endblock %}
       </div>
     </div>
-    {% include('../components/_footer.njk') %}
     <div class="modal">
       <div class="modalContainer">
         <img src="img/logo.svg" alt="" class="logo">
@@ -69,6 +68,8 @@
 
 
   </div>
+  {% include('../components/_footer.njk') %}
+
   {% block javascript %}
   <script async src="../javascripts/app.js"></script>
   {% endblock %}

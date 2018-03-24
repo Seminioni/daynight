@@ -1,18 +1,22 @@
 // Arrow mixin
-@mixin arrow($type, $size) {
+@mixin arrow($type, $size, $color, $onHoverColor) {
   display: inline-block;
   height: 100%;
   // height: unquote($size + "px");
   width: unquote($size + "px");
   &:hover {
     cursor: pointer;
+    &:after,
+    &:before {
+      background-color: $onHoverColor;
+    }
   }
 
   &:after,
   &:before {
     @include setTransitionFor(background);
     content: "";
-    background-color: var(--c-black);
+    background-color: $color;
     height: 1px;
     position: absolute;
     top: 50%;

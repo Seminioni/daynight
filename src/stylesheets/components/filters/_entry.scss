@@ -35,7 +35,6 @@
   width: 100px;
 
   &:before {
-    background: url("../img/icon-filter.svg") center center no-repeat;
     content: "";
     display: inline-block;
     height: 17px;
@@ -46,10 +45,6 @@
 
   &.active {
     color: var(--c-black);
-
-    &:before {
-      background-image: url("../img/icon-filter-active.svg");
-    }
 
     & + .btnCross {
       display: block;
@@ -80,10 +75,11 @@
 }
 
 .filterSelectorArrow {
-  @include arrow(down, 15);
+  @include arrow(down, 12, var(--c-black), var(--c-black));
   display: inline-block;
   margin-left: 12px;
   vertical-align: middle;
+  position: relative;
 }
 
 .filterReset {

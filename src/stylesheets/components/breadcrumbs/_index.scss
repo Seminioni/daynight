@@ -21,14 +21,10 @@
 }
 
 .breadcrumbs__link-icon {
-  @include arrow(left, 10);
+  @include arrow(left, 10, var(--c-grey), var(--c-grey));
   position: relative;
   margin-right: 10px;
   vertical-align: middle;
-  &:after,
-  &:before {
-    background: var(--c-grey);
-  }
 }
 //End core styles
 

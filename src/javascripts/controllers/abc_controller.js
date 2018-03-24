@@ -23,7 +23,9 @@ export default class Abc extends Controller {
     }
     const targetLetter = e.target.parentNode;
     const letters = getSiblingsOf(targetLetter);
+
     addClass(this.element, "letter-is-selected");
+
     letters.forEach(letter => removeClass(letter, "is-selected"));
 
     addClass(targetLetter, "is-selected");

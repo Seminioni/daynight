@@ -43,7 +43,7 @@
 }
 
 .address__arrow {
-  @include arrow(down, 15);
+  @include arrow(down, 15, var(--c-black), var(--c-black));
   @include setTransitionFor(transform);
   position: absolute;
   right: 2px;

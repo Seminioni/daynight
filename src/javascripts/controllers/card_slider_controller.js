@@ -1,10 +1,18 @@
 import { Controller } from "stimulus";
 import initSiema from "../components/slider";
+import initZoom from "../components/zoom";
 
 export default class CardSlider extends Controller {
-  // static targets = ["heading", "resetBtn", "grid"];
+  static targets = ["slide"];
 
   initialize() {
+    this.slideTargets.forEach(slide => {
+      initZoom(slide, {
+        zoom: 2,
+        paneContainer: this.element
+      });
+    });
+
     initSiema({
       selector: this.element,
       duration: 300,
@@ -17,8 +25,7 @@ export default class CardSlider extends Controller {
       loop: true,
       onInit: function() {
         this.addArrows();
-      },
-    })
+      }
+    });
   }
-
 }

@@ -1,3 +1,7 @@
+{% extends 'layouts/application.njk' %}
+
+{% block content %}
+
 <article class="post">
     <header class="postHeader">
         <h1 class="postTitle">Оплата</h1>
@@ -12,6 +16,8 @@
         <p>Yandex.Деньги не передает данные Вашей карты магазину и иным третьим лицам. Безопасность платежей с помощью банковских карт обеспечивается технологиями защищенного соединения HTTPS и двухфакторной аутентификации пользователя 3D Secure. В соответствии с ФЗ «О защите прав потребителей» в случае, если Вам оказана услуга или реализован товар ненадлежащего качества, платеж может быть возвращен на банковскую карту, с которой производилась оплата. Порядок возврата средств уточняйте у администрации интернет-магазина.</p>
 
         <p>Условия продажи товаров через сайт daynight.ru описаны <a href="oferta.html">здесь</a>.</p>
-        <img class="paymentsStandartsFullSet" src="img/img-payment.svg" alt="">
+        <img class="paymentsStandartsFullSet" src="https://daynight.ru/custom/day/img/img-payment.svg" alt="">
     </div>
 </article>
+
+{% endblock %}

@@ -22,7 +22,7 @@
   position: relative;
   width: 100%;
   .arrow--left {
-    @include arrow(left, 25);
+    @include arrow(left, 25, var(--c-grey), var(--c-black));
     position: absolute;
     left: -5px;
     top: 50%;
@@ -30,7 +30,7 @@
   }
 
   .arrow--right {
-    @include arrow(right, 25);
+    @include arrow(right, 25, var(--c-grey), var(--c-black));
     position: absolute;
     right: -5px;
     top: 50%;
@@ -169,8 +169,6 @@
 
 .productDescriptionInner {
   @include textNormalSize();
-  // height: 32px;
-  // overflow: hidden;
 
   p {
     @include textNormalSize();
