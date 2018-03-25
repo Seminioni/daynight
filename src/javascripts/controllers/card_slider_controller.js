@@ -1,7 +1,7 @@
 import { Controller } from "stimulus";
 import initSiema from "../components/slider";
 import initZoom from "../components/zoom";
-import { removeClass, toggleClass } from "../utils";
+import { removeClass } from "../utils";
 
 export default class CardSlider extends Controller {
   static targets = ["slide"];

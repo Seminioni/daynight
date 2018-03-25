@@ -21,10 +21,14 @@
   margin-bottom: 15px;
   position: relative;
   width: 100%;
-
+  @include setTransitionFor(0.8s, opacity, visibility, overflow);
   &.is-loading {
-    height: 0;
+    opacity: 0;
+    visibility: hidden;
     overflow: hidden;
+    > * {
+      height: 0;
+    }
   }
   .arrow--left {
     @include arrow(left, 25, var(--c-grey), var(--c-black));
