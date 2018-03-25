@@ -56,7 +56,7 @@
     top: 50%;
     width: 100%;
     @media (--m) {
-      @include setTransitionFor(background);
+      @include setTransitionFor(0.2s, background);
       background-color: var(--c-black);
     }
   }

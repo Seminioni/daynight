@@ -5,7 +5,8 @@
 }
 
 // Set transition for
-@mixin setTransitionFor($properties...) {
-  transition: 0.2s ease-in-out;
+@mixin setTransitionFor($time: 0.2s, $properties...) {
+  transition-timing-function: ease-in-out;
+  transition-duration: $time;
   transition-property: $properties;
 }

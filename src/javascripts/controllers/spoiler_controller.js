@@ -2,12 +2,13 @@ import { Controller } from "stimulus"
 import { toggleClass } from "../utils"
 
 export default class Spoiler extends Controller {
-  static targets = ['trigger', 'container'];
+  static targets = ['trigger', 'willHidden'];
 
   toggleSpoiler() {
     const className = this.element.getAttribute('data-classname')
+
+    Array.from(this.willHiddenTargets).forEach(willHidden => toggleClass(willHidden, className))
     toggleClass([
-      [this.spoiler, className],
       [this.element, className]
     ])
   }

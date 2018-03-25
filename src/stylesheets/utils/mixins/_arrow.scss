@@ -14,7 +14,7 @@
 
   &:after,
   &:before {
-    @include setTransitionFor(background);
+    @include setTransitionFor(0.2s, background);
     content: "";
     background-color: $color;
     height: 1px;

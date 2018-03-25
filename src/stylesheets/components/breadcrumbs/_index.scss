@@ -5,25 +5,30 @@
 
 .breadcrumbs__link {
   @include textNormalSize();
-  @include setTransitionFor(color);
+  @include setTransitionFor(0.2s, color);
+
   color: var(--c-grey);
   display: inline-block;
   padding-left: 4px;
   &:hover {
     color: var(--c-black);
     .breadcrumbs__link-icon {
-      &:after,
-      &:before {
-        background: var(--c-black);
-      }
+      background-image: svg-load("../icons/svg/icon-arrow.svg", fill=var(--c-black));
     }
   }
 }
 
 .breadcrumbs__link-icon {
-  @include arrow(left, 10, var(--c-grey), var(--c-grey));
+  @include setTransitionFor(0.2s, background);
   position: relative;
+  background-image: svg-load("../icons/svg/icon-arrow.svg", fill=var(--c-grey));
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
   margin-right: 10px;
+  width: 7px;
+  height: 7px;
+  transform: rotate(-90deg);
   vertical-align: middle;
 }
 //End core styles

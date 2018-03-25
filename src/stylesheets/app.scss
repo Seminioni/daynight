@@ -11,6 +11,7 @@
 @import "utils/GUI";
 @import "utils/socialShareLinks";
 @import "utils/forms/index";
+@import "components/spoiler/index";
 
 html,
 body {
@@ -119,10 +120,10 @@ body {
 @import "components/pluginSelect";
 @import "components/productCard";
 @import "components/sidebar/index";
-@import "components/spoiler/index";
 @import "components/socials/index";
 @import "components/post";
 @import "components/uniAccordion";
 @import "components/list/index";
 @import "components/text";
 @import "components/tour";
+@import "components/zoom/entry";

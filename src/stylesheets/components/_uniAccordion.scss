@@ -9,9 +9,14 @@
 }
 
 .uniAccordionNameArrow {
-  @include setTransitionFor(transform);
-  position: relative;
-  @include arrow(down, 15, var(--c-black), var(--c-black));
+  @include setTransitionFor(0.2s, transform);
+  // @include arrow(down, 15, var(--c-black), var(--c-black));
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  background-image: svg-load("../icons/svg/icon-arrow.svg");
   margin-left: 18px;
   vertical-align: middle;
 }
@@ -46,11 +51,11 @@
   margin: 24px 0 0;
   &.is-collapsed {
     .uniAccordionNameArrow {
-      transform: rotate(0deg);
+      transform: scale(-1);
     }
   }
   .uniAccordionNameArrow {
-    transform: rotate(180deg);
+    // transform: scale(-1);
   }
 }
 //End core styles

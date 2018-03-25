@@ -59,7 +59,11 @@
 }
 
 .socialShareLinksListLink--telegram {
-  background-image: url("../img/ico-telegram@2x.png");
+  background-image: svg-load(
+    "../icons/svg/icon-telegram.svg",
+    fill=#000,
+    stroke=#fff
+  );
 }
 
 //Media

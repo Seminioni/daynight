@@ -1,6 +1,8 @@
 let plugins = [
-  // require('stylelint')({}),
-  // require("postcss-reporter")({ clearReportedMessages: true }),
+  require("postcss-reporter")({ clearReportedMessages: true }),
+  require('postcss-inline-svg')({
+    removeFill: true
+  }),
   require("postcss-flexbugs-fixes")({}),
   require("postcss-normalize")({
     allowDuplicates: true
@@ -67,6 +69,7 @@ let plugins = [
 
 if (global.production) {
   plugins.push(require("css-mqpacker")());
+  plugins.push(require("postcss-svgo")());
 }
 
 module.exports = {

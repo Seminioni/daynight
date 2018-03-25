@@ -48,7 +48,7 @@
                         <h3 class="counter__title">Количество</h3>
                         <div class="counter__container" data-controller="stepper">
                             <span class="counter__btn counter__btn--minus" data-action="click->stepper#down"></span>
-                            <input class="counter__val" type="text" value="1" data-target="stepper.input">
+                            <input class="counter__val" type="text" value="1" data-action="input->stepper#validateInput" data-target="stepper.input">
                             <span class="counter__btn counter__btn--plus" data-action="click->stepper#up"></span>
                         </div>
                     </div>

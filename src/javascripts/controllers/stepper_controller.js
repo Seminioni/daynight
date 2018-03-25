@@ -15,6 +15,10 @@ export default class Stepper extends Controller {
     }
   }
 
+  validateInput(e) {
+    e.target.value = e.target.value.replace(/[^\d]/, '');
+  }
+
   get input() {
     return {
       instance: this.inputTarget,
