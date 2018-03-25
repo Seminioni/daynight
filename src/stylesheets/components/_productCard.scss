@@ -21,6 +21,11 @@
   margin-bottom: 15px;
   position: relative;
   width: 100%;
+
+  &.is-loading {
+    height: 0;
+    overflow: hidden;
+  }
   .arrow--left {
     @include arrow(left, 25, var(--c-grey), var(--c-black));
     position: absolute;

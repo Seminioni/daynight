@@ -1,24 +1,18 @@
 import { Controller } from "stimulus";
 import initSiema from "../components/slider";
 import initZoom from "../components/zoom";
-import Drift from 'drift-zoom';
+import { removeClass, toggleClass } from "../utils";
 
 export default class CardSlider extends Controller {
   static targets = ["slide"];
 
   initialize() {
     this.slideTargets.forEach(slide => {
-      // initZoom(slide, {
-      //   zoom: 2,
-      //   paneContainer: this.element,
-      //   hoverDelay: 10
-      // });
-      new Drift(slide, {
+      initZoom(slide, {
         zoom: 2,
         paneContainer: this.element,
-        hoverBoundingBox: true,
-        // inlinePane: false
-      })
+        hoverBoundingBox: true
+      });
     });
 
     initSiema({
@@ -35,5 +29,9 @@ export default class CardSlider extends Controller {
         this.addArrows();
       }
     });
+  }
+
+  connect() {
+    removeClass(this.element.parentNode, "is-loading");
   }
 }

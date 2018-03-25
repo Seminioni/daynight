@@ -1,19 +1,18 @@
 //Core styles
-
 .spoiler {
+  .spoiler__collapsable {
+    @include setTransitionFor(0.3s, max-height, opacity);
+    max-height: 1800px;
+    overflow: hidden;
+  }
+
   &.is-collapsed {
     .spoiler__collapsable {
       max-height: 0;
       opacity: 0;
     }
   }
-  .spoiler__collapsable {
-    @include setTransitionFor(0.3s, max-height, opacity);
-    max-height: 1800px;
-    overflow: hidden;
-  }
 }
-
 //End core styles
 
 //Mods
