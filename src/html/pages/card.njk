@@ -7,8 +7,8 @@
         <a href="catalog.html" class="breadcrumbs__link link"><i class="breadcrumbs__link-icon"></i>в каталог</a>
     </div>
     <div class="productCardInner">
-        <div class="productGallery is-loading">
-            <div class="productGalleryContainer" data-controller="card-slider">
+        <div class="productGallery">
+            <div class="productGalleryContainer is-initing" data-controller="card-slider">
                 <img class="productGalleryImg" src="images/content/img-catalog-card.jpg" alt="" data-zoom="images/content/img-catalog-card.jpg" data-target="card-slider.slide">
                 <img class="productGalleryImg" src="images/content/img-catalog-card-1.jpg" alt="" data-zoom="images/content/img-catalog-card-1.jpg" data-target="card-slider.slide">
                 <img class="productGalleryImg" src="images/content/img-catalog-card-2.jpg" alt="" data-zoom="images/content/img-catalog-card-2.jpg" data-target="card-slider.slide">
@@ -42,14 +42,14 @@
                 <div class="productCardGridCell">
                     <div id="productDescription" class="productDescription">
                         <p class="productDescriptionLabel">Описание</p>
-                        <div class="show-more is-collapsed" data-controller="show-more" data-show-more-length="15">
+                        {# <div class="show-more is-collapsed" data-controller="show-more" data-show-more-length="15">
                           <div class="productDescriptionInner">
                               <p data-target="show-more.string" data-action="click->show-more#onTriggerAction">Сайт рыбатекст поможет  дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях. При создании генератора мы использовали небезизвестный универсальный код речей. Текст генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет сделать текст более привлекательным и живым для визуально-слухового восприятия.
 
                               По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит любой макет непонятным смыслом и придаст неповторимый колорит советских времен.</p>
                           </div>
                           <span class="productDescriptionBtn" data-target="show-more.trigger" data-action="click->show-more#onTriggerAction">подробнее</span>
-                        </div>
+                        </div> #}
                     </div>
                     <p class="productString">Размер на модели: 2</p>
                     <p class="productString">Уход: химчистка</p>

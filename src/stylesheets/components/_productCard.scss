@@ -21,15 +21,7 @@
   margin-bottom: 15px;
   position: relative;
   width: 100%;
-  @include setTransitionFor(0.8s, opacity, visibility, overflow);
-  &.is-loading {
-    opacity: 0;
-    visibility: hidden;
-    overflow: hidden;
-    > * {
-      height: 0;
-    }
-  }
+
   .arrow--left {
     @include arrow(left, 25, var(--c-grey), var(--c-black));
     position: absolute;
@@ -52,6 +44,8 @@
   max-width: 325px;
   position: relative;
   width: calc(100% - 40px);
+
+  @include fixSlider();
 }
 
 .productGalleryImg {

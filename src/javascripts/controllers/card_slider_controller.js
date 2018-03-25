@@ -27,6 +27,7 @@ export default class CardSlider extends Controller {
       loop: true,
       onInit: function() {
         this.addArrows();
+        this.selector.classList.remove('is-initing');
       }
     });
   }

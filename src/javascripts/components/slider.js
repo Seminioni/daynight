@@ -1,6 +1,7 @@
 import Siema from "siema";
 
 export class ExtendedSiema extends Siema {
+
   addArrows() {
     this.arrowLeft = document.createElement("span");
     this.arrowRight = document.createElement("span");
@@ -20,5 +21,6 @@ export class ExtendedSiema extends Siema {
     this.arrowRight.addEventListener("click", () => this.next());
   }
 }
+
 
 export default options => new ExtendedSiema(options);
