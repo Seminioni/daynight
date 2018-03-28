@@ -158,6 +158,12 @@
   .socials {
     margin: 0 auto;
   }
+
+  .socials__link {
+    &:not(:last-of-type) {
+      margin-right: 5px;
+    }
+  }
 }
 
 .productDescription {
