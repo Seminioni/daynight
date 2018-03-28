@@ -1,5 +1,5 @@
 import { Controller } from "stimulus"
-import { toggleClass } from "../utils"
+import { tgCl } from "../utils"
 
 export default class ShowMore extends Controller {
   static targets = ['string', 'trigger'];
@@ -25,7 +25,7 @@ export default class ShowMore extends Controller {
     const shortString = JSON.parse(this.data.get('short-string'));
 
     if (!shortString) {
-      toggleClass([
+      tgCl([
         [this.triggerTarget, 'is-hidden'],
         [this.element, 'is-collapsed']
       ]);

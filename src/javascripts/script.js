@@ -1,4 +1,4 @@
-function addClass(e, cls) {
+function addCl(e, cls) {
   if (!hasClass(e, cls)) {
     e.className += (e.className ? ' ' : '') + cls;
   }
@@ -35,10 +35,10 @@ document.addEventListener('DOMContentLoaded', function () {
   if (btnMenu) {
     btnMenu.addEventListener('click', function (e) {
       e.preventDefault();
-      addClass(this, 'active');
-      addClass(popup, 'active');
-      addClass(tagBody, 'active');
-      addClass(tagHtml, 'active');
+      addCl(this, 'active');
+      addCl(popup, 'active');
+      addCl(tagBody, 'active');
+      addCl(tagHtml, 'active');
     }, false);
   }
 
@@ -66,11 +66,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (btnFilter) {
     btnFilter.addEventListener('click', function () {
-      addClass(this, 'active');
-      addClass(this.parentNode, 'active');
-      addClass(popupFilter, 'active');
-      addClass(tagBody, 'active');
-      addClass(tagHtml, 'active');
+      addCl(this, 'active');
+      addCl(this.parentNode, 'active');
+      addCl(popupFilter, 'active');
+      addCl(tagBody, 'active');
+      addCl(tagHtml, 'active');
     }, false);
   }
 
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if(hasClass(this, 'active')){
         rmClass(this, 'active');
       } else {
-        addClass(this, 'active');
+        addCl(this, 'active');
       }
     }, false);
   }
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if(hasClass(this.parentNode, 'active')){
           rmClass(this.parentNode, 'active');
         } else {
-          addClass(this.parentNode, 'active');
+          addCl(this.parentNode, 'active');
         }
       }, false);
     }
@@ -140,10 +140,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var title = el.getElementsByClassName('abcMobileLetterName')[0];
 
     title.addEventListener('click', function () {
-      addClass(wrapper, 'active');
-      addClass(this.parentNode, 'active');
+      addCl(wrapper, 'active');
+      addCl(this.parentNode, 'active');
       current.textContent = this.textContent;
-      addClass(choice, 'active');
+      addCl(choice, 'active');
     }, false);
   }
 
@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if(hasClass(el, 'active')){
           rmClass(el, 'active');
         } else {
-          addClass(el, 'active');
+          addCl(el, 'active');
         }
       }, false);
   }
@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (hasClass(parent, 'active')) {
           rmClass(parent, 'active');
         } else {
-          addClass(parent, 'active');
+          addCl(parent, 'active');
         }
       }
     }, false);
@@ -956,8 +956,8 @@ document.addEventListener('DOMContentLoaded', function (){
         e.preventDefault();
         rmClass(this, 'active');
         rmClass(slides[0], 'active');
-        addClass(slides[1], 'active');
-        addClass(buttonReset, 'active');
+        addCl(slides[1], 'active');
+        addCl(buttonReset, 'active');
         parseSlide(slides, 1);
         rmBgColor(el);
       });
@@ -973,8 +973,8 @@ document.addEventListener('DOMContentLoaded', function (){
           rmClass(navigationButton[j], 'active');
         }
         rmClass(this, 'active');
-        addClass(slides[0], 'active');
-        addClass(buttonStart, 'active');
+        addCl(slides[0], 'active');
+        addCl(buttonStart, 'active');
         setBgColor(el, bg);
       });
     }
@@ -990,7 +990,7 @@ document.addEventListener('DOMContentLoaded', function (){
 
         if (parseInt(elems[i].getAttribute('data-id'), 10) === id){
           data = JSON.parse(elems[i].getAttribute('data-set'));
-          addClass(elems[i], 'active');
+          addCl(elems[i], 'active');
         }
       }
 
@@ -1050,9 +1050,9 @@ document.addEventListener('DOMContentLoaded', function (){
           span.textContent = data[i].name;
 
           if(data[i].option){
-            addClass(button[i], 'option');
+            addCl(button[i], 'option');
           }
-          addClass(button[i], 'active');
+          addCl(button[i], 'active');
         } else {
           rmClass(button[i], 'active');
         }
@@ -1163,7 +1163,7 @@ document.addEventListener('DOMContentLoaded', function () {
           if (hasClass(scope, 'active')){
             rmClass(scope, 'active');
           } else {
-            addClass(scope, 'active');
+            addCl(scope, 'active');
           }
         }, false);
       }

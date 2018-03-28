@@ -47,15 +47,27 @@
 
 //Mods
 .socialShareLinksListLink--instagram {
-  background-image: url("../img/ico-instagram@2x.png");
+  background-image: svg-load(
+    "../icons/svg/icon-instagram.svg",
+    fill=#000,
+    stroke=#fff
+  );
 }
 
 .socialShareLinksListLink--fb {
-  background-image: url("../img/ico-fb@2x.png");
+  background-image: svg-load(
+    "../icons/svg/icon-fb.svg",
+    fill=#000,
+    stroke=#fff
+  );
 }
 
 .socialShareLinksListLink--vk {
-  background-image: url("../img/ico-vk@2x.png");
+  background-image: svg-load(
+    "../icons/svg/icon-vk.svg",
+    fill=#000,
+    stroke=#fff
+  );
 }
 
 .socialShareLinksListLink--telegram {

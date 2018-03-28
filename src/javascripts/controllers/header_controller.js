@@ -1,18 +1,18 @@
 import { Controller } from "stimulus"
-import { toggleClass } from "../utils"
+import { tgCl } from "../utils"
 
 export default class Header extends Controller {
-
+  static targets = ['burgerBtn', 'mobileMenu'];
   toggleMobileMenu() {
-    toggleClass(this.targets.find('burgerBtn'), 'is-pressed');
-    toggleClass(this.targets.find('mobileMenu'), 'is-open');
-    toggleClass(document.body, 'mobile-menu-is-open');
+    tgCl(this.burgerBtnTarget, 'is-pressed');
+    tgCl(this.mobileMenuTarget, 'is-open');
+    tgCl(document.body, 'modal-is-open');
   }
   onBurgerBtnClick(e) {
     e.preventDefault();
     this.toggleMobileMenu()
   }
-  onMobileMenuExitCross() {
+  onExitBtnClick() {
     this.toggleMobileMenu()
   }
 }

@@ -4,11 +4,8 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  padding-left: 19px;
-  padding-right: 19px;
   @media (--m) {
     justify-content: space-between;
-    padding: 0;
   }
 }
 

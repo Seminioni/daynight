@@ -1,7 +1,7 @@
 import { Controller } from "stimulus";
 import initSiema from "../components/slider";
 import initZoom from "../components/zoom";
-import { removeClass } from "../utils";
+import { rmCl } from "../utils";
 
 export default class CardSlider extends Controller {
   static targets = ["slide"];
@@ -33,6 +33,6 @@ export default class CardSlider extends Controller {
   }
 
   connect() {
-    removeClass(this.element.parentNode, "is-loading");
+    rmCl(this.element.parentNode, "is-loading");
   }
 }

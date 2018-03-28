@@ -1,145 +1,163 @@
-.filter {
-  padding-left: 23px;
-  padding-right: 23px;
+//Core styles
+.filters {
   position: relative;
+  padding-left: 20px;
+  padding-right: 20px;
+  z-index: 10;
+  background-color: #fff;
 
-  .btnCross {
+  .exit-btn {
+    right: 27px;
+    top: 0;
+    width: 15px;
+    height: 15px;
     display: none;
-    height: 37px;
-    right: 23px;
-    width: 37px;
   }
 
-  &.active {
-    background-color: var(--c-white);
-    bottom: 0;
-    left: 0;
+  &.are-open {
     position: fixed;
-    right: 0;
     top: 65px;
-    z-index: 10;
-  }
-}
-
-.filterInner {
-  min-height: 100%;
-}
-
-.filterButton {
-  @include textNormalSize();
-  color: var(--c-light-grey);
-  display: block;
-  height: 37px;
-  padding-top: 10px;
-  white-space: nowrap;
-  width: 100px;
-
-  &:before {
-    content: "";
-    display: inline-block;
-    height: 17px;
-    margin-right: 13px;
-    vertical-align: top;
-    width: 17px;
-  }
-
-  &.active {
-    color: var(--c-black);
-
-    & + .btnCross {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    .exit-btn {
+      display: initial;
+    }
+    .filters__container {
       display: block;
     }
+    .filters__trigger {
+      color: var(--c-black);
+      background-image: svg-load(
+        "../icons/svg/icon-filter.svg",
+        fill=var(--c-black),
+        stroke=var(--c-black)
+      );
+    }
   }
-}
 
-.filterSelectors {
-  align-items: flex-start;
-  display: none;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  position: relative;
-}
-
-.filterSelector {
-  max-width: 163px;
-  position: relative;
-  width: 100%;
-}
-
-.filterSelectorName {
-  @include textSmallSize();
-  cursor: pointer;
-  display: inline-block;
-  vertical-align: top;
-}
-
-.filterSelectorArrow {
-  @include arrow(down, 12, var(--c-black), var(--c-black));
-  display: inline-block;
-  margin-left: 12px;
-  vertical-align: middle;
-  position: relative;
-}
-
-.filterReset {
-  @include textSmallSize();
-  cursor: pointer;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 100;
-}
-
-.filterSelectorList {
-  background-color: color(var(--c-white) l(80%));
-  left: 0;
-  padding: 8px 12px 12px;
-  position: absolute;
-  top: 37px;
-  width: 100%;
-  z-index: 1;
-}
-
-.filterSelectorListItem {
-  @include textSmallSize();
-  cursor: pointer;
-
-  &.current {
-    font-weight: 500;
-  }
-}
-
-// Media
-
-@media screen and (min-width: $pre-mobile) {
-  .filter {
+  @media (--m) {
     padding-left: 0;
     padding-right: 0;
+  }
+}
 
-    &.active {
-      bottom: 0;
-      left: unset;
-      position: absolute;
-      right: unset;
-      top: 0;
-      width: calc(100% - 176px);
+.filters__trigger-wr {
+  background-color: var(--c-white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filters__trigger {
+  @include setTransitionFor(0.2s, background, color);
+  padding-left: 30px;
+  vertical-align: middle;
+  @include rhythm(11, 11);
+  color: var(--c-grey);
+  display: block;
+  outline: 0;
+  width: 20px;
+  height: 20px;
+  margin-bottom: 15px;
+  background-repeat: no-repeat;
+  background-image: svg-load(
+    "../icons/svg/icon-filter.svg",
+    fill=var(--c-grey),
+    stroke=var(--c-grey)
+  );
+  @media (--m) {
+    display: none;
+  }
+}
+
+.filters__container {
+  display: none;
+  @media (--m) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+  }
+}
+
+.filter {
+  @media (--m) {
+    flex-grow: 1;
+    max-width: 163px;
+    &:not(:last-of-type) {
+      margin-right: 5px;
     }
   }
 }
-@media screen and (min-width: 838px) {
-  .filterButton.active + .btnCross,
-  .popupFilter {
-    display: none;
+//End core styles
+//Mods
+.choices {
+  &.is-open {
+    .choices__list--dropdown {
+      display: block;
+      @media (--m) {
+        position: absolute;
+        top: 20px;
+        left: 0;
+      }
+    }
+    .choices__list--single {
+      &:after {
+        transform: scale(1);
+      }
+    }
   }
 
-  .filterButton {
-    display: none;
-  }
+  @media (--m) {
+    position: relative;
 
-  .filterSelectors {
-    display: flex;
-    padding-left: 0;
-    padding-right: 0;
   }
 }
+.choices__list--dropdown {
+  display: none;
+  &.is-active {
+    padding: 15px 10px 5px 10px;
+    background: var(--c-white);
+    @media (--m) {
+      width: 100%;
+    }
+  }
+  .choices__item--choice {
+    @include rhythm(11, 11);
+    padding: 5px 0;
+  }
+
+}
+
+.choices__list--single {
+  position: relative;
+  .choices__item.choices__item--selectable {
+    @include rhythm(11, 11);
+    padding-top: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #000011;
+    @media (--m) {
+      border-bottom: 0;
+    }
+  }
+
+  &:after {
+    @include setTransitionFor(0.2s, transform);
+    content: "";
+    position: absolute;
+    right: 0;
+    top: calc(50% - 5px);
+    background-image: svg-load(
+      "../icons/svg/icon-arrow.svg",
+      fill=var(--c-black),
+      stroke=var(--c-black)
+    );
+    width: 10px;
+    height: 10px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: scale(-1);
+  }
+}
+//End mods

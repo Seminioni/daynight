@@ -1,11 +1,11 @@
 module.exports = {
-  html        : true,
-  images      : true,
-  fonts       : true,
-  static      : false,
-  svgSprite   : true,
-  ghPages     : true,
-  stylesheets : true,
+  html: true,
+  images: true,
+  fonts: true,
+  static: false,
+  svgSprite: true,
+  ghPages: true,
+  stylesheets: true,
 
   javascripts: {
     entry: {
@@ -18,9 +18,10 @@ module.exports = {
   stylesheets: {
     sass: {
       includePaths: [
-        './node_modules/sass-burger/'
+        "./node_modules/sass-burger/",
+        "./node_modules/choices.js/assets/styles/scss/"
       ]
-    },
+    }
   },
 
   browserSync: {
@@ -28,12 +29,11 @@ module.exports = {
     server: {
       // should match `dest` in
       // path-config.json
-      baseDir: 'public'
+      baseDir: "public"
     }
   },
 
   production: {
     rev: false
-  },
-
-}
+  }
+};

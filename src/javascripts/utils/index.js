@@ -2,7 +2,7 @@
  * @param  HTMLElement
  * @param  className
  */
-export function removeClass(el, className) {
+export function rmCl(el, className) {
   if (el.classList) el.classList.remove(className);
   else
     el.className = el.className.replace(
@@ -14,7 +14,7 @@ export function removeClass(el, className) {
  * @param  HTMLElement
  * @param  className
  */
-export function addClass(el, className) {
+export function addCl(el, className) {
   if (el.classList) el.classList.add(className);
   else el.className += " " + className;
 }
@@ -22,7 +22,7 @@ export function addClass(el, className) {
  * @param  HTMLElement || Object
  * @param  className
  */
-export function toggleClass(el, className) {
+export function tgCl(el, className) {
   function toggle(el, className) {
     if (el.classList) {
       el.classList.toggle(className);

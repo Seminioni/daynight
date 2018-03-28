@@ -1,5 +1,5 @@
 import { Controller } from "stimulus";
-import { addClass, removeClass, getSiblingsOf } from "../utils";
+import { addCl, rmCl, getSiblingsOf } from "../utils";
 
 export default class Abc extends Controller {
   static targets = ["heading", "resetBtn", "grid"];
@@ -8,9 +8,9 @@ export default class Abc extends Controller {
     this.headingTarget.textContent = this.headingTarget.getAttribute(
       "data-placeholder"
     );
-    removeClass(this.element, "letter-is-selected");
+    rmCl(this.element, "letter-is-selected");
     Array.from(this.gridTarget.children).forEach(letter =>
-      removeClass(letter, "is-selected")
+      rmCl(letter, "is-selected")
     );
   }
 
@@ -24,11 +24,11 @@ export default class Abc extends Controller {
     const targetLetter = e.target.parentNode;
     const letters = getSiblingsOf(targetLetter);
 
-    addClass(this.element, "letter-is-selected");
+    addCl(this.element, "letter-is-selected");
 
-    letters.forEach(letter => removeClass(letter, "is-selected"));
+    letters.forEach(letter => rmCl(letter, "is-selected"));
 
-    addClass(targetLetter, "is-selected");
+    addCl(targetLetter, "is-selected");
 
     this.headingTarget.textContent = e.target.textContent;
   }

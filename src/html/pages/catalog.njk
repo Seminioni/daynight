@@ -2,7 +2,18 @@
 
 {% block content %}
 
-{% include "components/_filter.njk" %}
+<section class="filters" data-controller="filters" data-filters-are-open="false">
+  <div class="filters__trigger-wr">
+    <button type="button" class="btn filters__trigger" data-target="filters.trigger" data-action="click->filters#onTriggerAction">Фильтры</button>
+    <button type="button" class="exit-btn btn btn--cross" data-target="filters.exitBtn" data-action="click->filters#onExitBtnAction"></button>
+  </div>
+
+  <div class="filters__container" data-target="filters.container">
+    {% for item in range(0,4) %}
+      {% include "components/_filter.njk" %}
+    {% endfor %}
+  </div>
+</section>
 
 <div class="list list--long">
     <a class="list__item link" href="card.html">

@@ -1,5 +1,5 @@
 import { Controller } from "stimulus"
-import { toggleClass } from "../utils"
+import { tgCl } from "../utils"
 
 export default class Spoiler extends Controller {
   static targets = ['trigger', 'willHidden'];
@@ -7,8 +7,8 @@ export default class Spoiler extends Controller {
   toggleSpoiler() {
     const className = this.element.getAttribute('data-classname')
 
-    Array.from(this.willHiddenTargets).forEach(willHidden => toggleClass(willHidden, className))
-    toggleClass([
+    Array.from(this.willHiddenTargets).forEach(willHidden => tgCl(willHidden, className))
+    tgCl([
       [this.element, className]
     ])
   }

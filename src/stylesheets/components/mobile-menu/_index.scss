@@ -19,20 +19,10 @@
     }
   }
 
-  .btn-cross {
-    @include reset-button();
-    height: 60px;
-    position: absolute;
-    right: 16px;
-    top: 0;
-    width: 40px;
-
-    .icon-cross {
-      left: 50%;
-      top: 0;
-      transform: translateX(-50%);
-      width: 20px;
-    }
+  .exit-btn {
+    right: 27px;
+    width: 15px;
+    height: 16px;
   }
 
   .form--mobile-menu {
@@ -41,10 +31,8 @@
   @media (--m) {
     display: none;
   }
-
 }
 //End core styles
-
 //Mods
 .nav--mobile-menu {
   margin-top: 20px;
@@ -55,7 +43,7 @@
   }
 
   .nav__link--heading {
-    @include rhythm(16,28);
+    @include rhythm(16, 28);
     color: var(--c-black);
   }
 
@@ -73,7 +61,7 @@
     }
 
     .nav__link {
-      @include rhythm(14,28);
+      @include rhythm(14, 28);
     }
   }
 }
@@ -88,5 +76,4 @@
     }
   }
 }
-
 //End mods
