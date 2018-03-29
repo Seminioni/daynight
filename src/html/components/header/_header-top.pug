@@ -1,0 +1,9 @@
+include ../../macros/helpers.pug
+
+section.header__top
+  a#burger-btn.burger-btn(href='#', data-target='header.burgerBtn', data-action='click->header#onBurgerBtnClick')
+    span.burger-btn__body
+  a.logo(href='index.html')
+    img.logoImg(src='https://daynight.ru/custom/day/img/logo.svg', alt='')
+  a.basket-btn(href='basket.html')
+    +sprite('icon-basket')

@@ -1,5 +1,3 @@
-if (!TASK_CONFIG.html) return;
-
 const browserSync = require("browser-sync");
 const data = require("gulp-data");
 const gulp = require("gulp");
@@ -7,14 +5,16 @@ const gulpif = require("gulp-if");
 const handleErrors = require("../lib/handleErrors");
 const htmlmin = require("gulp-htmlmin");
 const path = require("path");
-const nunjucksRender = require("gulp-nunjucks-render");
-const fs = require("fs");
+const pug = require("gulp-pug");
+const emitty = require("emitty").setup(
+  path.join(PATH_CONFIG.src, PATH_CONFIG.html.src),
+  "pug"
+);
 
-const htmlTask = function() {
+const htmlTask = () => {
   const exclude =
     "!" +
     path.resolve(
-      process.env.PWD,
       PATH_CONFIG.src,
       PATH_CONFIG.html.src,
       "**/{" + TASK_CONFIG.html.excludeFolders.join(",") + "}/**"
@@ -23,52 +23,36 @@ const htmlTask = function() {
   const paths = {
     src: [
       path.resolve(
-        process.env.PWD,
         PATH_CONFIG.src,
         PATH_CONFIG.html.src,
-        "pages/*.{" + TASK_CONFIG.html.extensions + "}"
+        `pages/*.${TASK_CONFIG.html.extensions}`
       ),
       exclude
     ],
-    dest: path.resolve(process.env.PWD, PATH_CONFIG.dest, PATH_CONFIG.html.dest)
+    dest: path.resolve(PATH_CONFIG.dest, PATH_CONFIG.html.dest)
   };
 
-  const dataFunction =
-    TASK_CONFIG.html.dataFunction ||
-    function(file) {
-      const dataPath = path.resolve(
-        process.env.PWD,
-        PATH_CONFIG.src,
-        PATH_CONFIG.html.src,
-        TASK_CONFIG.html.dataFile
-      );
-      return JSON.parse(fs.readFileSync(dataPath, "utf8"));
-    };
-
-  const nunjucksRenderPath = [
-    path.resolve(process.env.PWD, PATH_CONFIG.src, PATH_CONFIG.html.src)
-  ];
-  TASK_CONFIG.html.nunjucksRender.path =
-    TASK_CONFIG.html.nunjucksRender.path || nunjucksRenderPath;
-
-  return (
-    gulp
-      .src(paths.src)
-      .pipe(data(dataFunction))
-      .on("error", handleErrors)
-      .pipe(nunjucksRender(TASK_CONFIG.html.nunjucksRender))
-      .on("error", handleErrors)
-      .pipe(gulpif(global.production, htmlmin(TASK_CONFIG.html.htmlmin)))
-      .pipe(
-        gulp.dest(file => {
-          return paths.dest;
-        })
-      )
-      .pipe(browserSync.stream())
-  );
+  return new Promise((resolve, reject) => {
+    emitty.scan(global.emittyChangedFile).then(() => {
+      gulp
+        .src(paths.src)
+        .pipe(gulpif(global.watch, emitty.filter(global.emittyChangedFile)))
+        .pipe(pug(TASK_CONFIG.html.pugOptions))
+        .on("error", handleErrors)
+        .pipe(gulpif(global.production, htmlmin(TASK_CONFIG.html.htmlmin)))
+        .pipe(gulp.dest(paths.dest))
+        .pipe(browserSync.stream())
+        .on("finish", resolve)
+        .on("error", reject);
+    });
+  });
 };
 
 const { alternateTask = () => htmlTask } = TASK_CONFIG.html;
 const task = alternateTask(gulp, PATH_CONFIG, TASK_CONFIG);
-gulp.task("html", task);
-module.exports = task;
+
+if (!TASK_CONFIG.html) {
+  module.exports = done => done();
+} else {
+  module.exports = htmlTask;
+}

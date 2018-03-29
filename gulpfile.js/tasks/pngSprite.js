@@ -8,7 +8,7 @@ const plumber = require("gulp-plumber");
 const errorHandler = require("../lib/handleErrors");
 
 const pngSpriteTask = function() {
-  const settings = {
+  const paths = {
     src: path.resolve(
       process.env.PWD,
       PATH_CONFIG.src,
@@ -21,28 +21,32 @@ const pngSpriteTask = function() {
     )
   };
 
-  const spriteData =
-    gulp.src(path.resolve(settings.src, '*.png'))
+  const spriteData = gulp
+    .src(path.resolve(paths.src, "*.png"))
     .pipe(plumber(errorHandler))
-    .pipe(spritesmith({
-    retinaSrcFilter: path.resolve(settings.src, '*@2x.png'),
-    imgName: 'sprite.png',
-    retinaImgName: 'sprite@2x.png',
-    cssName: '_sprite.scss'
-  }));
+    .pipe(
+      spritesmith({
+        retinaSrcFilter: path.resolve(paths.src, "*@2x.png"),
+        imgName: "sprite.png",
+        retinaImgName: "sprite@2x.png",
+        cssName: "_sprite.scss"
+      })
+    );
 
-  spriteData.img.pipe(gulp.dest(settings.dest));
-  spriteData.css.pipe(
-    gulp.dest(
-      path.resolve(
-        process.env.PWD,
-        PATH_CONFIG.src,
-        PATH_CONFIG.stylesheets.src,
-        'utils/sprite'
+  return new Promise((resolve, reject) => {
+    spriteData.img.pipe(gulp.dest(paths.dest));
+    spriteData.css.pipe(
+      gulp.dest(
+        path.resolve(
+          process.env.PWD,
+          PATH_CONFIG.src,
+          PATH_CONFIG.stylesheets.src,
+          "utils/sprite"
+        )
       )
-    )
-  );
+      .on('finish', resolve)
+    );
+  });
 };
 
-gulp.task("pngSprite", pngSpriteTask);
 module.exports = pngSpriteTask;

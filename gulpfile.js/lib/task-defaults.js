@@ -1,33 +1,33 @@
-const os   = require('os')
-const path = require('path')
-const pkg  = require(path.resolve(process.env.PWD, 'package.json'))
+const os = require("os");
+const path = require("path");
+const pkg = require(path.resolve(process.env.PWD, "package.json"));
 
 module.exports = {
   javascripts: {
-    extensions: ['js', 'jsx'],
+    extensions: ["js", "jsx"],
     hot: {
       reload: true,
       noInfo: false,
       quiet: true,
       react: false
     },
-    devtool: 'eval-cheap-module-source-map',
+    devtool: "eval-cheap-module-source-map",
     babelLoader: {
       // "test" is derived from TASK_CONFIG.javascripts.extensions
       // "options" is derived from TASK_CONFIG.javascripts.babel
-      loader: 'babel-loader',
+      loader: "babel-loader",
       exclude: /node_modules/
     },
     babel: {
-      presets: [["env", { "modules": false }], 'stage-1']
+      presets: [["env", { modules: false }], "stage-1"]
     },
     development: {},
     production: {
       devtool: false,
       uglifyJsPlugin: {},
       definePlugin: {
-        'process.env': {
-          'NODE_ENV': JSON.stringify('production')
+        "process.env": {
+          NODE_ENV: JSON.stringify("production")
         }
       }
     }
@@ -35,25 +35,18 @@ module.exports = {
 
   stylesheets: {
     sass: {
-      includePaths: [
-        "./node_modules",
-      ]
+      includePaths: ["./node_modules"]
     },
     extensions: ["sass", "scss", "css"]
   },
 
   html: {
     dataFile: "data/global.json",
-    nunjucksRender: {
-      envOptions: {
-        watch: false
-      }
-    },
-    htmlmin: {
-      collapseWhitespace: true
+    pugOptions: {
+      pretty: true
     },
     excludeFolders: ["layouts", "shared", "macros", "data"],
-    extensions: ["html", "njk", "json"]
+    extensions: ["pug"]
   },
 
   images: {
@@ -62,11 +55,6 @@ module.exports = {
 
   fonts: {
     extensions: ["woff2", "woff", "eot", "ttf", "svg"]
-  },
-
-  ghPages: {
-    branch: "gh-pages",
-    cacheDir: path.join(os.tmpdir(), pkg.name || "blendid")
   },
 
   svgSprite: {
@@ -92,5 +80,4 @@ module.exports = {
       postbuild: null
     }
   }
-}
-
+};

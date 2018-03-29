@@ -1,0 +1,146 @@
+extends ../layouts/application.pug
+
+block content
+  //- Корзина в состоянии "пусто"
+  .basket.basket--is-empty
+    include ../components/basket/_promo.pug
+    p.basketUniStr
+      | Корзина пуста.
+      a.basketUniLink(href='#') Перейти к покупкам
+  //- Корзина в состоянии "перейти к оплате заказа"
+  .basket.basket--payment
+    h2.basketUniTitle Оплата заказа №147 на сумму 9570 руб.
+    p.basketUniStr.basketUniStr--grey.basketUniStr--small
+      | Оформляя заказ Вы соглашаетесь на обработку и хранение ваших персональных данных.
+    .form
+      form
+        input.form__button(type='submit', value='оплатить')
+
+  //- Корзина в состоянии "присутствуют товары"
+  .basket.basket--is-not-empty
+    include ../components/basket/_promo.pug
+    ul.basket__list
+      - for (let i=0; i < 2; i++)
+        li.basket__item
+          .product-card
+            .product-card__cell
+              .product-card__img-wrapper
+                img.product-card__img(src='images/content/img-demo4.jpg', alt='')
+              .product-card__info
+                h3.product-card__title
+                  | Наименование  ##{i}
+                  span товара
+                ul.product-card__desc
+                  li.product-card__desc-item Женское / Джинсы R13
+                  li.product-card__desc-item Denim
+                  li.product-card__desc-item Размер: 30
+                  li.product-card__desc-item Артикул: R13W4021-208
+            .product-card__cell
+              .counter
+                h3.counter__title Количество
+                .counter__container(data-controller='stepper')
+                  span.counter__btn.counter__btn--minus(data-action='click->stepper#down')
+                  input.counter__val(data-action='input->stepper#validateInput', data-target='stepper.input', type='text', value='1')
+                  span.counter__btn.counter__btn--plus(data-action='click->stepper#up')
+              .product-card__unibox
+                h3.product-card__unibox-name Цена/₽
+                .product-card__unibox-value 000 000
+              .product-card__unibox
+                h3.product-card__unibox-name Скидка
+                .product-card__unibox-value 70%
+              .product-card__unibox
+                h3.product-card__unibox-name Итого/₽
+                .product-card__unibox-value 000 000
+              .product-card__remove-btn.remove-btn
+                span.remove-btn__text Удалить
+                span.remove-btn__icon.icon-cross
+
+    .basket__total-cost
+      span.basket__total-cost-val Итого: 8 820 ₽
+    .basket__unicontrol
+      h3.basket__unicontrol-title Способ доставки
+      .basket__unicontrol-item
+        .basket__unicontrol-lable
+          | Курьерская доставка до двери в любую точку РФ 
+          span.basket__unicontrol-lable-icon
+        .basket__unicontrol-desc
+          p
+            | Товар доставляется бесплатно курьером до двери Вашего дома при сумме заказа от 10 000 рублей.
+          p В случае заказа на сумму менее 10 000 рублей, доставка будет стоить 750 рублей.
+          p Стоимость 750 руб.
+          p Бесплатно от суммы 10000 руб.
+        .basket__unicontrol-price 750 ₽
+        .basket__unicontrol-item-controls
+          input#delivery1.basket__unicontrol-switcher(name='delivery', type='radio', value='courier', checked='')
+          label.basket__unicontrol-pseudoswitcher(for='delivery1')
+      .basket__unicontrol-item
+        .basket__unicontrol-lable
+          | Самовывоз из магазина в Санкт-Петербурге 
+          span.basket__unicontrol-lable-icon
+        .basket__unicontrol-desc
+          p Вы можете самостоятельно забрать свой заказ в магазине в Санкт-Петербурге.
+        .basket__unicontrol-price 0 ₽
+        .basket__unicontrol-item-controls
+          input#delivery2.basket__unicontrol-switcher(name='delivery', type='radio', value='nocourier')
+          label.basket__unicontrol-pseudoswitcher(for='delivery2')
+    .basket__total-cost
+      span.basket__total-cost-val Итого: 8 820 ₽
+    .basket__unicontrol
+      h3.basket__unicontrol-title Выберите способ оплаты
+      .basket__unicontrol-item.basket__unicontrol-item--withRightControl
+        .basket__unicontrol-lable
+          | Оплата банковской картой через Yandex.Касса 
+          span.basket__unicontrol-lable-icon
+        .basket__unicontrol-desc
+          p
+            | Оформляя заказ Вы соглашаетесь на обработку и хранение ваших персональных данных.
+        .basket__unicontrol-item-controls
+          input#payment1.basket__unicontrol-switcher(name='payment', type='radio', value='yandex', checked='')
+          label.basket__unicontrol-pseudoswitcher(for='payment1')
+      .basket__unicontrol-item.basket__unicontrol-item--withRightControl
+        .basket__unicontrol-lable
+          | Наличными или картой при самовывозе из магазина 
+          span.basket__unicontrol-lable-icon
+        .basket__unicontrol-desc
+          p
+            | Заказ необходимо оплатить при получении в магазине. Оформляя заказ Вы соглашаетесь на обработку и хранение ваших персональных данных.
+        .basket__unicontrol-item-controls
+          input#payment2.basket__unicontrol-switcher(name='payment', type='radio', value='cash')
+          label.basket__unicontrol-pseudoswitcher(for='payment2')
+    .basket__form.form
+      form(action='')
+        fieldset.form__fieldSet
+          legend.form__label.form__label--reqiured ФИО или название компании
+          input.form__field.form__field--withFullBorder(type='text', required='')
+        fieldset.form__fieldSet
+          legend.form__label.form__label--reqiured E-mail
+          input.form__field.form__field--withFullBorder(type='text', required='')
+        fieldset.form__fieldSet
+          legend.form__label.form__label--reqiured Контактные телефоны (с кодом города)
+          input.form__field.form__field--withFullBorder(type='text', required='')
+        fieldset.form__fieldSet
+          legend.form__label.form__label--reqiured Индекс
+          input.form__field.form__field--withFullBorder(type='text')
+        fieldset.form__fieldSet
+          legend.form__label.form__label--reqiured Город
+          input.form__field.form__field--withFullBorder(type='text', required='')
+        fieldset.form__fieldSet
+          legend.form__label.form__label--reqiured Улица, проспект и пр.
+          input.form__field.form__field--withFullBorder(type='text')
+        fieldset.form__fieldSet
+          legend.form__label.form__label--reqiured Номер дома
+          input.form__field.form__field--withFullBorder(type='text')
+        fieldset.form__fieldSet
+          legend.form__label.form__label--reqiured Корпус
+          input.form__field.form__field--withFullBorder(type='text')
+        fieldset.form__fieldSet
+          legend.form__label.form__label--reqiured Квартира, офис
+          input.form__field.form__field--withFullBorder(type='text')
+        fieldset.form__fieldSet
+          legend.form__label.form__label--reqiured Комментарии
+          textarea.formTextarea
+        fieldset.form__fieldSet
+          input.form__button.form__button--width165.form__button--resetMargin(type='submit', value='продолжить')
+          span.form__legend.form__legend--absolutePositionRight * — Поля, обязательные для заполнения
+        p.form__error * Не все обязательные поля заполнены
+

@@ -1,0 +1,35 @@
+.mobile-menu(data-target='header.mobileMenu')
+  button.exit-btn.btn.btn--cross(type='button', data-action='click->header#onExitBtnClick')
+  .mobile-menu__inner
+    nav.nav.nav--vertical.nav--mobile-menu
+      .nav__subset.spoiler.is-collapsed(data-controller='spoiler', data-classname='is-collapsed')
+        a.nav__link.nav__link--heading.link.spoiler__trigger(href='catalog.html', data-target='spoiler.trigger', data-action='spoiler#onTriggerAction') Женское
+        .nav__links.spoiler__collapsable.is-collapsed(data-target='spoiler.willHidden')
+          a.nav__link.link(href='catalog.html') Новинки
+          a.nav__link.link(href='brands.html') Одежда
+          a.nav__link.link(href='history.html') Бренды
+          a.nav__link.link(href='address.html') Аксессуары
+      .nav__subset.spoiler.is-collapsed(data-controller='spoiler', data-classname='is-collapsed')
+        a.nav__link.nav__link--heading.link.spoiler__trigger(href='catalog.html', data-target='spoiler.trigger', data-action='spoiler#onTriggerAction') Мужское
+        .nav__links.spoiler__collapsable.is-collapsed(data-target='spoiler.willHidden')
+          a.nav__link.link(href='catalog.html') Новинки
+          a.nav__link.link(href='brands.html') Одежда
+          a.nav__link.link(href='history.html') Бренды
+          a.nav__link.link(href='address.html') Аксессуары
+      a.nav__link.nav__link--heading.link(href='catalog.html') OFFLINE GALLERY
+      a.nav__link.nav__link--heading.link(href='catalog.html') DAYNIGHT.OUTLET
+      .nav__subset
+        .nav__links.nav__links--site-sections
+          a.nav__link.link(href='news.html') Новости
+          a.nav__link.link(href='brands.html') Бренды
+          a.nav__link.link(href='history.html') История
+          a.nav__link.link(href='address.html') Адреса
+          a.nav__link.link(href='basket.html') Корзина
+    .form.form--mobile-menu
+      form
+        input.form__field(type='text', placeholder='email')
+        input.form__button(type='submit', value='Подписаться')
+    nav.nav.nav--mobile-menu.nav--service
+      .nav__links
+        a.nav__link.link(href='payment.html') Оплата
+        a.nav__link.link(href='delivery.html') Доставка

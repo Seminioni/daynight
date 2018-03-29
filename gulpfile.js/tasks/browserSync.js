@@ -45,5 +45,4 @@ var browserSyncTask = function() {
   browserSync.init(TASK_CONFIG.browserSync)
 }
 
-gulp.task('browserSync', browserSyncTask)
 module.exports = browserSyncTask

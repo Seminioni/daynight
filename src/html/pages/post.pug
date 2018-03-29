@@ -1,0 +1,21 @@
+extends ../layouts/application.pug
+
+block content
+  article.post
+    header.postHeader
+      a.postBackLink.link(href='news.html')
+        span.postBackLinkText назад
+      h1.postTitle Гоша Рубчинский на выставке Burberry
+      time.postCreated 11.09.2017
+    .postContent
+      p
+        | 18 сентября в галерее Old Sessions House в Лондоне начала работу выставка «Here We Are», организованная Домом Burberry и посвященная известнейшим фотографам-документалистам XX века.
+      img(src='images/content/img-demo1.jpg', alt='')
+      p
+        | 18 сентября в галерее Old Sessions House в Лондоне начала работу выставка «Here We Are», организованная Домом Burberry и посвященная известнейшим фотографам-документалистам XX века.
+      p
+        | Кураторами выставки выступили президент и креативный директор Burberry Кристофер Бейли, владелица магазина Claire de Rouen Люси Кумара Мур, а также Аласдер Маклеллан. Помимо фотографий, рассказывающих о жизни британцев в прошлом веке, на выставке представлены работы российского дизайнера Гоши Рубчинского. Среди них — фотографии моделей в вещах, созданных Гошей в коллаборации с Burberry, а также его инсталляции, проекции и принты. Выставка продлится две недели, занимая 14 различных залов и комнат галереи.
+    include ../components/_optionalContent.pug
+    footer.post__footer
+      include ../components/_socialShareLinks.pug
+      include ../components/_socials.pug

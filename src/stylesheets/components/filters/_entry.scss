@@ -93,6 +93,10 @@
 //End core styles
 //Mods
 .choices {
+  &.is-focused {
+    outline: 0;
+  }
+
   &.is-open {
     .choices__list--dropdown {
       display: block;
@@ -158,6 +162,12 @@
     background-repeat: no-repeat;
     background-size: contain;
     transform: scale(-1);
+  }
+}
+
+.choices__item {
+  &.is-highlighted {
+    color: color(var(--c-black) l(80%));
   }
 }
 //End mods

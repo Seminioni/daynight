@@ -1,0 +1,35 @@
+extends ../layouts/application.pug
+block content
+  article.post
+    header.postHeader
+      a.postBackLink.link(href='brands.html')
+        span.postBackLinkText назад
+      h1.postTitle История бренда Sacai
+      time.postCreated 11.09.2017
+    .postContent
+      p
+        | Sacai (Сакай) — это японская марка, которая была основана в 1999 году дизайнером Chitose Abe (Читосе Абе).
+      p.center
+        img(src='https://daynight.ru/userfiles/editor/myimg/710_sacai---1.jpg', alt='')
+      p.center
+        img(src='https://daynight.ru/userfiles/editor/myimg/711_rei.png', alt='Одежда Sacai в магазине Day Night Lite', title='Одежда Sacai в магазине Day Night Lite', width='300', height='387')
+        img(src='https://daynight.ru/userfiles/editor/myimg/712_dzhuniya.png', alt='Одежда Sacai в магазине Day Night Lite', title='Одежда Sacai в магазине Day Night Lite', width='300', height='387')
+      p
+        | Название бренда Sacai — это девичья фамилия Читосе, в которой заменена лишь одна буква, С вместо К.
+        | Еще с детства Читосе начала говорить, что хочет стать дизайнером одежды. Увидев однажды по телевизору рекламу с участием известного японского дизайнера Issey Miyake (Иссей Мияке), она сказала: «Я хочу быть похожей на него, делать такую же моду как Issey Miyake!».
+        | Прежде чем создать собственный бренд одежды, Читосе 8 лет проработала в команде Comme des Garcons, под руководством Rei Kawakubo (Рей Кавакубо) и Junya Watanabe (Джуния Ватанабе), где получила огромный опыт и знания.
+      p
+        | первой коллекция бренда Sacai значительное внимание было уделено трикотажу. Сама Читосе говорила, что на момент создания первой коллекции Sacai трикотаж использовался другими дизайнерами достаточно одинаково, а ей хотелось показать, что есть и другие, новые формы его представления. В последствие, трикотаж стал преобладающим материалом в коллекциях Сакай
+      p
+        | Стиль бренда Sacai — это экспериментальная элегантность, соединяющая качество и функциональность во всех своих коллекциях.
+        | Философия Sacai четко отражает взгляд дизайнера марки, который не подстраивается под модные тенденции, а следует своей философии. В своих коллекциях Читосе сочетает казалось бы не сочетаемое, играет с разными фактурами тканей, использует сложные конструкции моделей, создавая концептуальные шедевры моды.
+        | Особое внимание Читосе также уделяет сочетанию цветов, а все используемые ткани специально создаются исключительно только для коллекций Sacai.
+        | Одной из фирменных и узнаваемых вещей Sacai является трикотажный джемпер, который со спины оказывается трапециевидной шифоновой блузкой с воланами и оборками.
+        | Клиенты бренда Sacai, по мнению Chitose Abe — это смелые, творческие, самодостаточные люди, которые открыты всему новому.
+      p.center
+        img(src='https://daynight.ru/userfiles/editor/myimg/716_sacai-2.png', alt='Одежда Sacai в магазине Day Night Lite', title='Одежда Sacai в магазине Day Night Lite', width='301', height='450')
+        img(src='https://daynight.ru/userfiles/editor/myimg/714_sacai-3.png', alt='Одежда Sacai в магазине Day Night Lite', title='Одежда Sacai в магазине Day Night Lite', width='300', height='450')
+    include ../components/_optionalContent.pug
+    footer.post__footer
+      include ../components/_socialShareLinks.pug
+      include ../components/_socials.pug

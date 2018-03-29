@@ -1,0 +1,25 @@
+extends ../layouts/application.pug
+
+block content
+  - var alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' ]
+  .abc.abc--mobile(data-controller='abc')
+    .abc__choise
+      h2.abc__choise-value(data-placeholder='Выберите букву', data-target='abc.heading') Выберите букву
+      button.abc__reset-btn(data-action='click->abc#onResetBtnClick', data-target='abc.resetBtn', type='button') Сбросить
+    .abc__grid(data-action='click->abc#onLettersGridClick', data-target='abc.grid')
+      each letter in alphabet
+        .abc__letter
+          h3.abc__letter-name #{letter}
+          ul.abc__listwords
+            for i in [0,1]
+              li.abc__word
+                a.abc__letter-link.link(href='#') #{letter} is the beset brand #{i}
+  .abc.abc--desktop
+    each letter in [0,1]
+      .abc__column
+        each letter in [0,1,2]
+          .abc__letter
+            h3.abc__letter-name S
+            ul.abc__listwords
+              li.abc__word
+                a.abc__list-link.link(href='brand.html') Sacai

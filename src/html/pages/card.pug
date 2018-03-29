@@ -1,0 +1,87 @@
+extends ../layouts/application.pug
+
+block content
+  .productCard
+    .breadcrumbs
+      a.breadcrumbs__link.link(href='catalog.html')
+        i.breadcrumbs__link-icon
+        | в каталог
+    .productCardInner
+      .productGallery
+        .productGalleryContainer.is-initing(data-controller='card-slider')
+          img.productGalleryImg(data-target='card-slider.slide', data-zoom='images/content/img-catalog-card.jpg', src='images/content/img-catalog-card.jpg', alt='')
+          img.productGalleryImg(data-target='card-slider.slide', data-zoom='images/content/img-catalog-card-1.jpg', src='images/content/img-catalog-card-1.jpg', alt='')
+          img.productGalleryImg(data-target='card-slider.slide', data-zoom='images/content/img-catalog-card-2.jpg', src='images/content/img-catalog-card-2.jpg', alt='')
+      .productMainContent
+        h1.productName
+          a.productNameLink(href='https://daynight.ru/shop/wildfox/') Wildfox
+        p.productString
+          span.productType Платье
+          span.productVendorCode Артикуль: H06HW603 FW17
+          span.productPrice 58 830 ₽
+        .productSizes
+          span.productCurrentSize
+            span.productCurrentSizeLabel Размер
+            span.productCurrentSizeValue 2
+          span.productTableOfSizesAnchor Таблица размеров
+          .productTableOfSizesWrapper
+            .productTableOfSizes
+              .productTableOfSizesRow
+                .productTableOfSizesCell
+                .productTableOfSizesCell
+        .productCardGrid
+          .productCardGridCell
+            #productDescription.productDescription
+              p.productDescriptionLabel Описание
+              .show-more.is-collapsed(data-controller='show-more', data-show-more-length='15')
+                .productDescriptionInner
+                  p(data-action='click->show-more#onTriggerAction', data-target='show-more.string')
+                    | Сайт рыбатекст поможет  дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях. При создании генератора мы использовали небезизвестный универсальный код речей. Текст генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет сделать текст более привлекательным и живым для визуально-слухового восприятия.
+                    | По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит любой макет непонятным смыслом и придаст неповторимый колорит советских времен.
+                span.productDescriptionBtn(data-action='click->show-more#onTriggerAction', data-target='show-more.trigger') подробнее
+            p.productString Размер на модели: 2
+            p.productString Уход: химчистка
+            p.productString Состав: 54% вискоза, 46% ацетат
+            p.productString Размерная сетка бренда: Usa
+          .productCardGridCell
+            input.form__button(type='button', value='в корзину')
+            input.form__button.form__button--favorite(type='button', value='в избранное')
+          .productCardGridCell
+            .uniAccordion.spoiler.is-collapsed(data-classname='is-collapsed', data-controller='spoiler')
+              p.uniAccordionName.spoiler__trigger(data-action='click->spoiler#onTriggerAction', data-target='spoiler.trigger')
+                | Доставка и возврат
+                span.uniAccordionNameArrow
+              .uniAccordionContainer.spoiler__collapsable.is-collapsed(data-target='spoiler.willHidden')
+                p
+                  strong Доставка
+                p
+                  | Все заказы, оформленные в нашем магазине, доставляются исключительно проверенными курьерскими службами из рук в руки по всей территории РФ. После обработки заказа, на указанный контактный адрес электронной почты Вам будет выслан номер для отслеживания отправления. Бесплатная доставка по территории РФ возможна при покупке от 15 000 ₽.
+                p
+                  strong Возврат
+                p
+                  | Согласно закону "О защите прав потребителя" обмен и возврат товара надлежащего качества возможен в течение 14 дней со дня получения заказа.
+                p
+                  a(href='#') Ознакомиться с условиями полностью
+            .uniAccordion.spoiler.is-collapsed(data-classname='is-collapsed', data-controller='spoiler')
+              p.uniAccordionName.spoiler__trigger(data-action='click->spoiler#onTriggerAction', data-target='spoiler.trigger')
+                | Задать вопрос
+                span.uniAccordionNameArrow
+              .uniAccordionContainer.spoiler__collapsable.is-collapsed(data-target='spoiler.willHidden')
+                .form
+                  form(action='')
+                    fieldset.form__fieldSet
+                      legend.form__label ФИО
+                      input.form__field.form__field--withFullBorder(type='text', required='')
+                    fieldset.form__fieldSet
+                      legend.form__label E-mail
+                      input.form__field.form__field--withFullBorder(type='text', required='')
+                    fieldset.form__fieldSet
+                      legend.form__label Ваш вопрос
+                      textarea.formTextarea
+                    fieldset.form__fieldSet
+                      input.form__button.form__button--width165.form__button--resetMargin(type='submit', value='отправить')
+                    p.productString.productString--grey
+                      | Нажимая «отправить» вы соглашаетесь на обработку персональных данных в соответствии с
+                      a(href='#') Политикой конфиденциальности
+        .productCardFooter
+          include ../components/_socials.pug

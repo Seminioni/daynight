@@ -1,0 +1,39 @@
+doctype html
+include ../macros/helpers.pug
+html
+  head
+    meta(charset='utf-8')
+    title
+    link(href='../stylesheets/app.css', rel='stylesheet')
+    meta(http-equiv='x-ua-compatible', content='ie=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0')
+    block head
+  body.page
+    .wrapper
+      include ../components/header/_header.pug
+      .main
+        aside.sidebar
+          nav.nav.nav--vertical.nav--aside
+            .nav__links
+              a.nav__link.nav__link--heading.link(href='index.html') Online Shop
+              a.nav__link.nav__link--heading.link(href='catalog.html') Женское
+              a.nav__link.link(href='catalog.html') Новинки
+              a.nav__link.link(href='catalog.html') Одежда
+              a.nav__link.link(href='catalog.html') Обувь
+              a.nav__link.link(href='catalog.html') Аксессуары
+              a.nav__link.nav__link--heading.link(href='catalog.html') Мужское
+              a.nav__link.link(href='catalog.html') Новинки
+              a.nav__link.link(href='catalog.html') Одежда
+              a.nav__link.link(href='catalog.html') Обувь
+              a.nav__link.link(href='catalog.html') Аксессуары
+              a.nav__link.nav__link--heading.link(href='catalog.html') offline gallery
+              a.nav__link.nav__link--heading.link(href='catalog.html') daynight.outlet
+          .form
+            form
+              input.form__field(type='text', placeholder='email')
+              input.form__button(type='submit', value='Подписаться')
+        .main__container
+          block content
+    include ../components/_footer.pug
+    block javascript
+      script(src='../javascripts/app.js', async='')

@@ -1,0 +1,20 @@
+extends ../layouts/application.pug
+block content
+  each i in [0,1]
+    .address.spoiler.is-collapsed(data-classname='is-collapsed', data-controller='spoiler')
+      .address__container
+        .address__img-wrapper.spoiler__collapsable.is-collapsed(data-target='spoiler.willHidden')
+          img.address__img(src='https://daynight.ru/userfiles/editor/myimg/423_dn2.png', alt='')
+        .address__info
+          h2.address__heading(data-action='click->spoiler#onTriggerAction', data-target='spoiler.trigger')
+            | Магазин DayNight #{i}
+            span.address__arrow
+          .address__contacts.spoiler__collapsable.is-collapsed(data-target='spoiler.willHidden')
+            .address__streets
+              .address__street
+                | Малая Посадская ул. 6 Санкт-Петербург
+              .address__street
+                | Malaya Posadskaya str. 6 Saint-Petersburg
+            .address__phone
+              | +7 812 234 2300
+

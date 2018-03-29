@@ -1,5 +1,3 @@
-if (!TASK_CONFIG.svgSprite) return;
-
 const browserSync = require("browser-sync");
 const gulp = require("gulp");
 const svgstore = require("gulp-svgstore");
@@ -34,5 +32,9 @@ const svgSpriteTask = function() {
 
 const { alternateTask = () => svgSpriteTask } = TASK_CONFIG.svgSprite;
 const task = alternateTask(gulp, PATH_CONFIG, TASK_CONFIG);
-gulp.task("svgSprite", task);
-module.exports = task;
+
+if (!TASK_CONFIG.svgSprite) {
+  module.exports = done => done();
+} else {
+  module.exports = task;
+}

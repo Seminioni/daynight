@@ -4,9 +4,6 @@ module.exports = {
   fonts: true,
   static: false,
   svgSprite: true,
-  ghPages: true,
-  stylesheets: true,
-
   javascripts: {
     entry: {
       // files paths are relative to
@@ -18,8 +15,7 @@ module.exports = {
   stylesheets: {
     sass: {
       includePaths: [
-        "./node_modules/sass-burger/",
-        "./node_modules/choices.js/assets/styles/scss/"
+        './node_modules/sass-burger'
       ]
     }
   },

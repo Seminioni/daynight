@@ -1,14 +1,12 @@
-if (!TASK_CONFIG.images) return;
+const browserSync = require("browser-sync");
+const changed = require("gulp-changed");
+const gulp = require("gulp");
+const gulpif = require("gulp-if");
+const path = require("path");
+const imagemin = require("gulp-imagemin");
 
-var browserSync = require("browser-sync");
-var changed = require("gulp-changed");
-var gulp = require("gulp");
-var gulpif = require("gulp-if");
-var path = require("path");
-var imagemin = require("gulp-imagemin");
-
-var imagesTask = function() {
-  var paths = {
+const imagesTask = function() {
+  const paths = {
     src: path.resolve(
       process.env.PWD,
       PATH_CONFIG.src,
@@ -49,5 +47,8 @@ var imagesTask = function() {
     .pipe(browserSync.stream());
 };
 
-gulp.task("images", imagesTask);
-module.exports = imagesTask;
+if (!TASK_CONFIG.images) {
+  module.exports = done => done;
+} else {
+  module.exports = imagesTask;
+}

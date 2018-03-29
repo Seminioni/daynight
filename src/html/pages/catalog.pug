@@ -1,0 +1,39 @@
+extends ../layouts/application.pug
+
+block content
+  section.filters(data-controller='filters', data-filters-are-open='false')
+    .filters__trigger-wr
+      button.btn.filters__trigger(type='button', data-target='filters.trigger', data-action='click->filters#onTriggerAction') Фильтры
+      button.exit-btn.btn.btn--cross(type='button', data-target='filters.exitBtn', data-action='click->filters#onExitBtnAction')
+    .filters__container(data-target='filters.container')
+      - for (let i = 0; i < 4; i++)
+        include ../components/_filter.pug
+  .list.list--long
+    a.list__item.link(href='card.html')
+      p.list__item-cover
+        span.list__item-sale SALE
+        img.list__item-cover-img(src='images/content/img-demo2.jpg', alt='')
+      span.list__item-title Платье Helmut Lang
+      span.list__item-price 58 830 ₽
+    a.list__item.link(href='card.html')
+      p.list__item-cover
+        span.list__item-new NEW
+        img.list__item-cover-img(src='images/content/img-demo2.jpg', alt='')
+      span.list__item-title Платье Helmut Lang
+      span.list__item-price 58 830 ₽
+    a.list__item.link(href='card.html')
+      p.list__item-cover
+        img.list__item-cover-img(src='images/content/img-demo3.jpg', alt='')
+      span.list__item-title Платье Helmut Lang
+      span.list__item-price 58 830 ₽
+    - for (let i = 0; i < 5; i++)
+      a.list__item.link(href='card.html')
+        p.list__item-cover
+          img.list__item-cover-img(src='images/content/img-demo2.jpg', alt='')
+        span.list__item-title Платье Helmut Lang
+        span.list__item-price 58 830 ₽
+    a.list__item.list__item--zero(href='#')
+
+  include ../components/_pagination.pug
+
+//- p.commonMsg Извините, ничего не найдено.

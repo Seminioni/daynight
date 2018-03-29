@@ -1,0 +1,13 @@
+extends ../layouts/application.pug
+
+block content
+  .list
+    - for (let i = 0; i < 9; i++)
+      a.list__item.link(href='post.html')
+        span.list__item-cover
+          img.list__item-cover-img(src='https://daynight.ru/userfiles/news/newslist/2/12089_5-novinok-v-daynight-na-posadsko.jpg', alt='')
+        time.list__item-date 28.09.2017
+        p.list__item-title 5 новинок недели
+
+  include ../components/_pagination.pug
+

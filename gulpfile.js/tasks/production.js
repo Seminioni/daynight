@@ -1,10 +1,10 @@
 const gulp            = require('gulp')
-const gulpSequence    = require('gulp-sequence')
 const getEnabledTasks = require('../lib/getEnabledTasks')
 const os              = require('os')
 const fs              = require('fs')
-var del               = require('del')
+const del               = require('del')
 const path            = require('path')
+const removeFalsyTasks = require('../lib/removeFalsyTasks')
 
 const productionTask = function(cb) {
   global.production = true
@@ -23,9 +23,8 @@ const productionTask = function(cb) {
   const rev = TASK_CONFIG.production.rev ? 'rev': false
   const static = TASK_CONFIG.static ? 'static' : false
   const { prebuild, postbuild } = TASK_CONFIG.additionalTasks.production
-
-  gulpSequence('clean', prebuild, tasks.assetTasks, tasks.codeTasks, rev, 'size-report', static, postbuild, 'replaceFiles', cb)
+  //
+  return removeFalsyTasks(['clean', prebuild, tasks.assetTasks, tasks.codeTasks, rev, 'sizeReport', static, 'replaceFiles', postbuild])
 }
 
-gulp.task('build', productionTask)
 module.exports = productionTask

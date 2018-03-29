@@ -1,0 +1,54 @@
+extends ../layouts/application.pug
+
+block content
+  .latest
+    .latestTop
+      a.link.latestTopLink(href='#')
+        img.latestTopCover(src='https://daynight.ru/custom/bnrs/2400-flowers.gif')
+    ul.latestList
+      li.latestListItem
+        .latestListItemLink
+          a.latestListItemLinkImgWrapper(href='https://daynight.ru/news/balenciaga-fall-2018/')
+            img.latestListItemLinkImg(src='https://daynight.ru//userfiles/news/large/2/12075_balenciaga-fall-2018.jpg', alt='Balenciaga Fall 2018')
+          a.latestListItemLinkText(href='https://daynight.ru/news/balenciaga-fall-2018/') Balenciaga Fall 2018
+      li.latestListItem
+        .latestListItemLink
+          a(href='https://daynight.ru/offline-gallery/')
+            img.latestListItemLinkImg(src='https://daynight.ru/custom/day/img/img-offline-gallery.jpg', alt='')
+      li.latestListItem
+        #instafeed1.latestListItemLink
+          a.latestListItemLinkImgWrapper(href='https://daynight.ru/offline-gallery/')
+            img.latestListItemLinkImg(src='https://daynight.ru/userfiles/news/large/2/12181_stella-mccartney-fall-2018.jpg', alt='')
+          a.latestListItemLinkText(href='https://www.instagram.com/p/BgVhx-MlTs0/') Stella McCartney Fall 2018
+      li.latestListItem
+        .latestListItemLink
+          a.latestListItemLinkImgWrapper(href='https://daynight.ru/news/altuzarra-fall-2018/')
+            img.latestListItemLinkImg(src='https://daynight.ru/userfiles/news/large/2/12067_altuzarra-fall-2018.jpg', alt='Altuzarra Fall 2018')
+          a.latestListItemLinkText(href='https://daynight.ru/news/altuzarra-fall-2018/') Altuzarra Fall 2018
+    ul.latestList
+      li.latestListItem
+        .latestListItemLink
+          a.latestListItemLinkImgWrapper(href='https://daynight.ru/news/new-items-daynightru273/')
+            img.latestListItemLinkImg(src='https://daynight.ru/userfiles/news/large/2/12043_novinki-daynightru.jpg', alt='Новинки daynight.ru')
+          a.latestListItemLinkText(href='https://daynight.ru/news/new-items-daynightru273/') Новинки daynight.ru
+      li.latestListItem
+        .latestListItemLink
+          a.latestListItemLinkImgWrapper(href='https://daynight.ru/news/nina-ricci-fall-2018/')
+            img.latestListItemLinkImg(src='https://daynight.ru/userfiles/news/large/2/12003_nina-ricci-fall-2018.jpg', alt='Nina Ricci Fall 2018')
+          a.latestListItemLinkText(href='https://daynight.ru/news/nina-ricci-fall-2018/') Nina Ricci Fall 2018
+      li.latestListItem
+        #instafeed2.latestListItemLink
+          a.latestListItemLinkImgWrapper(href='https://www.instagram.com/p/BgV6vSDlc9J/')
+            img.latestListItemLinkImg(src='//scontent.cdninstagram.com/vp/129a878f21ca40ce1abadb31d526fc98/5B2DBE8C/t51.2885-15/s640x640/sh0.08/e35/28766356_326549951200751_6098878273561821184_n.jpg', alt='')
+          a.latestListItemLinkText(href='https://www.instagram.com/p/BgV6vSDlc9J/') @daynight.ru
+      li.latestListItem
+        .latestListItemLink
+          a.latestListItemLinkImgWrapper(href='https://daynight.ru/news/ann-demeulemeester-fall-2018/')
+            img.latestListItemLinkImg(src='https://daynight.ru/userfiles/news/large/2/11995_ann-demeulemeester-fall-2018.jpg', alt='Ann Demeulemeester Fall 2018')
+          a.latestListItemLinkText(href='https://daynight.ru/news/ann-demeulemeester-fall-2018/') Ann Demeulemeester Fall 2018
+    a.link.form__button(href='news.html') читать другие новости
+    .linkToCatalog(href='catalog.html')
+      a.link.linkToCatalogText(href='catalog.html') Женское
+      a.link.linkToCatalogText(href='catalog.html') Мужское
+      a.link.linkToCatalogText(href='#') Outlet
+      span.linkToCatalogArrow
