@@ -1,26 +1,26 @@
 // Mixins entry point
+
 @import "utils";
 @import "arrow";
 @import "placeholder";
 
 
 @mixin reset-button {
-  overflow: visible;
-  margin: 0;
-  padding: 0;
-  border: 0;
   background: transparent;
+  border: 0;
+  cursor: pointer;
   font: inherit;
   line-height: normal;
-  cursor: pointer;
+  margin: 0;
+  overflow: visible;
+  padding: 0;
   -moz-user-select: text;
 
   &::-moz-focus-inner {
-    padding: 0;
     border: 0;
+    padding: 0;
   }
 }
-
 @mixin button-size(
   $padding-y,
   $padding-x,
@@ -28,22 +28,21 @@
   $line-height,
   $border-radius
 ) {
-  padding: $padding-y $padding-x;
+  border-radius: $border-radius;
   font-size: $font-size;
   line-height: $line-height;
-  border-radius: $border-radius;
+  padding: $padding-y $padding-x;
 }
 
 // Legacy mixins
+
 @mixin textNormalSize() {
   @include rhythm(11, 17);
-
   font-weight: 300;
   letter-spacing: 1px;
 }
 @mixin textSmallSize() {
   @include rhythm(9, 17);
-
   font-weight: 300;
   letter-spacing: 1px;
 }

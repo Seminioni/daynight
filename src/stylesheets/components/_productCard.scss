@@ -24,8 +24,8 @@
 
   .arrow--left {
     @include arrow(left, 25, var(--c-grey), var(--c-black));
-    position: absolute;
     left: -5px;
+    position: absolute;
     top: 50%;
     transform: translateY(-50%);
   }
@@ -40,12 +40,11 @@
 }
 
 .productGalleryContainer {
+  @include fixSlider();
   margin: 0 auto;
   max-width: 325px;
   position: relative;
   width: calc(100% - 40px);
-
-  @include fixSlider();
 }
 
 .productGalleryImg {
@@ -190,6 +189,7 @@
   @include textNormalSize();
   color: var(--c-black);
   cursor: pointer;
+
   &.is-hidden {
     display: none;
   }

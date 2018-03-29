@@ -1,41 +1,43 @@
 //Core styles
 .filters {
-  position: relative;
+  background-color: #FFFFFF;
   padding-left: 20px;
   padding-right: 20px;
+  position: relative;
   z-index: 10;
-  background-color: #fff;
 
   .exit-btn {
+    display: none;
+    height: 15px;
     right: 27px;
     top: 0;
     width: 15px;
-    height: 15px;
-    display: none;
   }
 
   &.are-open {
-    position: fixed;
-    top: 65px;
-    left: 0;
-    right: 0;
     bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 65px;
+
     .exit-btn {
       display: initial;
     }
+
     .filters__container {
       display: block;
     }
+
     .filters__trigger {
-      color: var(--c-black);
       background-image: svg-load(
         "../icons/svg/icon-filter.svg",
         fill=var(--c-black),
         stroke=var(--c-black)
       );
+      color: var(--c-black);
     }
   }
-
   @media (--m) {
     padding-left: 0;
     padding-right: 0;
@@ -43,29 +45,29 @@
 }
 
 .filters__trigger-wr {
+  align-items: center;
   background-color: var(--c-white);
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .filters__trigger {
   @include setTransitionFor(0.2s, background, color);
-  padding-left: 30px;
-  vertical-align: middle;
   @include rhythm(11, 11);
-  color: var(--c-grey);
-  display: block;
-  outline: 0;
-  width: 20px;
-  height: 20px;
-  margin-bottom: 15px;
-  background-repeat: no-repeat;
   background-image: svg-load(
     "../icons/svg/icon-filter.svg",
     fill=var(--c-grey),
     stroke=var(--c-grey)
   );
+  background-repeat: no-repeat;
+  color: var(--c-grey);
+  display: block;
+  height: 20px;
+  margin-bottom: 15px;
+  outline: 0;
+  padding-left: 30px;
+  vertical-align: middle;
+  width: 20px;
   @media (--m) {
     display: none;
   }
@@ -74,9 +76,9 @@
 .filters__container {
   display: none;
   @media (--m) {
+    align-items: flex-start;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
     margin-bottom: 15px;
   }
 }
@@ -85,6 +87,7 @@
   @media (--m) {
     flex-grow: 1;
     max-width: 163px;
+
     &:not(:last-of-type) {
       margin-right: 5px;
     }
@@ -101,32 +104,35 @@
     .choices__list--dropdown {
       display: block;
       @media (--m) {
+        left: 0;
         position: absolute;
         top: 20px;
-        left: 0;
       }
     }
+
     .choices__list--single {
       &:after {
         transform: scale(1);
       }
     }
   }
-
   @media (--m) {
     position: relative;
 
   }
 }
+
 .choices__list--dropdown {
   display: none;
+
   &.is-active {
-    padding: 15px 10px 5px 10px;
     background: var(--c-white);
+    padding: 15px 10px 5px;
     @media (--m) {
       width: 100%;
     }
   }
+
   .choices__item--choice {
     @include rhythm(11, 11);
     padding: 5px 0;
@@ -136,11 +142,12 @@
 
 .choices__list--single {
   position: relative;
+
   .choices__item.choices__item--selectable {
     @include rhythm(11, 11);
-    padding-top: 10px;
-    padding-bottom: 5px;
     border-bottom: 1px solid #000011;
+    padding-bottom: 5px;
+    padding-top: 10px;
     @media (--m) {
       border-bottom: 0;
     }
@@ -148,20 +155,20 @@
 
   &:after {
     @include setTransitionFor(0.2s, transform);
-    content: "";
-    position: absolute;
-    right: 0;
-    top: calc(50% - 5px);
     background-image: svg-load(
       "../icons/svg/icon-arrow.svg",
       fill=var(--c-black),
       stroke=var(--c-black)
     );
-    width: 10px;
-    height: 10px;
     background-repeat: no-repeat;
     background-size: contain;
+    content: "";
+    height: 10px;
+    position: absolute;
+    right: 0;
+    top: calc(50% - 5px);
     transform: scale(-1);
+    width: 10px;
   }
 }
 

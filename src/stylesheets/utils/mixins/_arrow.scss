@@ -1,11 +1,14 @@
 // Arrow mixin
+
 @mixin arrow($type, $size, $color, $onHoverColor) {
   display: inline-block;
   height: 100%;
   // height: unquote($size + "px");
   width: unquote($size + "px");
+
   &:hover {
     cursor: pointer;
+
     &:after,
     &:before {
       background-color: $onHoverColor;
@@ -15,15 +18,14 @@
   &:after,
   &:before {
     @include setTransitionFor(0.2s, background);
-    content: "";
     background-color: $color;
+    content: "";
     height: 1px;
     position: absolute;
     top: 50%;
-    width: unquote($size / 2 + "px");
     transform: translateY(-50%);
+    width: unquote($size / 2 + "px");
   }
-
   @if $type == "left" {
     &:after,
     &:before {

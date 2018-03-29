@@ -6,12 +6,13 @@
 .breadcrumbs__link {
   @include textNormalSize();
   @include setTransitionFor(0.2s, color);
-
   color: var(--c-grey);
   display: inline-block;
   padding-left: 4px;
+
   &:hover {
     color: var(--c-black);
+
     .breadcrumbs__link-icon {
       background-image: svg-load("../icons/svg/icon-arrow.svg", fill=var(--c-black));
     }
@@ -20,16 +21,16 @@
 
 .breadcrumbs__link-icon {
   @include setTransitionFor(0.2s, background);
-  position: relative;
   background-image: svg-load("../icons/svg/icon-arrow.svg", fill=var(--c-grey));
-  background-size: contain;
   background-repeat: no-repeat;
+  background-size: contain;
   display: inline-block;
-  margin-right: 10px;
-  width: 7px;
   height: 7px;
+  margin-right: 10px;
+  position: relative;
   transform: rotate(-90deg);
   vertical-align: middle;
+  width: 7px;
 }
 //End core styles
 

@@ -13,19 +13,19 @@
 
 .address__heading {
   @include textNormalSize();
-  padding: 20px 25px 10px 25px;
   border-bottom: 1px solid transparent;
+  left: 0;
+  padding: 20px 25px 10px;
   position: absolute;
   top: 0;
-  left: 0;
   width: 100%;
   @media (--m) {
-    width: auto;
-    margin-bottom: 5px;
-    position: static;
-    font-weight: 500;
     border-bottom: 0;
+    font-weight: 500;
+    margin-bottom: 5px;
     padding: 0;
+    position: static;
+    width: auto;
   }
 
   &:hover {
@@ -35,15 +35,15 @@
 
 .address__arrow {
   @include setTransitionFor(0.2s, transform);
-  background-repeat: no-repeat;
   background-image: svg-load("../icons/svg/icon-arrow.svg");
+  background-repeat: no-repeat;
   background-size: contain;
   display: inline-block;
-  position: absolute;
-  top: 50%;
-  right: 30px;
-  width: 10px;
   height: 10px;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  width: 10px;
   @media (--m) {
     display: none;
   }
@@ -52,8 +52,8 @@
 .address__container {
   padding-top: 46px;
   @media (--m) {
-    padding-top: 0;
     display: flex;
+    padding-top: 0;
   }
 }
 
@@ -83,8 +83,8 @@
   @media (--m) {
     display: block;
     margin-bottom: 10px;
-    width: 100%;
     padding: 0;
+    width: 100%;
   }
 }
 

@@ -1,23 +1,25 @@
 // Rhythm mixin
+
 @mixin rhythm($sizeValue, $heightValue) {
   font-size: $sizeValue + px;
   line-height: $heightValue / $sizeValue;
 }
 
 // Set transition for
+
 @mixin setTransitionFor($time: 0.2s, $properties...) {
-  transition-timing-function: ease-in-out;
   transition-duration: $time;
   transition-property: $properties;
+  transition-timing-function: ease-in-out;
 }
-
 @mixin fixSlider() {
   @include setTransitionFor(0.6s, opacity, visibility, overflow);
 
   &.is-initing {
     opacity: 0;
-    visibility: hidden;
     overflow: hidden;
+    visibility: hidden;
+
     > * {
       height: 0;
     }
