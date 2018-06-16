@@ -1,6 +1,6 @@
 mixin sprite(id, classes)
   - var viewBox = viewbox || "0 0 1 1"
-  span(class=`${id}, ${classes}`)
+  span(class=`${id} ${classes}`)
     svg(viewbox=viewBox)
       use(xlink:href=`images/svgSprite.svg#${id}`)
 
