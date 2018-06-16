@@ -65,4 +65,4 @@ typings/
 dist
 .cache
 .DS_Store
-src/images/content
+src/images
