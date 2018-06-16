@@ -3,7 +3,7 @@
 ### Постоянная ссылка на рабочую версию
 
 ```
-http://daynight0288.surge.sh/
+http://day-and-night.surge.sh/
 ```
 
 ### Подготовка
