@@ -1,9 +1,9 @@
-# DayNight.ru frontend repository
+# DayNight
 
-### Постоянная ссылка на рабочую версию
+### Посмотреть
 
 ```
-http://day-and-night.surge.sh/
+https://daynight.netlify.com/
 ```
 
 ### Подготовка
@@ -34,7 +34,7 @@ yarn start
 yarn build
 
 ```
-## Бегает на
+## Сделано на:
 
 * [Yarn](https://yarnpkg.com/en/) — Fast, reliable, and secure dependency management.
 * [Blendid](https://github.com/vigetlabs/blendid) — is a delicious stand-alone blend of tasks and build tools poured into Gulp to form a full-featured modern asset pipeline.
